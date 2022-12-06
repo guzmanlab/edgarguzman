@@ -1,0 +1,59 @@
+# Edgar Guzman
+
+# dependencies
+node_modules/
+.pnp/
+.pnp.js
+
+# testing
+coverage/
+test/
+testing/
+
+# database
+/prisma/db.sqlite
+/prisma/db.sqlite-journal
+
+# next.js
+.next/
+next-env.d.ts
+
+# production
+build/
+dist/
+out/
+
+# miscellaneous
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.swc
+.next
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+.DS_Store
+*.pem
+dist-ssr/
+*.local
+
+# logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# local env files
+.env
+.env*.local
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
