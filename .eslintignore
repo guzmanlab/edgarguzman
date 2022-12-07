@@ -1,0 +1,17 @@
+.git
+.swc
+.next
+.husky
+.vscode
+README.md
+next.config.js
+next.config.mjs
+package-lock.json
+pnpm-lock.yaml
+jsconfig.json
+tsconfig.json
+package.json
+yarn.lock
+
+.eslintrc.js
+node_modules/

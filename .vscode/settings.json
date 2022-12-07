@@ -1,0 +1,16 @@
+{
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnType": true,
+    "typescript.locale": "en",
+    "typescript.format.enable": true,
+    "typescript.autoClosingTags": true,
+    "typescript.preferences.quoteStyle": "single",
+    "explorer.compactFolders": false,
+    "editor.codeActionsOnSave": {
+        "source.fixAll": true,
+        "source.sortImports": true,
+        "source.fixAll.eslint": true,
+        "source.fixAll.format": true
+    }
+}
