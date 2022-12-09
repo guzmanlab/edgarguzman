@@ -37,4 +37,6 @@ module.exports = {
     'no-param-reassign': 'off',
     'vars-on-top': 'off',
     'import/extensions': 'off',
+
+    'global-require': 'off',
 };

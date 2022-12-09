@@ -1,0 +1,20 @@
+// # Eslint: Base Configuration
+@import 'variables.scss';
+
+// Global: Text Link Configuration
+@mixin decoration-link {
+    color: $inherit;
+    text-decoration-line: $underline;
+    text-decoration-style: $solid;
+    text-decoration-color: $inherit;
+    text-underline-offset: $six;
+}
+
+// Guzman: Text Link Configuration
+@mixin decorator-link {
+    color: $inherit;
+    text-decoration-line: $none;
+    text-decoration-style: $none;
+    text-decoration-color: $inherit;
+    text-underline-offset: $zero;
+}

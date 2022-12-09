@@ -1,0 +1,201 @@
+@import 'variables.module.scss';
+@import 'mixins.module.scss';
+
+*,
+*:is(::before, ::after),
+:is(::selection, :root),
+html,
+body,
+main,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    border: $zero;
+    outline: $zero;
+    margin: $zero0;
+    padding: $zero0;
+    box-sizing: $box-sizing;
+
+    font: $inherit;
+    fill: $inherit;
+    color: $inherit;
+    border-color: $inherit;
+    outline-color: $inherit;
+    background-color: $inherit;
+    vertical-align: $baseline;
+    text-shadow: $none;
+}
+
+*,
+*:is(::before, ::after) {
+    margin: $zero0;
+    padding: $zero0;
+    box-sizing: $box-sizing;
+}
+
+::selection {
+    color: $black;
+    background-color: $yellow;
+}
+
+html {
+    line-height: $one;
+}
+
+body {
+    font-size: $one-hundred;
+    font-family: $arial;
+}
+
+a {
+    color: $inherit;
+    text-decoration: $none;
+
+    &:is(:hover, :focus, :active, :not([id], [class])) {
+        @include decoration-link;
+    }
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: $block;
+    max-width: $one-hundred;
+    border-radius: $six-rem;
+}
+
+input,
+button,
+textarea,
+select {
+    font: $inherit;
+    outline: $one-rem $solid;
+}
+
+ol,
+ul {
+    list-style: $none;
+}
+
+blockquote,
+q {
+    quotes: $none;
+
+    &:is(::before, ::after) {
+        content: $blank;
+        content: $none;
+    }
+}
+
+table {
+    width: $one-hundred;
+    text-align: $align-left;
+    border-collapse: $collapse;
+    border-spacing: $zero;
+}
+
+table,
+th,
+td {
+    padding: $eight-rem;
+    border: $one-rem $solid;
+    text-transform: $capitalize;
+
+    &:nth-child(even) {
+        background-color: $gray;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: $weight-600;
+    font-style: $normal;
+    text-transform: $capitalize;
+}
+
+#root,
+#__next {
+    isolation: $isolate;
+}

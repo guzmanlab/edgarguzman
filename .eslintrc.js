@@ -1,7 +1,5 @@
 const config = require('./src/lib/config');
 
-const eslintConfig = {
+module.exports = {
     ...config.env.eslint,
 };
-
-module.exports = eslintConfig;

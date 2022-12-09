@@ -15,3 +15,5 @@ yarn.lock
 
 .eslintrc.js
 node_modules/
+src/styles/**/*.{css, scss, sass}
+src/styles/**/*.module.{css, scss, sass}

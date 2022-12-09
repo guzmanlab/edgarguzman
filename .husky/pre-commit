@@ -32,7 +32,7 @@ echo '🤔🤔🤔🤔... Alright.... Code looks good to me... Trying to build n
 
 yarn lint-staged ||
 (
-echo '❌👷🔨❌ Better call Bob... Because your build failed ❌👷🔨❌.'
+echo '❌👷🔨❌ Better call Bob... Because your build failed. ❌👷🔨❌'
 false;
 )
 

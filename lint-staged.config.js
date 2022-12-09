@@ -1,7 +1,5 @@
 const config = require('./src/lib/config');
 
-const lintStagedConfig = {
+module.exports = {
     ...config.env.lintStaged,
 };
-
-export default lintStagedConfig;
