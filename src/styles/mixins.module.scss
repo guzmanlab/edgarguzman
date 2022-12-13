@@ -1,4 +1,3 @@
-// # Eslint: Base Configuration
 @import 'variables.scss';
 
 // Global: Text Link Configuration
@@ -17,4 +16,44 @@
     text-decoration-style: $none;
     text-decoration-color: $inherit;
     text-underline-offset: $zero;
+}
+
+// Global: HTML5 Body Modular Tag
+@mixin media-modular {
+    @media (prefer-color-scheme: $dark) {
+
+        #modular,
+        .modular {
+            color: $white;
+            background-color: $black;
+        }
+    }
+
+    @media (prefer-color-scheme: $light) {
+
+        #modular,
+        .modular {
+            color: $black;
+            background-color: $white;
+        }
+    }
+}
+
+// Guzman: Text Logo
+@mixin media-guzman-logo {
+    @media (min-width: $forty-em) {
+        .guzman {
+            font-size: $eighty-rem;
+
+            a {
+                @include decorator-link;
+
+                &:hover,
+                &:focus,
+                &:active {
+                    @include decorator-link;
+                }
+            }
+        }
+    }
 }

@@ -24,14 +24,14 @@ dist/
 out/
 
 # miscellaneous
+.swc
 .idea
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
-.swc
-.next
+*.html
 package-lock.json
 pnpm-lock.yaml
 yarn.lock

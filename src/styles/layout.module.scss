@@ -4,91 +4,85 @@
 #modular,
 .modular {
     gap: $zero0;
-    display: grid;
-    margin: $zero0;
+    display: $grid;
+    margin: $zero $fifty-rem;
     padding: $zero0;
-    width: $one-hundred;
-    grid-template-columns: $max-rem $vh-hundred $max-rem;
+    height: $vh-hundred;
+    outline: $one-rem $solid;
+    grid-template-columns: $fifty-rem $vh-hundred $fifty-rem;
     grid-template-rows: $fr-one;
 }
 
-@media (prefer-color-scheme: dark) {
-    #modular,
-    .modular {
-        color: $white;
-        background-color: $black;
-    }
-}
+@include media-modular;
 
-@media (prefer-color-scheme: light) {
-    #modular,
-    .modular {
-        color: $black;
-        background-color: $white;
-    }
-}
-
-@media (min-width: 640px) {
-    #modular,
-    .modular {
-        max-width: 640px;
-    }
-}
-
-@media (min-width: 768px) {
-    #modular,
-    .modular {
-        max-width: 768px;
-    }
-}
-
-@media (min-width: 1024px) {
-    #modular,
-    .modular {
-        max-width: 1024px;
-    }
-}
-
-@media (min-width: 1280px) {
-    #modular,
-    .modular {
-        max-width: 1280px;
-    }
-}
-
-@media (min-width: 1536px) {
-    #modular,
-    .modular {
-        max-width: 1536px;
-    }
-}
-
-.section {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
+// HTML Layout Tag
 
 .header {
-    height: $max-rem;
+    height: $fifty-rem;
+    margin: $zero0;
+    padding: $zero $twenty-rem;
+    outline: $one-rem $solid;
     background-color: $white;
+}
+
+#nav {
+    outline: $one-rem $solid;
+    background-color: $gray;
+
+    ul {
+        display: $flex;
+        align-items: $center;
+        justify-content: $between;
+
+        li {
+            &:nth-last-of-type(2) {
+                margin-block: $zero;
+                margin-inline: $sixteen-rem;
+
+                a {
+                    color: $inherit;
+                    cursor: $cursor-default;
+                    text-decoration: $none;
+
+                    &:hover,
+                    &:focus,
+                    &:active {
+                        @include decorator-link;
+                    }
+                }
+            }
+        }
+    }
 }
 
 .main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
+    display: $flex;
+    margin: $zero0;
+    padding: $zero0;
+    min-height: $vh-hundred;
+    outline: $one-rem $solid;
     background-color: $white;
-    // background-image: linear-gradient(to bottom, #2e026d, #15162c);
 }
 
 .footer {
-    height: $max-rem;
+    margin: $zero0;
+    padding: $zero $twenty-rem;
+    height: $fifty-rem;
+    outline: $one-rem $solid;
     background-color: $white;
 }
+
+// HTML Layout Tag: Modules Within Modular
+
+.section {
+    width: $one-hundred;
+    height: $one-hundred;
+    display: $flex;
+    align-items: $center;
+    justify-content: $between;
+}
+
+// Company Logo: Modules Within Modular
 
 .guzman {
     color: $inherit;
@@ -96,7 +90,6 @@
     line-height: $sixteen;
     font-weight: $weight-800;
     text-transform: $capitalize;
-    margin: $zero0;
 
     a {
         @include decorator-link;
@@ -109,18 +102,4 @@
     }
 }
 
-@media (min-width: 640px) {
-    .guzman {
-        font-size: 5rem;
-
-        a {
-            @include decorator-link;
-
-            &:hover,
-            &:focus,
-            &:active {
-                @include decorator-link;
-            }
-        }
-    }
-}
+@include media-guzman-logo;

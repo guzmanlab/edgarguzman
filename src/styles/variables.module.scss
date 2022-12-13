@@ -4,6 +4,7 @@ $yellow: #ffff00;
 $pink: #cc66ff;
 $gray: #cccccc;
 $white: #ffffff;
+$bg-image: linear-gradient(to bottom, #2e026d, #15162c);
 
 // # Color Reset
 $none: none;
@@ -22,6 +23,15 @@ $collapse: collapse;
 $align-left: left;
 $blank: '';
 
+$grid: grid;
+$flex: flex;
+$center: center;
+$between: space-between;
+$cursor-default: default;
+$cursor-pointer: pointer;
+$dark: dark;
+$light: light;
+
 // # Number
 $zero: 0;
 $zero0: 0 0;
@@ -33,9 +43,15 @@ $one-hundred: 100%;
 $vh-hundred: 100vh;
 
 $one-rem: 0.0625rem;
-$sixteen-rem: 1rem;
+$three-rem: 0.1875rem;
 $eight-rem: 0.5rem;
-$max-rem: 3.125rem;
+$sixteen-rem: 1rem;
+$twenty-rem: 1.25rem;
+$thirty-two-rem: 3rem;
+$fifty-rem: 3.125rem;
+$eighty-rem: 5rem;
+
+$forty-em: 40em;
 
 $weight-600: 600;
 $weight-800: 800;
