@@ -1,0 +1,43 @@
+@import '../../../../styles/variables.module.scss';
+
+#main,
+.main {
+    margin: $zero0;
+    padding: $zero0;
+    font-family: $arial;
+}
+
+.wrapper {
+    margin: $zero0;
+    padding: 15px 20px;
+    font-family: $arial;
+    // border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+svg {
+    display: inline-block;
+    vertical-align: top;
+}
+
+h1 {
+    font-weight: $weight-900;
+    font-size: $twenty-rem;
+    line-height: $one;
+    margin: 6px 0 6px 10px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+// button+button {
+//     margin-left: 10px;
+// }
+
+.welcome {
+    color: $black;
+    font-size: $sixteen-rem;
+    margin-right: 10px;
+}

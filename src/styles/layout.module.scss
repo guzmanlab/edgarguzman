@@ -8,78 +8,112 @@
     margin: $zero $fifty-rem;
     padding: $zero0;
     height: $vh-hundred;
-    outline: $one-rem $solid;
-    grid-template-columns: $fifty-rem $vh-hundred $fifty-rem;
-    grid-template-rows: $fr-one;
+    grid-template-columns: $fr-one;
+    grid-template-rows: $fifty-rem $fifty-rem $fr-one $fifty-rem;
+
+    grid-auto-columns: $fr-one;
+    grid-auto-flow: $row;
+    grid-template-areas:
+        'header'
+        'navigation'
+        'main'
+        'footer';
+
+    *,
+    *:is(::before, ::after) {
+        outline: $one-rem $solid;
+    }
 }
 
 @include media-modular;
 
 // HTML Layout Tag
 
-.header {
-    height: $fifty-rem;
+#header,
+#nav,
+#main,
+#footer {
+    *,
+    *:is(::before, ::after) {
+        outline: $zero;
+    }
+}
+
+#header {
     margin: $zero0;
-    padding: $zero $twenty-rem;
-    outline: $one-rem $solid;
+    padding: $zero0;
+    height: $fifty-rem;
     background-color: $white;
+
+    grid-area: header;
 }
 
 #nav {
-    outline: $one-rem $solid;
+    margin: $zero0;
+    padding: $zero0;
+    height: $fifty-rem;
     background-color: $gray;
 
+    grid-area: navigation;
+
     ul {
+        margin: $zero0;
+        padding: $zero0;
+        height: $one-hundred;
+
         display: $flex;
         align-items: $center;
         justify-content: $between;
 
         li {
-            &:nth-last-of-type(2) {
+            &:nth-last-of-type(even) {
                 margin-block: $zero;
                 margin-inline: $sixteen-rem;
+            }
 
-                a {
-                    color: $inherit;
-                    cursor: $cursor-default;
-                    text-decoration: $none;
+            a {
+                color: $inherit;
+                cursor: $cursor-default;
+                text-decoration: $none;
 
-                    &:hover,
-                    &:focus,
-                    &:active {
-                        @include decorator-link;
-                    }
+                &:hover,
+                &:focus,
+                &:active {
+                    @include decoration-link;
                 }
             }
         }
     }
 }
 
-.main {
-    display: $flex;
+#main {
     margin: $zero0;
     padding: $zero0;
-    min-height: $vh-hundred;
-    outline: $one-rem $solid;
+    height: $vh-hundred;
     background-color: $white;
+
+    grid-area: main;
 }
 
-.footer {
-    margin: $zero0;
-    padding: $zero $twenty-rem;
-    height: $fifty-rem;
-    outline: $one-rem $solid;
-    background-color: $white;
+#footer {
+    // width: $one-hundred;
+    // height: $fifty-rem;
+    // margin: $zero0;
+    // padding: $zero0;
+    // outline: $zero;
+    // background-color: $white;
+
+    grid-area: footer;
 }
 
 // HTML Layout Tag: Modules Within Modular
 
 .section {
-    width: $one-hundred;
     height: $one-hundred;
     display: $flex;
     align-items: $center;
     justify-content: $between;
+    padding: $zero $twenty-rem;
 }
 
 // Company Logo: Modules Within Modular

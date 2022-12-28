@@ -1,16 +1,98 @@
 @import 'variables.module.scss';
 @import 'mixins.module.scss';
 
+.familiar {
+    font-family: $familiar;
+}
+
+.arial {
+    font-family: $arial;
+}
+
 .title {
-    font-size: $thirty-two-rem;
-    line-height: $one;
-    font-weight: $weight-800;
     margin: $zero0;
+    padding: $zero0;
+    outline: $zero;
+    line-height: $one;
+    font-size: $thirty-two-rem;
+    font-weight: $weight-800;
+}
+
+@include media-title;
+
+.italic {
+    font-style: $italic;
+}
+
+.weight {
+    font-weight: $weight-400;
+
+    &-100 {
+        font-weight: $weight-100;
+    }
+
+    &-200 {
+        font-weight: $weight-200;
+    }
+
+    &-300 {
+        font-weight: $weight-300;
+    }
+
+    &-400 {
+        font-weight: $weight-400;
+    }
+
+    &-500 {
+        font-weight: $weight-500;
+    }
+
+    &-600 {
+        font-weight: $weight-600;
+    }
+
+    &-700 {
+        font-weight: $weight-700;
+    }
+
+    &-800 {
+        font-weight: $weight-800;
+    }
+
+    &-900 {
+        font-weight: $weight-900;
+    }
+}
+
+.w-6 {
+    width: $six-rem;
+}
+
+.h-6 {
+    height: $six-rem;
+}
+
+.my-6 {
+    margin-block: $six-rem;
     padding: $zero0;
 }
 
-@media (min-width: $forty-em) {
-    .title {
-        font-size: $eighty-rem;
+.mx-6 {
+    margin-inline: $six-rem;
+    padding: $zero0;
+}
+
+.grid {
+    margin-block: $six-rem;
+    padding: $zero0;
+}
+
+.place {
+    &-center {
+        place-items: $center;
+    }
+
+    &-center-center {
+        place-items: $center $center;
     }
 }

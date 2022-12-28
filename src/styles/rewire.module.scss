@@ -120,11 +120,12 @@ html {
 
 body {
     font-size: $one-hundred;
-    font-family: $arial;
 }
 
 a {
+    outline: $zero;
     color: $inherit;
+    cursor: default;
     text-decoration: $none;
 
     &:is(:hover, :focus, :active, :not([id], [class])) {
@@ -138,9 +139,11 @@ h3,
 h4,
 h5,
 h6 {
-    font-weight: $weight-600;
-    font-style: $normal;
-    text-transform: $capitalize;
+    border: $zero;
+    outline: $zero;
+    font-weight: $weight-600 default;
+    font-style: $normal default;
+    text-transform: $capitalize default;
 }
 
 img,
@@ -163,12 +166,14 @@ select {
 
 ol,
 ul {
+    outline: $zero;
     list-style: $none;
 }
 
 blockquote,
 q {
     quotes: $none;
+    outline: $zero;
 
     &:is(::before, ::after) {
         content: $blank;
@@ -193,17 +198,6 @@ td {
     &:nth-child(even) {
         background-color: $gray;
     }
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-weight: $weight-600;
-    font-style: $normal;
-    text-transform: $capitalize;
 }
 
 #root,

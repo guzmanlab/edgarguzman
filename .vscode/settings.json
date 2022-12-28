@@ -1,4 +1,5 @@
 {
+    "eslint.enable": true,
     "editor.formatOnSave": true,
     "editor.formatOnPaste": true,
     "editor.formatOnType": true,
@@ -12,5 +13,25 @@
         "source.sortImports": true,
         "source.fixAll.eslint": true,
         "source.fixAll.format": true
+    },
+    "eslint.options": {
+        "useEslintrc": false,
+        "env": {
+            "es6": true,
+            "browser": true,
+            "commonjs": true,
+            "es2015": true,
+            "es2016": true,
+            "es2017": true,
+            "es2018": true,
+            "es2019": true,
+            "es2020": true,
+            "es2021": true,
+            "es2022": true,
+            "node": true
+        },
+        "parserOptions": {
+            "ecmaVersion": 2017
+        }
     }
 }

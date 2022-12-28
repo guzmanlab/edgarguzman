@@ -20,4 +20,5 @@ module.exports = {
     '@typescript-eslint/return-await': 'off',
     '@typescript-eslint/no-var-requires': 'off',
     '@typescript-eslint/no-use-before-define': 'off',
+    '@typescript-eslint/no-unused-vars': 'off',
 };

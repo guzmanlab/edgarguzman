@@ -18,4 +18,7 @@ module.exports = {
     ],
     'react/require-default-props': 'off',
     'react/no-unescaped-entities': 'off',
+    'react/jsx-quotes': 'off',
+    'react/wrap-multilines': 'off',
+    'react/button-has-type': 'off',
 };

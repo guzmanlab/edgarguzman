@@ -11,4 +11,6 @@ module.exports = {
         },
     ],
     'react/react-in-jsx-scope': 'off',
+    '@next/next/no-img-element': 'off',
+    '@next/next/inline-script-id': 'off',
 };

@@ -1,17 +1,20 @@
-@import 'variables.scss';
+@import 'variables.module.scss';
 
 // Global: Text Link Configuration
 @mixin decoration-link {
     color: $inherit;
+    outline: $zero;
+    cursor: $cursor-pointer;
     text-decoration-line: $underline;
     text-decoration-style: $solid;
     text-decoration-color: $inherit;
-    text-underline-offset: $six;
+    text-underline-offset: $six-rem;
 }
 
 // Guzman: Text Link Configuration
 @mixin decorator-link {
     color: $inherit;
+    outline: $zero;
     text-decoration-line: $none;
     text-decoration-style: $none;
     text-decoration-color: $inherit;
@@ -20,8 +23,44 @@
 
 // Global: HTML5 Body Modular Tag
 @mixin media-modular {
-    @media (prefer-color-scheme: $dark) {
+    @media all and (-ms-high-contrast: none) {
+        #modular,
+        .modular {
+            display: -ms-grid;
+            -ms-grid-columns: $fr-one;
+            -ms-grid-rows: $fifty-rem $fifty-rem $fr-one $fifty-rem;
+        }
 
+        #header {
+            -ms-grid-row: 2;
+            -ms-grid-row-span: 1;
+            -ms-grid-column: 1;
+            -ms-grid-column-span: 1;
+        }
+
+        #nav {
+            -ms-grid-row: 2;
+            -ms-grid-row-span: 1;
+            -ms-grid-column: 1;
+            -ms-grid-column-span: 1;
+        }
+
+        #main {
+            -ms-grid-row: 2;
+            -ms-grid-row-span: 1;
+            -ms-grid-column: 1;
+            -ms-grid-column-span: 1;
+        }
+
+        #footer {
+            -ms-grid-row: 3;
+            -ms-grid-row-span: 1;
+            -ms-grid-column: 1;
+            -ms-grid-column-span: 1;
+        }
+    }
+
+    @media (prefer-color-scheme: $dark) {
         #modular,
         .modular {
             color: $white;
@@ -30,11 +69,18 @@
     }
 
     @media (prefer-color-scheme: $light) {
-
         #modular,
         .modular {
             color: $black;
             background-color: $white;
+        }
+    }
+
+    @media (max-width: $forty-em) {
+        #modular,
+        .modular {
+            margin: $zero $twenty-rem;
+            padding: $zero0;
         }
     }
 }
@@ -43,7 +89,7 @@
 @mixin media-guzman-logo {
     @media (min-width: $forty-em) {
         .guzman {
-            font-size: $eighty-rem;
+            font-size: $twenty-rem;
 
             a {
                 @include decorator-link;
@@ -54,6 +100,15 @@
                     @include decorator-link;
                 }
             }
+        }
+    }
+}
+
+// Frame: Text Title
+@mixin media-title {
+    @media (min-width: $forty-em) {
+        .title {
+            font-size: 24/16;
         }
     }
 }
