@@ -1,3 +1,6 @@
+// Componentry Component Folder
+import Imagry from './componentry/FallBackImagry';
+
 // Sories Component Folder
 import Button from './design/Components/Button/Button';
 import Diagram from './design/Components/Diagram/Diagram';
@@ -28,9 +31,10 @@ import Head from './header/Head';
 import Title from './header/Title';
 
 // Layout Folder
-import Layout from './layouts/Layout';
+import Layout from './layouts/get-layout';
 
 export {
+    Imagry,
     Button,
     Diagram,
     Page,

@@ -1,6 +1,6 @@
 Test();
 
-function Test() {
+export function Test() {
     const config = {
         env: {
             COMPANY_LOGO: 'Edgar Guzman',

@@ -8,10 +8,10 @@
     margin: $zero $fifty-rem;
     padding: $zero0;
     height: $vh-hundred;
-    grid-template-columns: $fr-one;
-    grid-template-rows: $fifty-rem $fifty-rem $fr-one $fifty-rem;
+    grid-template-columns: $one-fr;
+    grid-template-rows: $fifty-rem $fifty-rem $one-fr $fifty-rem;
 
-    grid-auto-columns: $fr-one;
+    grid-auto-columns: $one-fr;
     grid-auto-flow: $row;
     grid-template-areas:
         'header'
@@ -96,12 +96,10 @@
 }
 
 #footer {
-    // width: $one-hundred;
-    // height: $fifty-rem;
-    // margin: $zero0;
-    // padding: $zero0;
-    // outline: $zero;
-    // background-color: $white;
+    margin: $zero0;
+    padding: $zero0;
+    height: $fifty-rem;
+    background-color: $white;
 
     grid-area: footer;
 }

@@ -15,6 +15,7 @@
 @mixin decorator-link {
     color: $inherit;
     outline: $zero;
+    cursor: $cursor-pointer;
     text-decoration-line: $none;
     text-decoration-style: $none;
     text-decoration-color: $inherit;
@@ -27,8 +28,8 @@
         #modular,
         .modular {
             display: -ms-grid;
-            -ms-grid-columns: $fr-one;
-            -ms-grid-rows: $fifty-rem $fifty-rem $fr-one $fifty-rem;
+            -ms-grid-columns: $one-fr;
+            -ms-grid-rows: $fifty-rem $fifty-rem $one-fr $fifty-rem;
         }
 
         #header {
@@ -108,7 +109,83 @@
 @mixin media-title {
     @media (min-width: $forty-em) {
         .title {
-            font-size: 24/16;
+            font-size: $thirty-two-rem;
+        }
+    }
+}
+
+// Frame: Medium Grid Columns
+@mixin medium-grid-cols {
+    @media (min-width: $forty-em) {
+        .md\:grid-cols {
+            &-none {
+                grid-template-columns: $none;
+            }
+
+            &-1 {
+                grid-template-columns: repeat($one-fr, minmax($zero, $one-fr));
+            }
+
+            &-2 {
+                grid-template-columns: repeat($two-fr, minmax($zero, $two-fr));
+            }
+
+            &-3 {
+                grid-template-columns: repeat($three-fr, minmax($zero, $three-fr));
+            }
+
+            // &-11 {
+            //     grid-template-columns: $-fr;
+            // }
+
+            // &-12 {
+            //     grid-template-columns: $-fr;
+            // }
+            &-16 {
+                grid-template-columns: repeat($sixteen-fr, minmax($zero, $sixteen-fr));
+            }
+
+            // &-12 {
+            //     grid-template-columns: $-fr;
+            // }
+        }
+    }
+}
+
+// Frame: Large Grid Columns
+@mixin large-grid-cols {
+    @media (min-width: $forty-em) {
+        .lg\:grid-cols {
+            &-none {
+                grid-template-columns: $none;
+            }
+
+            &-1 {
+                grid-template-columns: repeat($one-fr, minmax($zero, $one-fr));
+            }
+
+            &-2 {
+                grid-template-columns: repeat($two-fr, minmax($zero, $two-fr));
+            }
+
+            &-3 {
+                grid-template-columns: repeat($three-fr, minmax($zero, $three-fr));
+            }
+
+            // &-11 {
+            //     grid-template-columns: $-fr;
+            // }
+
+            // &-12 {
+            //     grid-template-columns: $-fr;
+            // }
+            &-16 {
+                grid-template-columns: repeat($sixteen-fr, minmax($zero, $sixteen-fr));
+            }
+
+            // &-12 {
+            //     grid-template-columns: $-fr;
+            // }
         }
     }
 }

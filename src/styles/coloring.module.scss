@@ -30,30 +30,32 @@
 }
 
 // # background-color
-.bg-inherit {
-    background-color: $inherit;
-}
+.bg {
+    &-inherit {
+        background-color: $inherit;
+    }
 
-.bg-current {
-    background-color: $current-color;
-}
+    &-current {
+        background-color: $current-color;
+    }
 
-.bg-black {
-    background-color: $black;
-}
+    &-black {
+        background-color: $black;
+    }
 
-.bg-pink {
-    background-color: $pink;
-}
+    &-pink {
+        background-color: $pink;
+    }
 
-.bg-yellow {
-    background-color: $yellow;
-}
+    &-yellow {
+        background-color: $yellow;
+    }
 
-.bg-gray {
-    background-color: $gray;
-}
+    &-gray {
+        background-color: $gray;
+    }
 
-.bg-white {
-    background-color: $white;
+    &-white {
+        background-color: $white;
+    }
 }

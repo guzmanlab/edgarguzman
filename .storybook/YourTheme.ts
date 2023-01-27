@@ -7,7 +7,7 @@ export default create({
     colorSecondary: 'black',
 
     // UI
-    appBg: 'black',
+    appBg: 'white',
     appContentBg: 'white',
     appBorderColor: 'black',
     appBorderRadius: 4,
@@ -19,6 +19,7 @@ export default create({
     // Text colors
     textColor: 'black',
     textInverseColor: 'black',
+    textMutedColor: 'black',
 
     // Toolbar default and active colors
     barTextColor: 'black',

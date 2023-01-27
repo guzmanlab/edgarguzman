@@ -27,6 +27,8 @@ const config = {
         FACEBOOK: 'https://www.facebook.com/edgaralexisguz',
         INSTAGRAM: 'https://www.instagram.com/edgaralexisguzman',
         LINKEDIN: 'https://www.linkedin.com/in/edgaralexisguzman',
+
+        NOT_FOUND_IMAGE: '/images/not-found.svg',
     },
 };
 

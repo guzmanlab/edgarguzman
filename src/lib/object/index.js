@@ -101,7 +101,7 @@ const NEXT_ENV = {
         defaultLocale: 'en',
     },
     images: {
-        domains: ['pbs.twimg.com'],
+        domains: ['pbs.twimg.com', 'github.com', 'raw.githubusercontent.com'],
     },
 };
 
@@ -126,7 +126,13 @@ const PRETTIER_ENV = {
 const STORYBOOK_ENV = {
     STORYBOOK_MAIN: {
         stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
-        staticDirs: ['../public/images'],
+        staticDirs: [
+            '../public/images',
+            // {
+            //     from: '../public/images/assets',
+            //     to: '../assets',
+            // },
+        ],
         addons: [
             '@storybook/addon-links',
             '@storybook/addon-essentials',
