@@ -1,4 +1,4 @@
-import config from '@lib/config';
+import config from '@lib/configuration';
 import NextHead from 'next/head';
 import { type FC } from 'react';
 

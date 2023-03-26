@@ -2,7 +2,7 @@
 import { createServerSupabaseClient } from '@supabase/auth-helpers-nextjs';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-import type { Database } from '@utils/database';
+import type { Database } from '@utils/data-base';
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     // Get product

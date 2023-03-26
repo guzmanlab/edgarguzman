@@ -5,7 +5,7 @@
 // import React, { useEffect, useState } from 'react';
 
 // import { Authentication, FontType, Linkaged, ProductCard, Template, Title } from '@components';
-// import config from '@lib/config';
+// import config from '@lib/configuration';
 // import { supabase } from '@lib/supabase';
 
 // export const getServerSideProps: GetServerSideProps = async ({ params }: any) => {

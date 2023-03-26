@@ -5,10 +5,10 @@
 // import React, { useEffect, useState } from 'react';
 
 // // import { supabase } from '../../lib/supabase';
-// // import config from '../../lib/config';
+// // import config from '../../lib/configuration';
 // import { Imagry } from '..';
 // import camera from '../../public/assets/camera-on.png';
-// import type { Database } from '../../utils/database';
+// import type { Database } from '../../utils/data-base';
 
 // type Profiles = Database['public']['Tables']['profiles']['Row'];
 

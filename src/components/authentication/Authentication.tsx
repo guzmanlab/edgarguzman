@@ -5,7 +5,7 @@
 // import { useEffect, useState } from 'react';
 
 // import { Account, Footer, Header, Imagry, Linkaged } from '../../components';
-// // import config from '../../lib/config';
+// // import config from '../../lib/configuration';
 // // import { prisma } from '../../lib/prisma';
 // // import { supabase } from '../../lib/supabase'
 

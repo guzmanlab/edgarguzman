@@ -1,7 +1,7 @@
 // @lib/prisma.ts
 import { PrismaClient } from '@prisma/client';
 
-import config from '@lib/config';
+import config from '@lib/configuration';
 
 export const prisma = global.prisma || new PrismaClient();
 

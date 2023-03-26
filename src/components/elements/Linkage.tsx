@@ -3,7 +3,7 @@ import NextLink, { type LinkProps } from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState, type FC, type MouseEventHandler, type PropsWithChildren, type ReactNode } from 'react';
 
-// import config from '@lib/config';
+// import config from '@lib/configuration';
 
 // type Props = {
 //     className?: string;

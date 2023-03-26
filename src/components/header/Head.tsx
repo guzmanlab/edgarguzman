@@ -1,4 +1,4 @@
-import config from '../../lib/config';
+import config from '../../lib/configuration';
 import Linkage from './Link';
 import Meta from './Meta';
 import Scripture from './Script';

@@ -6,7 +6,7 @@ import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 
 import { Account, AuthLayout, Imagry, Title } from '@components';
-import config from '@lib/config';
+import config from '@lib/configuration';
 import { supabase } from '@lib/supabase';
 
 // export const getStaticPaths = async () => {

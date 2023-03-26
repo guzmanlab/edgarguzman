@@ -9,7 +9,7 @@ import { supabase } from '@lib/supabase';
 
 import { Breaker, Buttonry, Divider, H1, H4, Imagry, Linkaged, Section, Title } from '@components';
 import Scripture from '@components/header/Script';
-// import config from '@lib/config';
+// import config from '@lib/configuration';
 
 export const getServerSideProps: GetServerSideProps = async () => {
     const { data: products } = await supabase.from('products').select('*');

@@ -6,7 +6,7 @@ import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 
 import { Imagry, Title } from '@components';
-import config from '@lib/config';
+import config from '@lib/configuration';
 import { supabase } from '@lib/supabase';
 
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {

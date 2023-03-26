@@ -4,7 +4,7 @@ import type { GetServerSideProps, NextPage } from 'next';
 
 import { Buttonry, Divider, Section, Title } from '@components';
 import { supabase } from '@lib/supabase';
-// import { config } from '@lib/config';
+// import { config } from '@lib/configuration';
 
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
     const { data: username, error } = await supabase.from('users').select().single();

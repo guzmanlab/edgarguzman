@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
 
 import { Breaker, Buttonry, Divider, Imagry, Loading, Title } from '@components';
 import Accordion from '@components/elements/Accordion';
-import config from '@lib/config';
+import config from '@lib/configuration';
 import { supabase } from '@lib/supabase';
 
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {

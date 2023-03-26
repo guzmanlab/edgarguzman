@@ -1,6 +1,6 @@
 import NextLink from 'next/link';
 
-import config from '../../lib/config';
+import config from '../../lib/configuration';
 
 const Footer = () => {
     return (

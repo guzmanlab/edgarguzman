@@ -3,7 +3,7 @@ import type { FC, ReactNode } from 'react';
 
 import { Title } from '@components';
 import Scripture from '@components/header/Script';
-// import config from '@lib/config';
+// import config from '@lib/configuration';
 
 type Props = {
     children: ReactNode;

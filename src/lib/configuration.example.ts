@@ -34,13 +34,6 @@ const config = {
         NEXTAUTH_SECRET: '',
         NEXTAUTH_URL: 'http://localhost:3000/api/auth',
 
-        // Next Auth Supabase Database
-        NEXT_PUBLIC_SUPABASE_URL: '',
-        NEXT_PUBLIC_SUPABASE_ANON_KEY: '',
-        SUPABASE_SERVICE_ROLE_KEY: '',
-        SUPABASE_JWT_SECRET: '',
-        SUPABASE_BUCKET: '',
-
         // Next Auth Discord Provider
         DISCORD_CLIENT_ID: '',
         DISCORD_CLIENT_SECRET: '',
@@ -60,11 +53,12 @@ const config = {
         EMAIL_SERVER_PASSWORD: '',
         EMAIL_FROM: '',
 
-        // Stripe
-        NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: '',
-        STRIPE_SECRET_KEY: '',
-        STRIPE_PRICE_ID: '',
-        STRIPE_WEBHOOK_SECRET: ''
+        // Next Auth Supabase Database
+        NEXT_PUBLIC_SUPABASE_URL: '',
+        NEXT_PUBLIC_SUPABASE_ANON_KEY: '',
+        SUPABASE_SERVICE_ROLE_KEY: '',
+        SUPABASE_JWT_SECRET: '',
+        IMAGE_SERVER: ''
     }
 };
 

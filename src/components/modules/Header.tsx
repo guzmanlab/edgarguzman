@@ -2,7 +2,7 @@
 // import NextLink from 'next/link';
 
 // import { Imagry, Linkaged } from '../../components';
-// import config from '../../lib/config';
+// import config from '../../lib/configuration';
 
 // const Header = () => {
 //     const gifUrl = 'https://dribbble.com/shots/6915953-Another-man-down/attachments/6915953-Another-man-down?mode=media';
@@ -145,7 +145,7 @@ import { signIn, signOut, useSession } from 'next-auth/react';
 import NextImage from 'next/image';
 
 import { Buttonry, Imagry, Linkaged } from '..';
-import config from '../../lib/config';
+import config from '../../lib/configuration';
 
 const Header: NextPage = () => {
     const { data: session, status } = useSession();

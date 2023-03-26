@@ -1,7 +1,7 @@
 // @components/header/Title.tsx
 import NextHead from 'next/head';
 import { type FC } from 'react';
-import config from '../../lib/config';
+import config from '../../lib/configuration';
 
 const name = config.env.COMPANY_NAME;
 

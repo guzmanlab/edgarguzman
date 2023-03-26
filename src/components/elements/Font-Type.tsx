@@ -7,7 +7,7 @@ import { Inter } from '@next/font/google';
 import localFont from '@next/font/local';
 import type { ReactNode } from 'react';
 
-// import config from '../../lib/config';
+// import config from '../../lib/configuration';
 
 type Props = {
     children?: ReactNode;

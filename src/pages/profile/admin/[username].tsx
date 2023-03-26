@@ -6,7 +6,7 @@ import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 
 import { Imagry, Loading, Title } from '@components';
-import config from '@lib/config';
+import config from '@lib/configuration';
 import { supabase } from '@lib/supabase';
 import { trpc } from '@utils/trpc';
 

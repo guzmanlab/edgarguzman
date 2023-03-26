@@ -140,7 +140,7 @@ module.exports = {
         'prettier.config.js',
         'lint-staged.config.js',
         'next.config.js',
-        'src/utils/database.ts',
+        'src/utils/data-base.ts',
         'next-env.d.ts',
         'environment.d.ts',
         'global-types.d.ts',

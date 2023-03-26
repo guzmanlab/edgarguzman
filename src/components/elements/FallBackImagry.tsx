@@ -1,7 +1,7 @@
 import NextImage from 'next/image';
 import React, { useEffect, useState, type FC } from 'react';
 
-import config from '../../lib/config';
+import config from '../../lib/configuration';
 
 declare type SafeNumber = number | `${number}`;
 

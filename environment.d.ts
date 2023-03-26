@@ -20,7 +20,7 @@ declare namespace NodeJS {
         readonly GOOGLE_CLIENT_SECRET: string;
 
         readonly EMAIL_SERVER_HOST: string;
-        readonly EMAIL_SERVER_PORT: number;
+        readonly EMAIL_SERVER_PORT: string;
         readonly EMAIL_SERVER_USER: string;
         readonly EMAIL_SERVER_PASSWORD: string;
         readonly EMAIL_FROM: string;
@@ -30,5 +30,7 @@ declare namespace NodeJS {
         readonly NEXT_PUBLIC_SUPABASE_ANON_KEY: string;
         readonly SUPABASE_SERVICE_ROLE_KEY: string;
         readonly SUPABASE_JWT_SECRET: string;
+        readonly SUPABASE_BUCKET: string;
+        readonly IMAGE_SERVER: string;
     }
 }

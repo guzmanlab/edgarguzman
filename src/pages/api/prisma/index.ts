@@ -1,5 +1,5 @@
 // @pages/api/prisma/index.ts
-import config from '@lib/config';
+import config from '@lib/configuration';
 import { PrismaClient } from '@prisma/client';
 
 export const prisma = global.prisma || new PrismaClient();

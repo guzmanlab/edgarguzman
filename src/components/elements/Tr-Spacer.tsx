@@ -4,7 +4,7 @@ import NextLink from 'next/link';
 import type { ReactNode } from 'react';
 
 // import { Authentication, FontType, Title } from '@components';
-// import config from '../../lib/config';
+// import config from '../../lib/configuration';
 
 // declare module 'react' {
 //     interface HTMLAttributes<T> extends AriaAttributes, DOMAttributes<T> {

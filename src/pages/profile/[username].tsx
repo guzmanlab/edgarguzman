@@ -7,7 +7,7 @@
 
 // import { Loading, Title } from '@components';
 // import { getUserSession } from '@hooks/getUserSession';
-// import config from '@lib/config';
+// import config from '@lib/configuration';
 // import { supabase } from '@lib/supabase';
 
 // export const getServerSideProps: GetServerSideProps = async ({ params }) => {

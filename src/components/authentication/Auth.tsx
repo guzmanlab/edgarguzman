@@ -6,7 +6,7 @@
 // import { useState } from 'react';
 
 // // import { Imagry, Title } from '../../components';
-// // import config from '../../lib/config';
+// // import config from '../../lib/configuration';
 // // import { supabase } from '../../lib/supabase'
 
 // const Auth: NextPage = () => {

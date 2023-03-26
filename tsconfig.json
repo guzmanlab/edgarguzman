@@ -47,6 +47,7 @@
         "tsconfig.prod.json",
         "tsconfig.eslint.json",
         "next-env.d.ts",
+        "environment.d.ts",
         "src/**/*",
         "public/**/*",
         ".storybook/**/*",
@@ -60,6 +61,6 @@
         ".eslint.js",
         "lint-staged.config.js",
         "next.config.js",
-        "src/utils/database.ts"
+        "src/utils/data-base.ts"
     ]
 }

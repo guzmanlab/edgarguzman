@@ -4,7 +4,7 @@ import { createTRPCNext } from '@trpc/next';
 import type { inferRouterInputs, inferRouterOutputs } from '@trpc/server';
 import superjson from 'superjson';
 
-import config from '@lib/config';
+import config from '@lib/configuration';
 import type { AppRouter } from '@server/trpc/router/_app';
 
 const getBaseUrl = () => {

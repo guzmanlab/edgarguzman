@@ -3,7 +3,7 @@ import type { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
-import config from '@lib/config';
+import config from '@lib/configuration';
 
 const Loading: NextPage = () => {
     const router = useRouter();

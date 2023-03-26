@@ -4,7 +4,7 @@
 // import { useEffect, useState } from 'react';
 
 // // import { supabase } from '../../lib/supabase';
-// import { Database } from '../../utils/database';
+// import { Database } from '../../utils/data-base';
 // import Avatar from './Avatar';
 
 // type Profiles = Database['public']['Tables']['profiles']['Row'];

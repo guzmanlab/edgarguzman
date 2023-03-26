@@ -24,3 +24,4 @@ node_modules/
 /src/lib/rules/**/*.js
 /src/styles/**/*.{css, scss, sass}
 /src/styles/**/*.module.{css, scss, sass}
+**/*/data-base.ts
