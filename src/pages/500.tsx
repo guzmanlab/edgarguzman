@@ -1,4 +1,4 @@
-import { Title } from '../components';
+import { Title } from '@components';
 
 const Custom500 = () => {
     return (

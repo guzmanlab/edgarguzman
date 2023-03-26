@@ -1,4 +1,5 @@
 import NextLink from 'next/link';
+
 // import config from '../../lib/config';
 
 const navigation = [
@@ -6,32 +7,32 @@ const navigation = [
         id: 1,
         url: '/',
         name: 'Home',
-        current: true,
+        current: true
     },
     {
         id: 2,
         url: '/about',
         name: 'About',
-        current: false,
+        current: false
     },
     {
         id: 3,
-        url: '/product',
+        url: '/products',
         name: 'Product',
-        current: false,
+        current: false
     },
     {
         id: 5,
         url: '/contact',
         name: 'Contact',
-        current: false,
+        current: false
     },
     {
         id: 4,
         url: '/cart',
         name: 'Cart',
-        current: false,
-    },
+        current: false
+    }
     // {
     //   id: ,
     //   url: '/',

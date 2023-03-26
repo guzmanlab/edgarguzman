@@ -13,7 +13,7 @@ const Head = () => {
             />
             <Meta
                 name='description'
-                content={`an E-Commerce made by ${config.env.COMPANY_LOGO}`}
+                content={`an E-Commerce made by ${config.env.COMPANY_NAME}`}
             />
             <Meta
                 httpEquiv='X-UA-Compatible'

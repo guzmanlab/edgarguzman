@@ -15,11 +15,12 @@ yarn.lock
 
 .eslintrc.js
 node_modules/
-public/scripts/Welcome.js
-public/scripts/Welcome.ts
-public/scripts/**/*.{js, ts}
-src/lib/**/*.{js, jsx, ts, tsx}
-src/lib/**/index.js
-src/lib/rules/**/*.js
-src/styles/**/*.{css, scss, sass}
-src/styles/**/*.module.{css, scss, sass}
+/public/scripts/**/*
+# public/scripts/Welcome.js
+# public/scripts/Welcome.ts
+# public/scripts/**/*.{js, ts}
+/src/lib/**/*.{js, jsx, ts, tsx}
+/src/lib/**/index.js
+/src/lib/rules/**/*.js
+/src/styles/**/*.{css, scss, sass}
+/src/styles/**/*.module.{css, scss, sass}

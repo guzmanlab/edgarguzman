@@ -24,12 +24,12 @@
 
 // Global: HTML5 Body Modular Tag
 @mixin media-modular {
-    @media all and (-ms-high-contrast: none) {
+    @media all and (-ms-high-contrast: $none) {
         #modular,
         .modular {
             display: -ms-grid;
             -ms-grid-columns: $one-fr;
-            -ms-grid-rows: $fifty-rem $fifty-rem $one-fr $fifty-rem;
+            -ms-grid-rows: repeat(2, $fifty-rem) $one-fr $fifty-rem;
         }
 
         #header {

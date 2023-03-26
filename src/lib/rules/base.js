@@ -1,31 +1,40 @@
 // Eslint: Base Configuration
 
 module.exports = {
-    'import/no-extraneous-dependencies': [
-        'error',
-        {
-            devDependencies: true,
-        },
-    ],
+    // 'import/no-extraneous-dependencies': [
+    //     'error',
+    //     {
+    //         devDependencies: true,
+    //         optionalDependencies: false,
+    //         peerDependencies: false
+    //     }
+    // ],
     'import/prefer-default-export': 'off',
-    'import/first': 'error',
-    'import/newline-after-import': 'error',
-    'import/no-duplicates': 'error',
+    // 'import/first': 'off',
+    // 'import/newline-after-import': 'off',
+    // TODO : I need to get this fix - Edgar
+    // 'import/no-duplicates': [
+    //     'error',
+    //     {
+    //         includeExports: true
+    //     }
+    // ],
+    // 'import/no-duplicates': 'error',
     'simple-import-sort/imports': [
         'off',
         {
             groups: [
                 [
-                    '^(assert|buffer|child_process|cluster|console|constants|crypto|dgram|dns|domain|events|fs|http|https|module|net|os|path|punycode|querystring|readline|repl|stream|string_decoder|sys|timers|tls|tty|url|util|vm|zlib|freelist|v8|process|async_hooks|http2|perf_hooks)(/.*|$)',
+                    '^(assert|buffer|child_process|cluster|console|constants|crypto|dgram|dns|domain|events|fs|http|https|module|net|os|path|punycode|querystring|readline|repl|stream|string_decoder|sys|timers|tls|tty|url|util|vm|zlib|freelist|v8|process|async_hooks|http2|perf_hooks)(/.*|$)'
                 ],
                 ['^react', '^@?\\w'],
                 ['^\\u0000'],
                 ['^(src|internals)(/.*|$)'],
                 ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
                 ['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
-                ['^.+\\.s?css$'],
-            ],
-        },
+                ['^.+\\.s?css$']
+            ]
+        }
     ],
     'simple-import-sort/import': 'off',
     'simple-import-sort/exports': 'off',
@@ -40,23 +49,33 @@ module.exports = {
 
     'global-require': 'off',
 
-    'import/no-anonymous-default-export': [
-        'error',
-        {
-            allowArray: false,
-            allowArrowFunction: false,
-            allowAnonymousClass: false,
-            allowAnonymousFunction: false,
-            allowCallExpression: true, // The true value here is for backward compatibility
-            allowLiteral: false,
-            allowObject: false,
-        },
-    ],
+    // 'import/no-anonymous-default-export': [
+    //     'error',
+    //     {
+    //         allowArray: false,
+    //         allowArrowFunction: false,
+    //         allowAnonymousClass: false,
+    //         allowAnonymousFunction: false,
+    //         allowCallExpression: true, // The true value here is for backward compatibility
+    //         allowLiteral: false,
+    //         allowObject: false
+    //     }
+    // ],
     'import/no-named-as-default': 'off',
+    'import/no-mutable-exports': 'off',
 
     //Possible Errors
     // The following rules point out areas where you might have made mistakes.
-    'comma-dangle': 2, // disallow or enforce trailing commas
+    'comma-dangle': [
+        'error',
+        {
+            arrays: 'never',
+            objects: 'never',
+            imports: 'never',
+            exports: 'never',
+            functions: 'never'
+        }
+    ], // disallow or enforce trailing commas
     'no-cond-assign': 2, // disallow assignment in conditional expressions
     'no-console': 'off', // disallow use of console (off by default in the node environment)
     'no-constant-condition': 2, // disallow use of constant expressions in conditions
@@ -121,7 +140,7 @@ module.exports = {
     'no-octal': 2, // disallow use of octal literals
     'no-octal-escape': 2, // disallow use of octal escape sequences in string literals, such as var foo = "Copyright \251";
     'no-param-reassign': 'off', // disallow reassignment of function parameters (off by default)
-    'no-process-env': 2, // disallow use of process.env (off by default)
+    'no-process-env': 'off', // disallow use of process.env (off by default)
     'no-proto': 2, // disallow usage of __proto__ property
     'no-redeclare': 2, // disallow declaring the same variable more then once
     'no-return-assign': 2, // disallow use of assignment in return statement
@@ -187,4 +206,61 @@ module.exports = {
     'react/react-in-jsx-scope': 2, // Prevent missing React when using JSX
     'react/self-closing-comp': 2, // Prevent extra closing tags for components without children
     'react/wrap-multilines': 2, // Prevent missing parentheses around multilines JSX
+
+    // TODO : I need to get this fix - Edgar
+    'import/no-extraneous-dependencies': 'off',
+    'import/first': 'off',
+    'import/newline-after-import': 'off',
+    'import/no-duplicates': 'off',
+    'import/no-anonymous-default-export': 'off',
+    // 'prettier/prettier': [
+    //     1,
+    //     {
+    //         printWidth: 180,
+    //         tabWidth: 4,
+    //         semi: true,
+    //         singleQuote: true,
+    //         jsxSingleQuote: true,
+    //         trailingComma: 'none',
+    //         bracketSpacing: true,
+    //         bracketSameLine: true,
+    //         arrowParens: 'avoid',
+    //         singleAttributePerLine: true
+    //     }
+    // ],
+    '@typescript-eslint/ban-types': [
+        'error',
+        {
+            types: {
+                String: false,
+                Boolean: false,
+                Number: false,
+                Symbol: false,
+                '{}': false,
+                Object: false,
+                object: false,
+                Function: false
+            },
+            extendDefaults: true
+        }
+    ],
+    '@typescript-eslint/no-unsafe-return': 'off',
+    '@typescript-eslint/indent': ['error', 4],
+    '@typescript-eslint/restrict-template-expressions': 'error',
+    '@typescript-eslint/no-unsafe-assignment': 'off',
+    'prettier/prettier': [
+        0,
+        {
+            printWidth: 180,
+            tabWidth: 4,
+            semi: true,
+            singleQuote: true,
+            jsxSingleQuote: true,
+            trailingComma: 'none',
+            bracketSpacing: true,
+            bracketSameLine: true,
+            arrowParens: 'avoid',
+            singleAttributePerLine: true
+        }
+    ] // disallow or enforce trailing commas
 };

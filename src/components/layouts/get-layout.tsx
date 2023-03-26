@@ -1,5 +1,5 @@
-import React, { type FC, type ReactNode } from 'react';
-import NextImage from 'next/image';
+import type { FC, ReactNode } from 'react';
+// import SignHeader from '../componentry/Signature-Header';
 import Footer from '../modules/Footer';
 import Header from '../modules/Header';
 import Main from '../modules/Main';
@@ -13,6 +13,7 @@ const Layout: FC<Props> = ({ children }) => {
     return (
         <>
             <Header />
+            {/* <SignHeader /> */}
             <Navigation />
             <Main>{children}</Main>
             <Footer />

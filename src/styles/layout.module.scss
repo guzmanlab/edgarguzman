@@ -9,7 +9,7 @@
     padding: $zero0;
     height: $vh-hundred;
     grid-template-columns: $one-fr;
-    grid-template-rows: $fifty-rem $fifty-rem $one-fr $fifty-rem;
+    grid-template-rows: repeat(2, $fifty-rem) $one-fr $fifty-rem;
 
     grid-auto-columns: $one-fr;
     grid-auto-flow: $row;
@@ -35,6 +35,7 @@
 #footer {
     *,
     *:is(::before, ::after) {
+        border: $zero;
         outline: $zero;
     }
 }
@@ -48,6 +49,78 @@
     grid-area: header;
 }
 
+.header-nav {
+    width: auto;
+    height: $one-hundred-percent;
+    margin: $zero0;
+    padding: $zero0;
+    background-color: white;
+
+    // grid-area: header;
+
+    // *,
+    // *:is(::before, ::after) {
+    //     border-radius: $six-rem;
+    //     outline: $one-rem $solid;
+    // }
+
+    section {
+        height: $one-hundred-percent;
+        margin: $zero0;
+        padding: $zero0;
+        // background-color: $yellow;
+        font-size: $sixteen-rem;
+
+        display: flex;
+        align-items: center;
+    }
+
+    .profile-loading {
+        margin: $zero0;
+        padding: $zero0;
+
+        font-weight: bold;
+        font-size: $sixteen-rem;
+    }
+
+    .avatar {
+        width: auto;
+        height: 50%;
+        margin: $zero0;
+        padding: $zero0;
+
+        border-radius: $sixteen-rem;
+    }
+
+    .breaker-profile {
+        content: '';
+        // width: auto;
+        // height: 50%;
+        margin: $four-rem;
+        // padding: $zero0;
+
+        // border-radius: $sixteen-rem;
+    }
+
+    .btn-signout,
+    .btn-signin {
+        cursor: default;
+
+        &:hover,
+        &:focus,
+        &:active {
+            cursor: pointer;
+        }
+    }
+
+    h4 {
+        margin: $zero0;
+        padding: $zero0;
+        font-weight: bold;
+        font-size: $sixteen-rem;
+    }
+}
+
 #nav {
     margin: $zero0;
     padding: $zero0;
@@ -59,7 +132,7 @@
     ul {
         margin: $zero0;
         padding: $zero0;
-        height: $one-hundred;
+        height: $one-hundred-percent;
 
         display: $flex;
         align-items: $center;
@@ -107,10 +180,11 @@
 // HTML Layout Tag: Modules Within Modular
 
 .section {
-    height: $one-hundred;
+    height: $one-hundred-percent;
     display: $flex;
     align-items: $center;
     justify-content: $between;
+    margin: $zero0;
     padding: $zero $twenty-rem;
 }
 

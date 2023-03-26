@@ -1,4 +1,5 @@
 import NextLink from 'next/link';
+
 import config from '../../lib/config';
 
 const Footer = () => {
@@ -6,7 +7,7 @@ const Footer = () => {
         <footer id='footer'>
             <section className='section'>
                 <div className='guzman'>
-                    <NextLink href='/'>{config.env.COMPANY_LOGO}</NextLink>
+                    <NextLink href='/'>{config.env.COMPANY_NAME}</NextLink>
                 </div>
             </section>
         </footer>

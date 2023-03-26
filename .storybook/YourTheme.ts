@@ -33,7 +33,7 @@ export default create({
     inputBorderRadius: 4,
 
     // Brand assests
-    brandTitle: process.env.COMPANY_LOGO,
+    brandTitle: process.env.COMPANY_NAME,
     brandUrl: process.env.SITE_DEVELOPMENT_URL,
-    brandTarget: '_self',
+    brandTarget: '_self'
 });

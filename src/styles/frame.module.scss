@@ -2,11 +2,11 @@
 @import 'mixins.module.scss';
 
 .familiar {
-    font-family: $familiar;
+    font-family: $type-face-familiar;
 }
 
 .arial {
-    font-family: $arial;
+    font-family: $type-face-arial;
 }
 
 .title {
@@ -34,6 +34,10 @@
 
 .italic {
     font-style: $italic;
+}
+
+.capitalize {
+    text-transform: $capitalize;
 }
 
 .weight {
@@ -264,13 +268,146 @@
     }
 }
 
+// Flexbox & Grid
 .flex {
+    // Flex
+    // Utilities for controlling how flex items both grow and shrink.
     display: $flex;
+
+    // Flex
+    // Utilities for controlling how flex items both grow and shrink.
+    &-1 {
+        flex: $one $one $zero-percent;
+    }
+
+    &-auto {
+        flex: $one $one $auto;
+    }
+
+    &-initial {
+        flex: $zero $one $initial;
+    }
+
+    &-none {
+        flex: $none;
+    }
+
+    // Flex Direction
+    // Utilities for controlling how flex items wrap.
+    &-row {
+        flex-direction: row;
+    }
+
+    &-row-reverse {
+        flex-direction: row-reverse;
+    }
+
+    &-col {
+        flex-direction: column;
+    }
+
+    &-col-reverse {
+        flex-direction: column-reverse;
+    }
+
+    // Flex Wrap
+    // Utilities for controlling how flex items wrap.
+    &-wrap {
+        flex-wrap: wrap;
+    }
+
+    &-wrap-reverse {
+        flex-wrap: wrap-reverse;
+    }
+
+    &-nowrap {
+        flex-wrap: nowrap;
+    }
 }
 
 .grid {
-    margin-block: $six-rem;
-    padding: $zero0;
+    // margin-block: $six-rem;
+    // padding: $zero0;
+
+    display: $grid;
+}
+
+.gap {
+    &-0 {
+        gap: $zero-rem;
+    }
+
+    &-px {
+        gap: $one-rem;
+    }
+
+    &-4 {
+        gap: $four-rem;
+    }
+
+    &-6 {
+        gap: $six-rem;
+    }
+
+    &-16 {
+        gap: $sixteen-rem;
+    }
+
+    &-20 {
+        gap: $twenty-rem;
+    }
+
+    &-y {
+        &-0 {
+            row-gap: $zero-rem;
+        }
+
+        &-px {
+            row-gap: $one-rem;
+        }
+
+        &-4 {
+            row-gap: $four-rem;
+        }
+
+        &-6 {
+            row-gap: $six-rem;
+        }
+
+        &-16 {
+            row-gap: $sixteen-rem;
+        }
+
+        &-20 {
+            row-gap: $twenty-rem;
+        }
+    }
+
+    &-x {
+        &-0 {
+            column-gap: $zero-rem;
+        }
+
+        &-px {
+            column-gap: $one-rem;
+        }
+
+        &-4 {
+            column-gap: $four-rem;
+        }
+
+        &-6 {
+            column-gap: $six-rem;
+        }
+
+        &-16 {
+            column-gap: $sixteen-rem;
+        }
+
+        &-20 {
+            column-gap: $twenty-rem;
+        }
+    }
 }
 
 .align {
@@ -304,12 +441,74 @@
 }
 
 .border {
+    // border-width: $one-rem;
+    border: $one-rem $solid !important;
+
     &-y-1 {
-        border: $one-rem $solid;
+        border: $one-rem $solid !important;
     }
 
     &-x-1 {
-        border: $one-rem $solid;
+        border: $one-rem $solid !important;
+    }
+
+    // Border Style
+
+    &-auto {
+        border-style: auto;
+    }
+
+    &-dashed {
+        border-style: dashed;
+    }
+
+    &-dotted {
+        border-style: dotted;
+    }
+
+    &-double {
+        border-style: double;
+    }
+
+    &-groove {
+        border-style: groove;
+    }
+
+    &-hidden {
+        border-style: hidden;
+    }
+
+    &-inherit {
+        border-style: inherit;
+    }
+
+    &-initial {
+        border-style: initial;
+    }
+
+    &-inset {
+        border-style: inset;
+    }
+
+    &-none {
+        border-style: none;
+    }
+
+    &-outset {
+        border-style: outset;
+    }
+
+    &-ridge {
+        border-style: ridge;
+    }
+
+    // Solid
+    &-solid {
+        border-style: $solid;
+    }
+
+    &-unset {
+        border-style: unset;
     }
 }
 
@@ -336,8 +535,44 @@
     // &-12 {
     //     font-size: $-rem;
     // }
+
+    &-26 {
+        font-size: 1.625rem;
+    }
+
+    &-50 {
+        font-size: $fifty-rem;
+    }
+
+    // Outline Style
+    font-family: $type-face-arial;
+
+    &-arial {
+        font-family: $type-face-arial;
+    }
+
+    &-nunito {
+        font-family: $type-face-nunito;
+    }
+
+    &-code {
+        font-family: $type-face-code;
+    }
+
+    &-times {
+        font-family: $type-face-times;
+    }
+
+    // Outline Style
+
+    &-familiar {
+        font-family: $type-face-familiar;
+    }
 }
 
+// Flexbox & Grid
+// Grid Template Columns
+// Utilities for specifying the columns in a grid layout.
 .grid-cols {
     &-1 {
         grid-template-columns: repeat($one-fr, minmax($zero, $one-fr));
@@ -366,6 +601,85 @@
 @include medium-grid-cols;
 
 @include large-grid-cols;
+
+// Flexbox & Grid
+// Grid Auto Flow
+// Utilities for controlling how elements in a grid are auto-placed.
+.auto-flow {
+    &-row {
+        grid-auto-flow: row;
+    }
+
+    &-col {
+        grid-auto-flow: column;
+    }
+
+    &-dense {
+        grid-auto-flow: dense;
+    }
+
+    &-row-dense {
+        grid-auto-flow: row dense;
+    }
+
+    &-col-dense {
+        grid-auto-flow: column dense;
+    }
+}
+
+// @include medium-auto-flow;
+
+// @include large-auto-flow;
+
+// Flexbox & Grid
+// Grid Auto Columns
+// Utilities for controlling the size of implicitly-created grid columns.
+.auto-cols {
+    &-auto {
+        grid-auto-columns: $auto;
+    }
+
+    &-min {
+        grid-auto-columns: min-content;
+    }
+
+    &-max {
+        grid-auto-columns: max-content;
+    }
+
+    &-fr {
+        grid-auto-columns: minmax($zero, $one-fr);
+    }
+}
+
+// @include medium-auto-cols;
+
+// @include large-auto-cols;
+
+// Flexbox & Grid
+// Grid Auto Rows
+// Utilities for controlling the size of implicitly-created grid rows.
+.auto-rows {
+    &-auto {
+        grid-auto-rows: $auto;
+    }
+
+    &-min {
+        grid-auto-rows: min-content;
+    }
+
+    &-max {
+        grid-auto-rows: max-content;
+    }
+
+    &-fr {
+        grid-auto-rows: minmax($zero, $one-fr);
+    }
+}
+
+// @include medium-auto-rows;
+
+// @include large-auto-rows;
 
 .gap {
     &-0 {
@@ -485,4 +799,310 @@
     }
 
     resize: $resize-both;
+}
+
+.outline {
+    // outline-width: $one-rem;
+    outline: $one-rem $solid !important;
+
+    &-none {
+        outline-width: $zero;
+    }
+
+    &-1 {
+        outline-width: $one-rem;
+    }
+
+    &-2 {
+        outline-width: $two-rem;
+    }
+
+    &-4 {
+        outline-width: $four-rem;
+    }
+
+    &-6 {
+        outline-width: $six-rem;
+    }
+
+    // Outline Style
+
+    &-auto {
+        outline-style: auto;
+    }
+
+    &-dashed {
+        outline-style: dashed;
+    }
+
+    &-dotted {
+        outline-style: dotted;
+    }
+
+    &-double {
+        outline-style: double;
+    }
+
+    &-groove {
+        outline-style: groove;
+    }
+
+    &-hidden {
+        outline-style: hidden;
+    }
+
+    &-inherit {
+        outline-style: inherit;
+    }
+
+    &-initial {
+        outline-style: initial;
+    }
+
+    &-inset {
+        outline-style: inset;
+    }
+
+    &-none {
+        outline-style: none;
+    }
+
+    &-outset {
+        outline-style: outset;
+    }
+
+    &-ridge {
+        outline-style: ridge;
+    }
+
+    // Solid
+    &-solid {
+        outline-style: $solid;
+    }
+
+    &-unset {
+        outline-style: unset;
+    }
+}
+
+.Button {
+    width: 100%;
+    display: grid;
+    place-items: center center;
+    // justify-content: center;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    // transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    // transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+    // transition-duration: .3s
+}
+
+.Button.ButtonPrimary {
+    --tw-bg-opacity: 1;
+    background-color: rgb(239 238 0 / var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: rgb(0 0 0 / var(--tw-text-opacity));
+    border-width: $one-rem;
+    border-style: solid;
+    border-color: $black;
+    --tw-ring-opacity: 1;
+    --tw-ring-color: rgb(255 254 45 / var(--tw-ring-opacity));
+}
+
+.Button.ButtonPrimary:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(208 208 0 / var(--tw-bg-opacity));
+
+    cursor: pointer;
+}
+
+.Button.ButtonPrimary:active {
+    --tw-bg-opacity: 1;
+    background-color: rgb(178 177 0 / var(--tw-bg-opacity));
+}
+
+.ButtonNormal {
+    width: 100%;
+    padding: 0.625rem 1.25rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    // font-weight: 600;
+
+    // border-radius: $sixteen-rem;
+}
+
+// Product(s) Breadcrumbs Navigation
+ul.breadcrumb {
+    padding: 0.625rem 1rem;
+    list-style: $none;
+    background-color: #eeeeee;
+
+    li {
+        display: inline;
+        font-size: 1.125rem;
+
+        // a {
+        //     // color: #0275d8;
+        //     text-decoration: $none;
+
+        //     &:hover {
+        //         color: $black;
+        //         text-decoration: underline;
+        //     }
+        // }
+
+        &:before {
+            padding: 0.5rem;
+            color: $black;
+            content: '/\00a0';
+        }
+    }
+}
+
+// // Version 2 Test Only
+// .grid {
+//     // gap: 1.875rem;
+//     display: grid;
+//     // grid-template-columns: repeat(12, 1fr);
+
+//     // * {
+//     //     background: orange;
+//     // }
+// }
+
+// Nested Styling
+.products {
+    width: 100%;
+    // height: 100vh;
+    // position: relative;
+
+    gap: 0 1.25rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    // grid-template-rows: 1fr;
+    grid-auto-rows: auto;
+
+    // outline: 0.0625rem solid #000000 !important;
+    border-radius: 0;
+    // background-color: #ffff00;
+    overflow: hidden;
+    // margin: 0 0;
+    // padding: 0 0;
+
+    // Nested Styling
+    .image-container {
+        width: 100%;
+        height: 100%;
+        position: relative;
+
+        outline: 0.0625rem solid #000000 !important;
+        border-radius: 0;
+        // background-color: #ffff00;
+        overflow: hidden;
+        padding: 0 0;
+
+        .image {
+            width: 100%;
+            height: 100%;
+            position: relative !important;
+            object-fit: cover; // Optional
+        }
+    }
+
+    // Next.js Nested Styling
+    .next-image {
+        max-width: 100%;
+
+        div {
+            position: unset !important;
+            padding: 0px !important;
+
+            img {
+                position: unset !important;
+                width: 100% !important;
+                height: 100% !important;
+                max-height: 100% !important;
+                max-width: 100% !important;
+            }
+        }
+    }
+
+    .custom-img {
+        object-fit: contain;
+        width: 100% !important;
+        position: relative !important;
+        height: unset !important;
+        background-color: #000000;
+
+        pointer-events: none;
+    }
+
+    .unset-img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .unset-img > div {
+        position: unset !important;
+    }
+
+    .button {
+        color: $black;
+        cursor: default;
+        font-weight: 600;
+        border-radius: 0.0625rem;
+        // object-fit: contain;
+        width: 100% !important;
+        // position: relative !important;
+        height: unset !important;
+        background-color: $white;
+
+        padding-block: 0.75rem;
+        padding-inline: 0;
+
+        outline: 0.0625rem solid #000000 !important;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &:focus {
+            cursor: wait;
+        }
+
+        // &:active {
+        //     cursor: default;
+        // }
+
+        &:disabled {
+            cursor: default;
+        }
+    }
+}
+
+// Accordion
+.accordion {
+    // background-color: #eee;
+    // color: #444;
+    cursor: pointer;
+    padding: 1.125rem;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: $one-rem $solid !important;
+    font-size: $sixteen-rem;
+    transition: 0.4s;
+    font-weight: 600;
+
+    .active,
+    &:hover {
+        background-color: #cccccc;
+    }
+}
+
+.panel {
+    padding: 1.125rem;
+    display: none;
+    background-color: $white;
+    overflow: hidden;
 }

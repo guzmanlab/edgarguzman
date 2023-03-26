@@ -16,4 +16,5 @@ module.exports = {
     'no-empty-character-class': ['off'],
     'no-labels': ['off'],
     'quote-props': ['error', 'as-needed'],
+    'object-curly-spacing': ['error', 'always']
 };

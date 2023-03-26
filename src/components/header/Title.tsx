@@ -1,15 +1,35 @@
+// @components/header/Title.tsx
 import NextHead from 'next/head';
 import { type FC } from 'react';
 import config from '../../lib/config';
 
+const name = config.env.COMPANY_NAME;
+
 type Props = {
     title?: string;
+    description?: string;
 };
 
-const Title: FC<Props> = ({ title }) => {
+const Title: FC<Props> = ({ title, description }): JSX.Element => {
     return (
         <NextHead>
-            <title>{title ? `${title} : ${config.env.COMPANY_LOGO}` : config.env.COMPANY_LOGO}</title>
+            {description && (
+                <meta
+                    name='description'
+                    content={description ? `${description}` : description}
+                />
+            )}
+            {description && (
+                <meta
+                    name='og:description'
+                    content={description ? `${description}` : description}
+                />
+            )}
+            <meta
+                name='og:title'
+                content={description ? `${description} : ${description}` : description}
+            />
+            <title>{title ? `${title} : ${name}` : name}</title>
         </NextHead>
     );
 };

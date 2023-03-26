@@ -13,12 +13,16 @@ testing/
 # database
 /prisma/db.sqlite
 /prisma/db.sqlite-journal
+prisma/migrations/
 
 # next.js
 .next/
 next-env.d.ts
+environment.d.ts
+global-types.d.ts
 
 # production
+storybook-static/
 build/
 dist/
 out/
@@ -32,9 +36,6 @@ out/
 *.sln
 *.sw?
 *.html
-package-lock.json
-pnpm-lock.yaml
-yarn.lock
 .DS_Store
 *.pem
 dist-ssr/
@@ -51,9 +52,27 @@ lerna-debug.log*
 # local env files
 .env
 .env*.local
+.env*.production
+.env*.development
+src/lib/config/index.js
+src/lib/config.ts
+
+# lock files
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
 
 # vercel
 .vercel
 
+# storybook
+.storybook
+*.storybook
+
 # typescript
 *.tsbuildinfo
+*.prod.tsbuildinfo
+*.eslint.tsbuildinfo
+
+types-safely-list.ts
+src/utils/database.ts

@@ -9,11 +9,11 @@ module.exports = {
             semi: true,
             singleQuote: true,
             jsxSingleQuote: true,
-            trailingComma: 'all',
+            trailingComma: 'none',
             bracketSpacing: true,
             bracketSameLine: true,
             arrowParens: 'avoid',
-            singleAttributePerLine: true,
-        },
-    ],
+            singleAttributePerLine: true
+        }
+    ]
 };

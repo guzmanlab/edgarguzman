@@ -1,6 +1,6 @@
+import config from '@lib/config';
 import NextHead from 'next/head';
 import { type FC } from 'react';
-import config from 'src/lib/config';
 
 type Props = {
     charSet?: string;

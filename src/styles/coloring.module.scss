@@ -59,3 +59,34 @@
         background-color: $white;
     }
 }
+
+// # Outline color
+.outline {
+    &-inherit {
+        outline-color: $inherit;
+    }
+
+    &-current {
+        outline-color: $current-color;
+    }
+
+    &-black {
+        outline-color: $black;
+    }
+
+    &-pink {
+        outline-color: $pink;
+    }
+
+    &-yellow {
+        outline-color: $yellow;
+    }
+
+    &-gray {
+        outline-color: $gray;
+    }
+
+    &-white {
+        outline-color: $white;
+    }
+}

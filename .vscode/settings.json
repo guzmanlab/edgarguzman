@@ -33,5 +33,11 @@
         "parserOptions": {
             "ecmaVersion": 2017
         }
-    }
+    },
+    "eslint.validate": [
+        "javascript",
+        "typescript",
+        // "javascriptreact",
+        // "typescriptreact"
+    ]
 }

@@ -1,5 +1,6 @@
 import type { NextPage, NextPageContext } from 'next';
-import { Title } from '../components';
+
+import { Title } from '@components';
 
 type Props = {
     statusCode?: number;

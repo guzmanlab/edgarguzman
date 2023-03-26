@@ -1,6 +1,6 @@
-import { Title } from 'src/components';
+import { Title } from '@components';
 
-const Cart = () => {
+const Cart = ({ Cart }: any) => {
     return (
         <>
             <Title title='Cart' />
@@ -13,6 +13,8 @@ const Cart = () => {
                 <desc>Shopping Cart</desc>
 
                 {/* Add a Dynamic Product Array list when Add to Cart button when clicked. */}
+
+                {/* <pre>{Cart.first() == 'Edgar' ? 'Hello, Edgar!' : 'Hello, world-cart!'}</pre> */}
             </section>
         </>
     );
