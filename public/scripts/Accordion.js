@@ -1,4 +1,5 @@
 // @public/scripts/Accordion.js
+// @ts-nocheck
 'use strict';
 
 Accordion();

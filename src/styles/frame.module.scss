@@ -1106,3 +1106,22 @@ ul.breadcrumb {
     background-color: $white;
     overflow: hidden;
 }
+
+// Typography
+// Text Transform
+// Utilities for controlling the transformation of text.
+
+// Nested Styling
+.uppercase {
+    text-transform: uppercase;
+}
+
+.lowercase {
+    text-transform: lowercase;
+}
+
+// Re-move capitalize class to this location : Edgar
+
+.normal-case {
+    text-transform: none;
+}

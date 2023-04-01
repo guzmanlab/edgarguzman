@@ -34,8 +34,8 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
 
 const DynamicProducts: NextPage = ({ product }: any) => {
     const router = useRouter();
-    console.log(supabase.auth.getUser());
-    console.log(product);
+    // console.log(supabase.auth.getUser());
+    // console.log(product);
 
     if (router.isFallback) {
         // return <div>{config.env.LOADING || 'Loading'}</div>;

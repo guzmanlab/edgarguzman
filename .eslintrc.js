@@ -173,6 +173,11 @@ module.exports = {
         '@typescript-eslint/no-empty-function': 'off',
 
         '@next/next/inline-script-id': 'off',
-        'react/no-unescaped-entities': 'off'
+        'react/no-unescaped-entities': 'off',
+        'react/jsx-key': 'off',
+
+        '@typescript-eslint/ban-ts-comment': 'off',
+        '@typescript-eslint/no-misused-promises': 'off',
+        '@typescript-eslint/no-unsafe-argument': 'off'
     }
 };

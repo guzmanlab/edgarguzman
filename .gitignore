@@ -76,3 +76,5 @@ yarn.lock
 *.tsbuildinfo
 *.prod.tsbuildinfo
 *.eslint.tsbuildinfo
+
+scripture.package.json

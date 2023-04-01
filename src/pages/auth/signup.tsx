@@ -1,151 +1,68 @@
 // @pages/auth/signup.tsx
-import type { GetServerSidePropsContext, InferGetServerSidePropsType, NextPage } from 'next';
-import { useSession } from 'next-auth/react';
-import NextLink from 'next/link';
+// import type { NextPage } from 'next';
+// import NextImage from 'next/image';
+// import NextLink from 'next/link';
 
-import { Section, Title } from '@components';
+// import { Form, Section, Title } from '@components';
 
-const SignUp = () => {
+// const SignUp = () => {
+//     return (
+//         <>
+//             <Title title='Sign Up' />
+
+//             <Section>
+//                 <h1 className='capitalize weight-600 font-26'>Sign Up</h1>
+
+//                 <div className="flex h-screen w-screen items-center justify-center bg-gray-50">
+//                     <div className="z-10 w-full max-w-md overflow-hidden rounded-2xl border border-gray-100 shadow-xl">
+//                         <div className="flex flex-col items-center justify-center space-y-3 border-b border-gray-200 bg-white px-4 py-6 pt-8 text-center sm:px-16">
+//                             <a href="https://dub.sh">
+//                                 <NextImage
+//                                     src="/logo.png"
+//                                     alt="Logo"
+//                                     className="h-10 w-10 rounded-full"
+//                                     width={20}
+//                                     height={20}
+//                                 />
+//                             </a>
+//                             <h3 className="text-xl font-semibold">Sign Up</h3>
+//                             <p className="text-sm text-gray-500">
+//                                 Create an account with your email and password
+//                             </p>
+//                         </div>
+//                         <Form type="signup" />
+//                     </div>
+//                 </div>
+//             </Section>
+//         </>
+//     );
+// };
+
+// export default SignUp;
+
+import Image from 'next/image';
+
+import Form from '@components/componentry/form';
+
+export default function Login() {
     return (
-        <>
-            <Title title='Sign Up' />
-
-            <Section>
-                <h1 className='capitalize weight-600 font-26'>Sign Up</h1>
-
-                {/* <Component {...pageProps} /> */}
-
-                <fieldset>
-                    <label
-                        className='capitalize weight-600 font-26'
-                        htmlFor='first-name'>
-                        First Name
-                    </label>
-
-                    <input
-                        className='
-                            weight-400
-                            font-16
-                            bg-white
-                            radius-6
-                            outline
-                            flex
-                            items-center
-                        '
-                        type='text'
-                        name='first-name'
-                        placeholder='first name'
-                        aria-placeholder='first name'
-                        // onChange={...pageProps}
-                    />
-                </fieldset>
-
-                <fieldset>
-                    <label
-                        className='capitalize weight-600 font-26'
-                        htmlFor='last-name'>
-                        Last Name
-                    </label>
-
-                    <input
-                        className='
-                            weight-400
-                            font-16
-                            bg-white
-                            radius-6
-                            outline
-                            flex
-                            items-center
-                        '
-                        type='text'
-                        name='last-name'
-                        placeholder='last name'
-                        aria-placeholder='last name'
-                        // onChange={...pageProps}
-                    />
-                </fieldset>
-
-                <fieldset className='grid'>
-                    <label
-                        className='capitalize weight-600 font-26'
-                        htmlFor='email'>
-                        Email
-                    </label>
-                    <input
-                        className='
-                            weight-400
-                            font-16
-                            bg-white
-                            radius-6
-                            outline
-                            flex
-                            items-center
-                        '
-                        type='email'
-                        name='email'
-                        placeholder='john@email.com'
-                        aria-placeholder='john@email.com'
-                        // onChange={({ target }) => setUserInfo({ ...userInfo, email: target.value })}
-                    />
-                </fieldset>
-
-                <fieldset className='grid'>
-                    <label
-                        className='capitalize weight-600 font-26'
-                        htmlFor='password'>
-                        Password
-                    </label>
-                    <input
-                        className='
-                            weight-400
-                            font-16
-                            bg-white
-                            radius-6
-                            outline
-                            flex
-                            items-center
-                        '
-                        type='password'
-                        name='password'
-                        placeholder='********'
-                        aria-placeholder='********'
-                        // onChange={({ target }) => setUserInfo({ ...userInfo, password: target.value })}
-                    />
-                </fieldset>
-
-                {/* <NextLink
-                    className=''
-                    href='/auth/forgot-your-password'
-                >
-                    Forgot your password?
-                </NextLink>
-
-                <br
-                    className='m-6'
-                />
-
-                <NextLink
-                    className=''
-                    href='/auth/signup'
-                >
-                    Sign in account
-                </NextLink> */}
-
-                {/* <br
-                    className='m-6'
-                /> */}
-
-                <button
-                    className='capitalize weight-600 font-26 bg-yellow radius-6'
-                    type='submit'
-                    // onClick={() => signIn(provider.id)}
-                >
-                    {/* Sign Up with {provider.name} */}
-                    Sign Up
-                </button>
-            </Section>
-        </>
+        <div className='flex h-screen w-screen items-center justify-center bg-gray-50'>
+            <div className='z-10 w-full max-w-md overflow-hidden rounded-2xl border border-gray-100 shadow-xl'>
+                <div className='flex flex-col items-center justify-center space-y-3 border-b border-gray-200 bg-white px-4 py-6 pt-8 text-center sm:px-16'>
+                    <a href='https://dub.sh'>
+                        <Image
+                            src='/logo.png'
+                            alt='Logo'
+                            className='h-10 w-10 rounded-full'
+                            width={20}
+                            height={20}
+                        />
+                    </a>
+                    <h3 className='text-xl font-semibold'>Sign Up</h3>
+                    <p className='text-sm text-gray-500'>Create an account with your email and password</p>
+                </div>
+                <Form type='signup' />
+            </div>
+        </div>
     );
-};
-
-export default SignUp;
+}

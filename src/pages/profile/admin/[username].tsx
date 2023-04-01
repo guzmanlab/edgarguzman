@@ -64,6 +64,8 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
         throw new Error(`${error}`);
     }
 
+    console.log('users: ', userInformation);
+
     return {
         props: {
             userInformation
@@ -72,7 +74,7 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
 };
 
 const Profile: NextPage = ({ userInformation }: any) => {
-    // console.log(supabase.auth.getUser());
+    console.log(supabase.auth.admin.listUsers());
     // console.log(userInformation);
 
     const router = useRouter();
@@ -84,33 +86,248 @@ const Profile: NextPage = ({ userInformation }: any) => {
         <>
             <Title title={userInformation ? `${userInformation.username}` : ''} />
 
-            <section>
-                {/* <div
-                    style={{
-                        outlineWidth: '0.0625rem',
-                        outlineStyle: 'solid',
-                        outlineColor: '#000000',
-                        borderRadius: '3.125rem',
-                        backgroundColor: '#ffff00',
-                        overflow: 'hidden',
-                        display: 'grid',
-                        placeItems: 'center center',
-                        marginBlock: '1.25rem',
-                        marginInline: '0',
-                    }}>
-                    <Imagry
-                        src={userInformation ? `/${userInformation.user.image}` : ''}
-                        alt={userInformation ? `${userInformation.username}` : ''}
-                        width={100}
-                        height={100}
-                    />
-                </div> */}
+            <section
+                className='
+                    flex
+                    flex-col
+                    align-center
+                    space-between
+                '>
+                <div
+                    className='
+                        flex
+                        align-center
+                        space-between
+                    '>
+                    <div
+                        style={{
+                            outlineWidth: '0.0625rem',
+                            outlineStyle: 'solid',
+                            outlineColor: '#000000',
+                            borderRadius: '3.125rem',
+                            backgroundColor: '#ffff00',
+                            overflow: 'hidden',
+                            display: 'grid',
+                            placeItems: 'center center',
+                            marginBlock: '1.25rem',
+                            // marginInline: '0',
+                            marginInlineStart: '0',
+                            marginInlineEnd: '1.125em'
+                        }}>
+                        <Imagry
+                            src={userInformation ? `/${userInformation.avatar_url}` : ''}
+                            alt={userInformation ? `${userInformation.first_name}` : ''}
+                            width={100}
+                            height={100}
+                        />
+                    </div>
 
-                <h1 className='title font-bold text-2xl'>{userInformation ? `${userInformation.username}` : ''}</h1>
+                    <h1
+                        className='
+                            title
+                            weight-600
+                            text-2xl
+                        '>
+                        {userInformation ? `${userInformation.username}` : ''}
+                    </h1>
+                </div>
 
-                <br className='my-20' />
+                <br className='my-6' />
 
-                <desc className='font-mono'>{userInformation ? `${userInformation.username}` : ''}</desc>
+                {/* <hr
+                    className='
+                        outline
+                    '
+                /> */}
+
+                {/* <br className='my-6' /> */}
+
+                <desc
+                    className='
+                        flex
+                        flex-col
+                        align-center
+                        space-between
+                    '>
+                    <h6
+                        className='
+                            weight-600
+                        '>
+                        Database Identity
+                    </h6>
+
+                    <br className='my-6' />
+
+                    <pre>{userInformation ? `${userInformation.id}` : ''}</pre>
+                </desc>
+
+                <br className='my-6' />
+
+                <desc
+                    className='
+                        flex
+                        flex-col
+                        align-center
+                        space-between
+                    '>
+                    <desc
+                        className='
+                        weight-600
+                    '>
+                        User Identity
+                    </desc>
+
+                    <br className='my-6' />
+
+                    <pre>{userInformation ? `${userInformation.user_id}` : ''}</pre>
+                </desc>
+
+                <br className='my-6' />
+
+                <desc
+                    className='
+                        flex
+                        flex-col
+                        align-center
+                        space-between
+                    '>
+                    <desc
+                        className='
+                        weight-600
+                    '>
+                        Customer Identity
+                    </desc>
+
+                    <br className='my-6' />
+
+                    <pre>{userInformation ? `${userInformation.customer_id}` : ''}</pre>
+                </desc>
+
+                <br className='my-6' />
+
+                <desc
+                    className='
+                        flex
+                        flex-col
+                        align-center
+                        space-between
+                    '>
+                    <desc
+                        className='
+                            weight-600
+                        '>
+                        Created At
+                    </desc>
+
+                    <br className='my-6' />
+
+                    <pre>{userInformation ? `${userInformation.created_at}` : ''}</pre>
+                </desc>
+
+                <br className='my-6' />
+
+                <desc
+                    className='
+                        flex
+                        flex-col
+                        align-center
+                        space-between
+                    '>
+                    <desc
+                        className='
+                            weight-600
+                        '>
+                        Inserted At
+                    </desc>
+
+                    <br className='my-6' />
+
+                    <pre>{userInformation ? `${userInformation.inserted_at}` : ''}</pre>
+                </desc>
+
+                <br className='my-6' />
+
+                <desc
+                    className='
+                        flex
+                        flex-col
+                        align-center
+                        space-between
+                    '>
+                    <desc
+                        className='
+                            weight-600
+                        '>
+                        Updated At
+                    </desc>
+
+                    <br className='my-6' />
+
+                    <pre>{userInformation ? `${userInformation.updated_at}` : ''}</pre>
+                </desc>
+
+                <br className='my-6' />
+
+                <desc
+                    className='
+                        flex
+                        flex-col
+                        align-center
+                        space-between
+                    '>
+                    <desc
+                        className='
+                        weight-600
+                    '>
+                        Username
+                    </desc>
+
+                    <br className='my-6' />
+
+                    <pre>{userInformation ? `${userInformation.username}` : ''}</pre>
+                </desc>
+
+                <br className='my-6' />
+
+                <desc
+                    className='
+                        flex
+                        flex-col
+                        align-center
+                        space-between
+                    '>
+                    <desc
+                        className='
+                        weight-600
+                    '>
+                        Is Shown
+                    </desc>
+
+                    <br className='my-6' />
+
+                    <pre>{userInformation ? `${userInformation.is_shown}` : ''}</pre>
+                </desc>
+
+                <br className='my-6' />
+
+                <desc
+                    className='
+                        flex
+                        flex-col
+                        align-center
+                        space-between
+                    '>
+                    <desc
+                        className='
+                        weight-600
+                    '>
+                        Is Admin
+                    </desc>
+
+                    <br className='my-6' />
+
+                    <pre>{userInformation ? `${userInformation.is_admin}` : ''}</pre>
+                </desc>
             </section>
         </>
     );

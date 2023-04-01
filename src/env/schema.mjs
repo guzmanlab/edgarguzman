@@ -28,15 +28,18 @@ export const serverSchema = z.object({
     EMAIL_SERVER_USER: z.string(),
     EMAIL_SERVER_PASSWORD: z.string(),
     EMAIL_SERVER_PORT: z.string(),
-    EMAIL_FROM: z.string(),
+    EMAIL_FROM: z.string()
     // NEXT_PUBLIC_SUPABASE_URL: z.string(),
     // NEXT_PUBLIC_SUPABASE_ANON_KEY: z.string(),
     // SUPABASE_SERVICE_ROLE_KEY: z.string(),
     // SUPABASE_JWT_SECRET: z.string(),
-    NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: z.string(),
-    STRIPE_SECRET_KEY: z.string(),
-    STRIPE_PRICE_ID: z.string(),
-    STRIPE_WEBHOOK_SECRET: z.string()
+    // SUPABASE_BUCKET: z.string(),
+    // IMAGE_SERVER: z.string(),
+    // NEXT_PUBLIC_IMAGE_SERVER: z.string(),
+    // NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: z.string(),
+    // STRIPE_SECRET_KEY: z.string(),
+    // STRIPE_PRICE_ID: z.string(),
+    // STRIPE_WEBHOOK_SECRET: z.string()
 });
 
 /**
@@ -46,6 +49,8 @@ export const serverSchema = z.object({
  */
 export const clientSchema = z.object({
     // NEXT_PUBLIC_CLIENTVAR: z.string(),
+    NEXT_PUBLIC_IMAGE_SERVER: z.string()
+    // NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: z.string()
 });
 
 /**
@@ -56,4 +61,6 @@ export const clientSchema = z.object({
  */
 export const clientEnv = {
     // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
+    NEXT_PUBLIC_IMAGE_SERVER: process.env.NEXT_PUBLIC_IMAGE_SERVER
+    // NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY,
 };

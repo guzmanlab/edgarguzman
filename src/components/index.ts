@@ -13,6 +13,10 @@ import Authentication from './authentication/Authentication';
 
 // Component(ry) Component Folder
 // import Card from './componentry/Card';
+import CheckoutForm from './componentry/checkout-form';
+import Form from './componentry/form';
+import SignIn from './componentry/sign-in';
+import SignOut from './componentry/sign-out';
 import Imagry from './elements/FallBackImagry';
 // import Figure from './componentry/Figure';
 // import Grid from './componentry/Grid';
@@ -42,7 +46,7 @@ import Details from './elements/Detail-Summary';
 import Divider from './elements/Division';
 import FieldsetForm from './elements/Fieldset-Form';
 import FontType from './elements/Font-Type';
-import Form from './elements/Form';
+// import Form from './elements/Form';
 import H1 from './elements/Heading-1';
 import H4 from './elements/Heading-4';
 import Hr from './elements/Horizontal-Rule';
@@ -78,6 +82,10 @@ export {
     // Card,
     // Grid,
     // Input,
+    CheckoutForm,
+    Form,
+    SignIn,
+    SignOut,
     Imagry,
 
     // Element(s) Component Folder
@@ -91,7 +99,7 @@ export {
     Details,
     Divider,
     FontType,
-    Form,
+    // Form,
     FieldsetForm,
     H1,
     H4,

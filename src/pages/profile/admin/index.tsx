@@ -56,14 +56,16 @@
 //                     <h4
 //                         className='
 //                         weight-600
-//                     '>
+//                     '
+// >
 //                         Product
 //                     </h4>
 //                     <pre>
 //                         {informations.map((link: any) => (
 //                             <NextLink
 //                                 key={link.id}
-//                                 href={`/products/${link.id}`}>
+//                                 href={`/profile/admin/${link.id}`}
+// >
 //                                 <div className='cursor-pointer border-b border-gray-300	mt-8 pb-4'>{link.full_name}</div>
 //                             </NextLink>
 //                         ))}
@@ -72,14 +74,16 @@
 //                     <h4
 //                         className='
 //                         weight-600
-//                     '>
+//                     '
+// >
 //                         User Profile
 //                     </h4>
 //                     <pre>
 //                         {informations.map((link: any) => (
 //                             <NextLink
 //                                 key={link.id}
-//                                 href={`/profile/${link.username}`}>
+//                                 href={`/profile/${link.username}`}
+// >
 //                                 <div className='cursor-pointer border-b border-gray-300	mt-8 pb-4'>{link.full_name}</div>
 //                             </NextLink>
 //                         ))}
@@ -88,14 +92,16 @@
 //                     <h4
 //                         className='
 //                         weight-600
-//                     '>
+//                     '
+// >
 //                         Admin Profile
 //                     </h4>
 //                     <pre>
 //                         {informations.map((link: any) => (
 //                             <NextLink
 //                                 key={link.id}
-//                                 href={`/profile/admin/${link.username}`}>
+//                                 href={`/profile/admin/${link.username}`}
+// >
 //                                 <div className='cursor-pointer border-b border-gray-300	mt-8 pb-4'>{link.full_name}</div>
 //                             </NextLink>
 //                         ))}
@@ -104,14 +110,16 @@
 //                     <h4
 //                         className='
 //                         weight-600
-//                     '>
+//                     '
+// >
 //                         Edit Admin Profile
 //                     </h4>
 //                     <pre>
 //                         {informations.map((link: any) => (
 //                             <NextLink
 //                                 key={link.id}
-//                                 href={`/profile/admin/edit/${link.username}`}>
+//                                 href={`/profile/admin/edit/${link.username}`}
+// >
 //                                 <div className='cursor-pointer border-b border-gray-300	mt-8 pb-4'>{link.full_name}</div>
 //                             </NextLink>
 //                         ))}
@@ -120,14 +128,16 @@
 //                     <h4
 //                         className='
 //                         weight-600
-//                     '>
+//                     '
+// >
 //                         Setting Admin Profile
 //                     </h4>
 //                     <pre>
 //                         {informations.map((link: any) => (
 //                             <NextLink
 //                                 key={link.id}
-//                                 href={`/profile/admin/setting/${link.username}`}>
+//                                 href={`/profile/admin/setting/${link.username}`}
+// >
 //                                 <div className='cursor-pointer border-b border-gray-300	mt-8 pb-4'>{link.full_name}</div>
 //                             </NextLink>
 //                         ))}
@@ -136,14 +146,16 @@
 //                     <h4
 //                         className='
 //                         weight-600
-//                     '>
+//                     '
+// >
 //                         List of User/Admin Profile
 //                     </h4>
 //                     <pre>
 //                         {informations.map((link: any) => (
 //                             <NextLink
 //                                 key={link.id}
-//                                 href={`/profile/admin`}>
+//                                 href={`/profile/admin`}
+// >
 //                                 <div className='cursor-pointer border-b border-gray-300	mt-8 pb-4'>{link.full_name}</div>
 //                             </NextLink>
 //                         ))}
@@ -160,10 +172,82 @@
 
 // this is template
 
-type Props = {};
+import type { GetServerSideProps, NextPage } from 'next';
+import NextLink from 'next/link';
+import { useRouter } from 'next/router';
+import React, { ReactNode, useEffect, useState } from 'react';
 
-const Admin = (props: Props) => {
-    return <div>Admin</div>;
+import { Breaker, Buttonry, Divider, H1, H4, Imagry, Linkaged, Section, Title } from '@components';
+import Scripture from '@components/header/Script';
+import config from '@lib/configuration';
+import { supabase } from '@lib/supabase';
+
+// type Props = {
+//     children?: ReactNode
+// };
+
+export const getServerSideProps: GetServerSideProps = async () => {
+    const { data: users, error } = await supabase.from('users').select('*');
+
+    // if (!users) {
+    //     return {
+    //         notFound: true
+    //     }
+    // }
+
+    // if (error) {
+    //     console.log(error);
+    //     throw new Error(`${error}`);
+    // }
+
+    // console.log('users: ', users);
+
+    return {
+        props: {
+            users
+        }
+    };
 };
 
-export default Admin;
+const Administrative: NextPage = ({ users }: any) => {
+    console.log(supabase.auth.admin.listUsers());
+    const [state, setState] = useState(users);
+
+    return (
+        <>
+            <Title title='Administration' />
+
+            <table>
+                <tr
+                    className='
+                        weight-600
+                    '
+                    key={'header'}>
+                    {Object.keys(state[0]).map(key => (
+                        <th>{key}</th>
+                    ))}
+                </tr>
+                {state.map((user: any) => (
+                    <tr key={user.id}>
+                        {Object.values(user).map((val: any) => (
+                            <td
+                                className='
+                                    lowercase
+                                '>
+                                <NextLink
+                                    className='
+                                    lowercase
+                                '
+                                    href={`/profile/admin/${user.username}`}>
+                                    {val}
+                                </NextLink>
+                            </td>
+                        ))}
+                    </tr>
+                ))}
+            </table>
+        </>
+    );
+};
+
+export default Administrative;

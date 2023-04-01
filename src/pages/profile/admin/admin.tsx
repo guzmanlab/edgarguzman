@@ -1,4 +1,4 @@
-// @page/admin.tsx
+// @pages/profile/admin/admin.tsx
 import type { GetServerSideProps, NextPage } from 'next';
 
 import { SidebarLayout, Title } from '@components';

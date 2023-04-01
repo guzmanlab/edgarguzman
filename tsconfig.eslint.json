@@ -3,7 +3,8 @@
     "extends": "./tsconfig.json",
     "compilerOptions": {
         // ensure that nobody can accidentally use this config for a build
-        "noEmit": true
+        "noEmit": true,
+        "sourceMap": false
     },
     "include": [
         // whatever paths you intend to lint
@@ -17,6 +18,7 @@
         ".eslint.js",
         "lint-staged.config.js",
         "next.config.js",
-        "src/utils/database.ts"
+        "src/utils/data-base.ts",
+        "src/env"
     ]
 }

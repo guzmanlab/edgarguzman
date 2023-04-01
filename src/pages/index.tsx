@@ -5,16 +5,14 @@ import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 
-import { supabase } from '@lib/supabase';
-
 import { Breaker, Buttonry, Divider, H1, H4, Imagry, Linkaged, Section, Title } from '@components';
-import Scripture from '@components/header/Script';
+import { supabase } from '@lib/supabase';
 // import config from '@lib/configuration';
 
 export const getServerSideProps: GetServerSideProps = async () => {
     const { data: products } = await supabase.from('products').select('*');
 
-    console.log('products: ', products);
+    // console.log('products: ', products);
 
     return {
         props: {
