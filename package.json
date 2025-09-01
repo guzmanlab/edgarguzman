@@ -1,0 +1,48 @@
+{
+  "name": "edgarguzman",
+  "description": "electronic commerce infrastructure in a monorepo",
+  "homepage": "https://github.com/guzmanlab/edgarguzman#readme",
+  "packageManager": "pnpm@8.15.6",
+  "version": "0.0.0",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "start": "turbo start",
+    "lint": "turbo lint"
+  },
+  "keywords": [
+    "open-source",
+    "typescript",
+    "eslint",
+    "commerce",
+    "nextjs",
+    "postgresql",
+    "prettier",
+    "drizzle",
+    "tailwindcss",
+    "trpc",
+    "better-auth",
+    "zod",
+    "turborepo"
+  ],
+  "author": {
+    "name": "Edgar Guzman",
+    "url": "https://edgarguzman.co/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guzmanlab/edgarguzman.git"
+  },
+  "bugs": {
+    "url": "https://github.com/guzmanlab/edgarguzman/issues"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "engines": {
+    "node": ">=18.x",
+    "npm": ">=10",
+    "pnpm": ">=8"
+  }
+}
