@@ -39,7 +39,9 @@
     "url": "https://github.com/guzmanlab/edgarguzman/issues"
   },
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "turbo": "^2.5.4"
+  },
   "engines": {
     "node": ">=18.x",
     "npm": ">=10",
