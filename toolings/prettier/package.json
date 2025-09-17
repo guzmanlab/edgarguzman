@@ -1,0 +1,23 @@
+{
+  "name": "@edgarguzman/prettier",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {
+    ".": "./src/root.mjs"
+  },
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "check": "prettier \"**/*/apps/**/*/src/**/*.+(ts|tsx)\" --ignore-path .prettierignore",
+    "format": "prettier \"**/*/apps/**/*/src/**/*.+(ts|tsx)\" --ignore-path .prettierignore --write"
+  },
+  "devDependencies": {
+    "@edgarguzman/tailwind": "workspace:^",
+    "prettier": "^3.5.3",
+    "prettier-plugin-tailwindcss": "^0.6.8"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

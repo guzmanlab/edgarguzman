@@ -12,6 +12,14 @@
       "cache": false,
       "persistent": false
     },
+    "check": {
+      "dependsOn": ["^check"],
+      "cache": false
+    },
+    "format": {
+      "dependsOn": ["^format"],
+      "cache": false
+    },
     "start": {
       "dependsOn": ["^start"],
       "cache": false,
