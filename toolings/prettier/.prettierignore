@@ -1,0 +1,14 @@
+# dependencies
+node_modules
+
+# vercel turbo
+.vercel
+.turbo
+
+# next.js
+.next
+public
+next-env.d.ts
+
+# typescript
+*.tsbuildinfo

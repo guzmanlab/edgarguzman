@@ -9,6 +9,8 @@
   "scripts": {
     "dev": "turbo dev",
     "build": "turbo build",
+    "prettier:check": "turbo check",
+    "prettier:format": "turbo format",
     "start": "turbo start",
     "lint": "turbo lint"
   },
@@ -40,6 +42,7 @@
   },
   "dependencies": {},
   "devDependencies": {
+    "@edgarguzman/prettier": "workspace:^",
     "turbo": "^2.5.4"
   },
   "engines": {
