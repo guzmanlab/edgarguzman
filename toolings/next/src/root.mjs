@@ -1,4 +1,6 @@
 const packages = [
+  'eslint',
+  'next',
   'tailwind',
   'typescript'
 ];
