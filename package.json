@@ -42,7 +42,6 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@edgarguzman/prettier": "workspace:^",
     "turbo": "^2.5.4"
   },
   "engines": {
