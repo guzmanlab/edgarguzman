@@ -1,5 +1,5 @@
 {
-  "extends": "@edgarguzman/typescript/base.json",
+  // "extends": "@edgarguzman/typescript/base.json",
   "include": [
     "src"
   ],
