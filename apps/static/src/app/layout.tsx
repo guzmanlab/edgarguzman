@@ -61,15 +61,15 @@ export function metadata(): Metadata {
       },
     ],
     creator: "Edgar Guzman",
-    // metadataBase: new URL(""),
+    metadataBase: new URL("https://edgarguzman-static.vercel.app"),
     openGraph: {
       title: "Edgar Guzman",
       description: "electronic commerce infrastructure in a monorepo",
-      url: "https://edgarguzman.co",
+      url: "https://edgarguzman-static.vercel.app",
       siteName: "Edgar Guzman",
       images: [
         {
-          url: "/images/opengraph-image.svg",
+          url: "/api/og",
           width: 1200,
           height: 630,
           alt: "Edgar Guzman",
@@ -82,7 +82,7 @@ export function metadata(): Metadata {
       card: "summary_large_image",
       title: "Edgar Guzman",
       description: "electronic commerce infrastructure in a monorepo",
-      images: ["/images/opengraph-image.svg"],
+      images: ["/api/og"],
     },
     appleWebApp: {
       title: "Edgar Guzman",
