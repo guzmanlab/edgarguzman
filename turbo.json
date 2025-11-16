@@ -3,7 +3,7 @@
   "ui": "stream",
   "tasks": {
     "dev": {
-      "dependsOn": ["^dev"],
+      "dependsOn": ["^dev", "^db:generate"],
       "cache": false,
       "persistent": false
     },
@@ -11,6 +11,22 @@
       "dependsOn": ["^build"],
       "cache": false,
       "persistent": false
+    },
+    "db:generate": {
+      "dependsOn": ["^db:generate"],
+      "cache": false
+    },
+    "db:migrate": {
+      "dependsOn": ["^db:migrate"],
+      "cache": false
+    },
+    "db:studio": {
+      "dependsOn": ["^db:studio"],
+      "cache": false
+    },
+    "db:drop": {
+      "dependsOn": ["^db:drop"],
+      "cache": false
     },
     "check": {
       "dependsOn": ["^check"],

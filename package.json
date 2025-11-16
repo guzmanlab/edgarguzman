@@ -9,6 +9,10 @@
   "scripts": {
     "dev": "turbo dev",
     "build": "turbo build",
+    "db:generate": "turbo db:generate",
+    "db:migrate": "turbo db:migrate",
+    "db:studio": "turbo db:studio",
+    "db:drop": "turbo db:drop",
     "prettier:check": "turbo check",
     "prettier:format": "turbo format",
     "start": "turbo start",
