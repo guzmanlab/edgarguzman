@@ -16,7 +16,7 @@ const ComingSoon: NextPage = () => {
 
         <div className="grid grid-cols-1 grid-rows-2 gap-4 sm:grid-cols-1 sm:grid-rows-2 md:gap-8">
           <div className="text-lg">
-            This is a description of the coming soon page.
+            This is a description of coming soon page.
           </div>
         </div>
       </div>

@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1763164823272,
+      "tag": "0000_bouncy_molecule_man",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1763166467914,
+      "tag": "0001_living_lyja",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1763168209811,
+      "tag": "0002_puzzling_major_mapleleaf",
+      "breakpoints": true
+    }
+  ]
+}
