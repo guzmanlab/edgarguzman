@@ -23,7 +23,12 @@ export const session = pgTable(
       .references(() => user.id)
       .notNull(),
 
-    // TODO: add the following columns later
+    token: varchar().notNull(),
+    expiresAt: timestamp({
+      withTimezone: true,
+    }).notNull(),
+    ipAddress: varchar().notNull(),
+    userAgent: varchar().notNull(),
 
     createdAt: timestamp({
       withTimezone: true,

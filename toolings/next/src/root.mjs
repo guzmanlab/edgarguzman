@@ -1,8 +1,10 @@
 const packages = [
-  'eslint',
-  'next',
-  'tailwind',
-  'typescript'
+  "auth",
+  "drizzle",
+  "eslint",
+  "next",
+  "tailwind",
+  "typescript",
 ];
 
 /** @type {import("next").NextConfig[]} * */
@@ -14,5 +16,5 @@ export const nextJsConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  transpilePackages: packages.map(module => `@edgarguzman/${module}`)
+  transpilePackages: packages.map((module) => `@edgarguzman/${module}`),
 };

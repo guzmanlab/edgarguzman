@@ -13,6 +13,7 @@
     "db:migrate": "turbo db:migrate",
     "db:studio": "turbo db:studio",
     "db:drop": "turbo db:drop",
+    "auth:build": "turbo auth:build",
     "prettier:check": "turbo check",
     "prettier:format": "turbo format",
     "start": "turbo start",

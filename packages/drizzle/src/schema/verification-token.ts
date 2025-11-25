@@ -1,5 +1,5 @@
 import { init } from "@paralleldrive/cuid2";
-import { pgTable, timestamp, varchar } from "drizzle-orm/pg-core";
+import { pgTable, primaryKey, timestamp, varchar } from "drizzle-orm/pg-core";
 
 const createId = init({
   length: 24,
@@ -12,7 +12,11 @@ export const verificationToken = pgTable(
       .primaryKey()
       .$defaultFn(() => createId()),
 
-    // TODO: add the following columns later
+    identifier: varchar().notNull(),
+    value: varchar().notNull(),
+    expiresAt: timestamp({
+      withTimezone: true,
+    }).notNull(),
 
     createdAt: timestamp({
       withTimezone: true,
@@ -23,8 +27,10 @@ export const verificationToken = pgTable(
       withTimezone: true,
     }).$onUpdateFn(() => new Date()),
   },
-  () => [
-    // TODO: add the following 'primary key' function later
+  (table) => [
+    primaryKey({
+      columns: [table.identifier, table.value],
+    }),
   ],
 );
 
