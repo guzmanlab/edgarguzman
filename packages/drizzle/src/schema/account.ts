@@ -1,6 +1,12 @@
 import { init } from "@paralleldrive/cuid2";
 import { relations } from "drizzle-orm";
-import { index, pgTable, timestamp, varchar } from "drizzle-orm/pg-core";
+import {
+  index,
+  pgTable,
+  primaryKey,
+  timestamp,
+  varchar,
+} from "drizzle-orm/pg-core";
 
 import { user } from "@drizzle/schema/user";
 
@@ -23,7 +29,23 @@ export const account = pgTable(
       .references(() => user.id)
       .notNull(),
 
-    // TODO: add the following columns later
+    accountId: varchar().notNull(),
+    providerId: varchar().notNull(),
+    accessToken: varchar().notNull(),
+    refreshToken: varchar().notNull(),
+    idToken: varchar().notNull(),
+    accessTokenExpiresAt: timestamp({
+      withTimezone: true,
+    })
+      .defaultNow()
+      .notNull(),
+    refreshTokenExpiresAt: timestamp({
+      withTimezone: true,
+    })
+      .defaultNow()
+      .notNull(),
+    scope: varchar(),
+    password: varchar(),
 
     createdAt: timestamp({
       withTimezone: true,
@@ -35,7 +57,9 @@ export const account = pgTable(
     }).$onUpdateFn(() => new Date()),
   },
   (table) => [
-    // TODO: add the following 'primary key' function later
+    primaryKey({
+      columns: [table.providerId, table.accountId],
+    }),
     index("account_user_id_idx").on(table.userId),
   ],
 );

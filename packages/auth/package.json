@@ -1,0 +1,36 @@
+{
+  "name": "@edgarguzman/auth",
+  "version": "0.0.0",
+  "main": "src/client.ts",
+  "private": true,
+  "exports": {
+    "./client": {
+      "default": "./dist/client.js",
+      "types": "./dist/client.d.ts"
+    },
+    "./server": {
+      "default": "./dist/server.js",
+      "types": "./dist/server.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "auth:build": "tsc"
+  },
+  "dependencies": {
+    "@edgarguzman/drizzle": "workspace:^",
+    "better-auth": "^1.3.9",
+    "server-only": "^0.0.1"
+  },
+  "devDependencies": {
+    "@edgarguzman/eslint": "workspace:^",
+    "@edgarguzman/typescript": "workspace:^",
+    "@types/node": "^20",
+    "typescript": "^5"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
