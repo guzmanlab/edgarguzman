@@ -70,9 +70,15 @@ importers:
         specifier: ^0.0.1
         version: 0.0.1
     devDependencies:
+      '@edgarguzman/eslint':
+        specifier: workspace:^
+        version: link:../../toolings/eslint
       '@edgarguzman/typescript':
         specifier: workspace:^
         version: link:../../toolings/typescript
+      '@types/node':
+        specifier: ^20
+        version: 20.19.19
       typescript:
         specifier: ^5
         version: 5.9.2
