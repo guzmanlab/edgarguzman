@@ -1,6 +1,7 @@
 const packages = [
   "auth",
   "drizzle",
+  "lib",
   "eslint",
   "next",
   "tailwind",

@@ -1,0 +1,28 @@
+{
+  "name": "@edgarguzman/lib",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {
+    "./schema/*": "./src/schema/*.ts",
+    "./env": "./src/env.ts",
+    "./error-log": "./src/error-log.ts",
+    "./log": "./src/log.ts"
+  },
+  "files": [
+    "src"
+  ],
+  "dependencies": {
+    "@edgarguzman/drizzle": "workspace:^",
+    "drizzle-zod": "^0.8.3",
+    "zod": "^4.1.13"
+  },
+  "devDependencies": {
+    "@edgarguzman/eslint": "workspace:^",
+    "@edgarguzman/typescript": "workspace:^",
+    "@types/node": "^20",
+    "typescript": "^5"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
