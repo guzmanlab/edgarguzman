@@ -25,7 +25,8 @@
     "paths": {
       "@/*": ["./src/*"],
       "@edgarguzman/auth/*": ["../../packages/auth/src/*"],
-      "@edgarguzman/drizzle/*": ["../../packages/drizzle/src/*"]
+      "@edgarguzman/drizzle/*": ["../../packages/drizzle/src/*"],
+      "@edgarguzman/lib/*": ["../../packages/lib/src/*"]
     }
   },
   "include": [
