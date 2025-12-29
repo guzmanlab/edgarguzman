@@ -1,10 +1,14 @@
 {
   "extends": "@edgarguzman/typescript",
   "compilerOptions": {
+    "strict": true,
+
     "baseUrl": ".",
     "paths": {
-      "@lib/*": ["src/*"],
+      "@rpc/*": ["./src/*"],
+      "@edgarguzman/auth/*": ["../auth/src/*"],
       "@edgarguzman/drizzle/*": ["../drizzle/src/*"],
+      "@edgarguzman/lib/*": ["../lib/src/*"],
     },
   },
   "include": ["src"],
