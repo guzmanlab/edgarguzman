@@ -1,0 +1,33 @@
+{
+  "name": "@edgarguzman/trpc",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {
+    ".": "./src/root.ts",
+    "./client": "./src/client.ts",
+    "./create-context": "./src/create-context.ts",
+    "./routers/*": "./src/routers/**/*.ts"
+  },
+  "files": [
+    "src"
+  ],
+  "scripts": {},
+  "dependencies": {
+    "@edgarguzman/auth": "workspace:^",
+    "@edgarguzman/drizzle": "workspace:^",
+    "@edgarguzman/lib": "workspace:^",
+    "@trpc/server": "^10.45.2",
+    "drizzle-orm": "^0.44.7",
+    "superjson": "^2.2.6",
+    "zod": "^4.1.13"
+  },
+  "devDependencies": {
+    "@edgarguzman/eslint": "workspace:^",
+    "@edgarguzman/typescript": "workspace:^",
+    "@types/node": "^20",
+    "typescript": "^5"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

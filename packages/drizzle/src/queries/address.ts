@@ -8,6 +8,8 @@ type FetchAddressesParams = {
   userId: string;
 };
 
+// TODO: add a JSDoc comment on what this function do without clicking the function name
+// TODO: rework on this function for a optional sorting on the where clause
 export async function fetchAddresses(params: Readonly<FetchAddressesParams>) {
   let [result] = await drizzle
     .select()
@@ -22,6 +24,8 @@ type FetchAddressParams = {
   userId: string;
 };
 
+// TODO: add a JSDoc comment on what this function do without clicking the function name
+// TODO: rework on this function for a optional sorting on the where clause
 export async function fetchAddress(params: Readonly<FetchAddressParams>) {
   let [result] = await drizzle
     .select()
@@ -36,6 +40,7 @@ type AddressParams = {
   userId: string;
 };
 
+// TODO: remove this function and merge this function into fetchAddress() with a optional sorting - asc or desc
 export async function fetchAddressBy(params: Readonly<AddressParams>) {
   let [result] = await drizzle.select().from(address).where(
     // and(
@@ -59,6 +64,7 @@ type CreateAddressParams = {
   defaulted: boolean;
 };
 
+// TODO: add a JSDoc comment on what this function do without clicking the function name
 export async function createAddress(params: Readonly<CreateAddressParams>) {
   let [result] = await drizzle
     .insert(address)
@@ -83,6 +89,7 @@ type UpdateAddressParams = {
   defaulted: boolean;
 };
 
+// TODO: add a JSDoc comment on what this function do without clicking the function name
 export async function updateAddress(params: Readonly<UpdateAddressParams>) {
   let [updated] = await drizzle
     .update(address)
@@ -108,6 +115,7 @@ type DeleteAddressParams = {
   userId: string;
 };
 
+// TODO: add a JSDoc comment on what this function do without clicking the function name
 export async function deleteAddress(params: Readonly<DeleteAddressParams>) {
   let [deleted] = await drizzle
     .delete(address)

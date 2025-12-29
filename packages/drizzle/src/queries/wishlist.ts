@@ -3,10 +3,12 @@ import { and, eq } from "drizzle-orm";
 import { drizzle } from "@drizzle/client";
 import { wishlist } from "@drizzle/schema";
 
+// TODO: remove type from fetchWishlists()
 type FetchWishlistsParams = {
   numberOfUUIDsToGenerate: string;
 };
 
+// TODO: rework in order to see every user that in the database without having to insert a user id
 export async function fetchWishlists(params: Readonly<FetchWishlistsParams>) {
   try {
     let [result] = await drizzle
@@ -27,10 +29,12 @@ export async function fetchWishlists(params: Readonly<FetchWishlistsParams>) {
   }
 }
 
+// TODO: rename/add what type it's require from the function
 type FetchWishlistParams = {
   numberOfUUIDsToGenerate: string;
 };
 
+// TODO: rework in order to see every user that in the database when inserting a user id
 export async function fetchWishlist(params: Readonly<FetchWishlistParams>) {
   try {
     let [result] = await drizzle
@@ -69,6 +73,7 @@ type FetchWishlistByProductIdParams = {
   productId: string;
 };
 
+// TODO: this function links to nowhere
 export async function fetchWishlistByProductId(
   params: Readonly<FetchWishlistByProductIdParams>,
 ) {
@@ -89,6 +94,7 @@ type ToggleWishlistFavoritedParams = {
   favorited: boolean;
 };
 
+// TODO: this function links to nowhere
 export async function toggleWishlistFavorited(
   params: Readonly<ToggleWishlistFavoritedParams>,
 ) {
