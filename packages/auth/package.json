@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@edgarguzman/drizzle": "workspace:^",
-    "better-auth": "^1.3.9",
+    "better-auth": "^1.4.5",
     "server-only": "^0.0.1"
   },
   "devDependencies": {
