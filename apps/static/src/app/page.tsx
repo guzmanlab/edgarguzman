@@ -2,11 +2,11 @@ import type { Metadata, NextPage } from "next";
 
 export function metadata(): Metadata {
   return {
-    title: "Coming Soon",
+    title: "Edgar Guzman",
   };
 }
 
-const ComingSoon: NextPage = () => {
+const Home: NextPage = () => {
   return (
     <main className="grid min-h-screen grid-cols-1 place-items-center text-black">
       <div className="grid grid-col-1 place-items-center gap-12 px-4 py-16">
@@ -24,4 +24,4 @@ const ComingSoon: NextPage = () => {
   );
 };
 
-export default ComingSoon;
+export default Home;
