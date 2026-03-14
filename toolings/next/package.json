@@ -3,11 +3,18 @@
   "version": "0.0.0",
   "private": true,
   "exports": {
-    ".": "./src/root.mjs"
+    ".": "./src/root.ts"
   },
   "files": [
     "src"
   ],
+  "dependencies": {
+    "next": "^15.5.8"
+  },
+  "devDependencies": {
+    "@edgarguzman/typescript": "workspace:^",
+    "typescript": "^5.4.4"
+  },
   "publishConfig": {
     "access": "public"
   }

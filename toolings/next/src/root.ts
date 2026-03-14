@@ -1,15 +1,18 @@
-const packages = [
+import type { NextConfig } from "next";
+
+const packages: string[] = [
   "auth",
   "drizzle",
   "lib",
+  "trpc",
   "eslint",
   "next",
+  "prettier",
   "tailwind",
   "typescript",
 ];
 
-/** @type {import("next").NextConfig[]} * */
-export const nextJsConfig = {
+export const nextJsConfig: NextConfig = {
   reactStrictMode: true,
   typescript: {
     ignoreBuildErrors: true,

@@ -1,0 +1,5 @@
+{
+  "extends": "@edgarguzman/typescript/next.json",
+  "include": ["src"],
+  "exclude": ["node_modules"],
+}
