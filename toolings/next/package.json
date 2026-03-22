@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "@edgarguzman/typescript": "workspace:^",
-    "typescript": "^5.4.4"
+    "typescript": "^5.7.2"
   },
   "publishConfig": {
     "access": "public"

@@ -1,41 +1,17 @@
 {
   "extends": "@edgarguzman/typescript/next.json",
   "compilerOptions": {
-    "jsx": "preserve",
-
-    "target": "ES2017",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": false,
-    "noEmit": true,
-    "incremental": true,
-    "module": "esnext",
-    "esModuleInterop": true,
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
-
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
-      "@edgarguzman/auth/*": ["../../packages/auth/src/*"],
-      "@edgarguzman/drizzle/*": ["../../packages/drizzle/src/*"],
-      "@edgarguzman/lib/*": ["../../packages/lib/src/*"]
-    }
+    },
   },
   "include": [
+    "src",
     "**/*.ts",
     "**/*.tsx",
-    "**/*.mjs",
-    "**/*.js",
     "next-env.d.ts",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
 }
