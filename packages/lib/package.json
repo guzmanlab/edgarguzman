@@ -4,8 +4,6 @@
   "private": true,
   "exports": {
     "./schema/*": "./src/schema/*.ts",
-    "./class-name": "./src/class-name.ts",
-    "./hooks/*": "./src/hooks/*.ts",
     "./env": "./src/env.ts",
     "./error-log": "./src/error-log.ts",
     "./log": "./src/log.ts"
@@ -22,7 +20,7 @@
     "@edgarguzman/eslint": "workspace:^",
     "@edgarguzman/typescript": "workspace:^",
     "@types/node": "^20",
-    "typescript": "^5"
+    "typescript": "^5.7.2"
   },
   "publishConfig": {
     "access": "public"

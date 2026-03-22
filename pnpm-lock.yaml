@@ -14,12 +14,6 @@ importers:
 
   apps/static:
     dependencies:
-      '@edgarguzman/drizzle':
-        specifier: workspace:^
-        version: link:../../packages/drizzle
-      '@edgarguzman/lib':
-        specifier: workspace:^
-        version: link:../../packages/lib
       next:
         specifier: ^15.5.8
         version: 15.5.12(react-dom@19.2.4)(react@19.2.4)
@@ -49,7 +43,7 @@ importers:
         specifier: ^19.1.14
         version: 19.2.14
       '@types/react-dom':
-        specifier: ^19.1.14
+        specifier: ^19.1.9
         version: 19.2.3(@types/react@19.2.14)
       autoprefixer:
         specifier: ^10.4.20
@@ -61,7 +55,7 @@ importers:
         specifier: ^3.4.17
         version: 3.4.17
       typescript:
-        specifier: ^5.5.4
+        specifier: ^5.7.2
         version: 5.9.3
 
   packages/auth:
@@ -86,8 +80,8 @@ importers:
         specifier: ^20
         version: 20.19.19
       typescript:
-        specifier: ^5
-        version: 5.9.2
+        specifier: ^5.7.2
+        version: 5.9.3
 
   packages/drizzle:
     dependencies:
@@ -124,13 +118,13 @@ importers:
         version: 0.31.6
       tsup:
         specifier: latest
-        version: 8.5.0(tsx@4.20.6)(typescript@5.9.2)
+        version: 8.5.0(tsx@4.20.6)(typescript@5.9.3)
       tsx:
         specifier: ^4.20.6
         version: 4.20.6
       typescript:
-        specifier: ^5
-        version: 5.9.2
+        specifier: ^5.7.2
+        version: 5.9.3
 
   packages/lib:
     dependencies:
@@ -139,10 +133,10 @@ importers:
         version: link:../drizzle
       drizzle-zod:
         specifier: ^0.8.3
-        version: 0.8.3(drizzle-orm@0.44.7)(zod@4.1.13)
+        version: 0.8.3(drizzle-orm@0.44.7)(zod@4.3.6)
       zod:
         specifier: ^4.1.13
-        version: 4.1.13
+        version: 4.3.6
     devDependencies:
       '@edgarguzman/eslint':
         specifier: workspace:^
@@ -154,8 +148,8 @@ importers:
         specifier: ^20
         version: 20.19.19
       typescript:
-        specifier: ^5
-        version: 5.9.2
+        specifier: ^5.7.2
+        version: 5.9.3
 
   packages/trpc:
     dependencies:
@@ -191,8 +185,8 @@ importers:
         specifier: ^20
         version: 20.19.19
       typescript:
-        specifier: ^5
-        version: 5.9.2
+        specifier: ^5.7.2
+        version: 5.9.3
 
   toolings/eslint:
     devDependencies:
@@ -240,8 +234,8 @@ importers:
         specifier: workspace:^
         version: link:../typescript
       typescript:
-        specifier: ^5.4.4
-        version: 5.9.2
+        specifier: ^5.7.2
+        version: 5.9.3
 
   toolings/prettier:
     devDependencies:
@@ -261,8 +255,8 @@ importers:
         specifier: ^3.4.17
         version: 3.4.17
       typescript:
-        specifier: ^5.5.4
-        version: 5.9.2
+        specifier: ^5.7.2
+        version: 5.9.3
 
   toolings/typescript: {}
 
@@ -2452,14 +2446,14 @@ packages:
       '@neondatabase/serverless': 1.0.2
     dev: false
 
-  /drizzle-zod@0.8.3(drizzle-orm@0.44.7)(zod@4.1.13):
+  /drizzle-zod@0.8.3(drizzle-orm@0.44.7)(zod@4.3.6):
     resolution: {integrity: sha512-66yVOuvGhKJnTdiqj1/Xaaz9/qzOdRJADpDa68enqS6g3t0kpNkwNYjUuaeXgZfO/UWuIM9HIhSlJ6C5ZraMww==}
     peerDependencies:
       drizzle-orm: '>=0.36.0'
       zod: ^3.25.0 || ^4.0.0
     dependencies:
       drizzle-orm: 0.44.7(@neondatabase/serverless@1.0.2)
-      zod: 4.1.13
+      zod: 4.3.6
     dev: false
 
   /dunder-proto@1.0.1:
@@ -4717,7 +4711,7 @@ packages:
     resolution: {integrity: sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==}
     dev: false
 
-  /tsup@8.5.0(tsx@4.20.6)(typescript@5.9.2):
+  /tsup@8.5.0(tsx@4.20.6)(typescript@5.9.3):
     resolution: {integrity: sha512-VmBp77lWNQq6PfuMqCHD3xWl22vEoWsKajkF8t+yMBawlUS8JzEI+vOVMeuNZIuMML8qXRizFKi9oD5glKQVcQ==}
     engines: {node: '>=18'}
     hasBin: true
@@ -4753,7 +4747,7 @@ packages:
       tinyexec: 0.3.2
       tinyglobby: 0.2.15
       tree-kill: 1.2.2
-      typescript: 5.9.2
+      typescript: 5.9.3
     transitivePeerDependencies:
       - jiti
       - supports-color
@@ -4971,12 +4965,6 @@ packages:
       typescript: 5.9.3
     transitivePeerDependencies:
       - supports-color
-    dev: true
-
-  /typescript@5.9.2:
-    resolution: {integrity: sha512-CWBzXQrc/qOkhidw1OzBTQuYRbfyxDXJMVJ1XNwUHGROVmuaeiEm3OslpZ1RV96d7SKKjZKrSJu3+t/xlw3R9A==}
-    engines: {node: '>=14.17'}
-    hasBin: true
     dev: true
 
   /typescript@5.9.3:

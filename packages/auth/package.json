@@ -28,7 +28,7 @@
     "@edgarguzman/eslint": "workspace:^",
     "@edgarguzman/typescript": "workspace:^",
     "@types/node": "^20",
-    "typescript": "^5"
+    "typescript": "^5.7.2"
   },
   "publishConfig": {
     "access": "public"
