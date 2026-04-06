@@ -11,8 +11,8 @@ import {
   updateOrderParams,
 } from "@edgarguzman/lib/schema/order";
 
-import { router } from "@rpc/client";
-import { protectProcedure } from "@rpc/procedure";
+import { router } from "../client";
+import { protectProcedure } from "../procedure";
 
 export const orderRouter = router({
   all: protectProcedure

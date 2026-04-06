@@ -1,12 +1,12 @@
 import type { inferRouterInputs, inferRouterOutputs } from "@trpc/server";
 
-import type { AppRouter } from "@rpc/routers/app";
+import type { AppRouter } from "./routers/app";
 
-export { rpc } from "@rpc/client";
-export { createContext } from "@rpc/create-context";
-export type { TRPCContext } from "@rpc/create-context";
-export { appRouter } from "@rpc/routers/app";
-export type { AppRouter } from "@rpc/routers/app";
+export { rpc } from "./client";
+export { createContext } from "./create-context";
+export type { TRPCContext } from "./create-context";
+export { appRouter } from "./routers/app";
+export type { AppRouter } from "./routers/app";
 
 // TODO: add a JSDoc comment on what this export type does
 export type RouterInputs = inferRouterInputs<AppRouter>;

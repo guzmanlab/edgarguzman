@@ -9,14 +9,14 @@ import {
   varchar,
 } from "drizzle-orm/pg-core";
 
-import { account } from "@drizzle/schema/account";
-import { address } from "@drizzle/schema/address";
-import { country } from "@drizzle/schema/country";
-import { customer } from "@drizzle/schema/customer";
-import { order } from "@drizzle/schema/order";
-import { product } from "@drizzle/schema/product";
-import { session } from "@drizzle/schema/session";
-import { wishlist } from "@drizzle/schema/wishlist";
+import { account } from "../schema/account";
+import { address } from "../schema/address";
+import { country } from "../schema/country";
+import { customer } from "../schema/customer";
+import { order } from "../schema/order";
+import { product } from "../schema/product";
+import { session } from "../schema/session";
+import { wishlist } from "../schema/wishlist";
 
 const createId = init({
   length: 24,

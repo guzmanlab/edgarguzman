@@ -2,7 +2,7 @@ import { neon } from "@neondatabase/serverless";
 import { config } from "dotenv";
 import { drizzle as neonDrizzle } from "drizzle-orm/neon-http";
 
-import * as schema from "@drizzle/schema";
+import * as schema from "./schema";
 
 // TODO: rework this neon database connection client file
 

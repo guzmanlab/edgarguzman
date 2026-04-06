@@ -2,7 +2,7 @@ import { init } from "@paralleldrive/cuid2";
 import { relations } from "drizzle-orm";
 import { index, pgTable, timestamp, varchar } from "drizzle-orm/pg-core";
 
-import { user } from "@drizzle/schema/user";
+import { user } from "../schema/user";
 
 const createId = init({
   length: 24,

@@ -7,7 +7,7 @@ import {
 } from "drizzle-zod";
 import { z } from "zod";
 
-import { timestamp } from "@lib/time-stamp";
+import { timestamp } from "../time-stamp";
 
 const baseSchema = createSelectSchema(customer).omit(timestamp);
 

@@ -1,7 +1,7 @@
 import { eq } from "drizzle-orm";
 
-import { drizzle } from "@drizzle/client";
-import { customer } from "@drizzle/schema/customer";
+import { drizzle } from "../client";
+import { customer } from "../schema/customer";
 
 // TODO: add a Sort between asc or desc
 // TODO: add the Sort type

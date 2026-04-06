@@ -1,6 +1,6 @@
 import { TRPCError } from "@trpc/server";
 
-import { middleware } from "@rpc/client";
+import { middleware } from "../client";
 
 export const userAuthMiddleware = middleware(async ({ ctx, next }) => {
   if (!ctx.session?.user)

@@ -7,8 +7,8 @@ import {
 } from "@edgarguzman/lib/schema/user";
 import { desc, eq } from "drizzle-orm";
 
-import { router } from "@rpc/client";
-import { protectProcedure, publicProcedure } from "@rpc/procedure";
+import { router } from "../client";
+import { protectProcedure, publicProcedure } from "../procedure";
 
 export const userRouter = router({
   all: publicProcedure.query(async ({ ctx }) => {

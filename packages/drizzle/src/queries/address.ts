@@ -1,7 +1,7 @@
 import { eq } from "drizzle-orm";
 
-import { drizzle } from "@drizzle/client";
-import { address } from "@drizzle/schema/address";
+import { drizzle } from "../client";
+import { address } from "../schema/address";
 
 type FetchAddressesParams = {
   countryId: string | null;

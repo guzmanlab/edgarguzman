@@ -11,8 +11,8 @@ import {
   updateCustomerParams,
 } from "@edgarguzman/lib/schema/customer";
 
-import { router } from "@rpc/client";
-import { protectProcedure, publicProcedure } from "@rpc/procedure";
+import { router } from "../client";
+import { protectProcedure, publicProcedure } from "../procedure";
 
 export const customerRouter = router({
   all: publicProcedure.input(customerIdSchema).query(async ({ ctx, input }) => {

@@ -8,7 +8,7 @@ import {
   varchar,
 } from "drizzle-orm/pg-core";
 
-import { user } from "@drizzle/schema/user";
+import { user } from "../schema/user";
 
 const createId = init({
   length: 24,
