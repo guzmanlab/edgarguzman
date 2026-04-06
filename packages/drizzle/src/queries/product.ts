@@ -2,8 +2,8 @@
 
 import { eq } from "drizzle-orm";
 
-import { drizzle } from "@drizzle/client";
-import { product } from "@drizzle/schema/product";
+import { drizzle } from "../client";
+import { product } from "../schema/product";
 
 // TODO: add a Sort and FetchProducts type then link it to fetchProducts() function
 

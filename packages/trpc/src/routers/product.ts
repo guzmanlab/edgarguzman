@@ -12,8 +12,8 @@ import {
   updateProductParams,
 } from "@edgarguzman/lib/schema/product";
 
-import { router } from "@rpc/client";
-import { protectProcedure, publicProcedure } from "@rpc/procedure";
+import { router } from "../client";
+import { protectProcedure, publicProcedure } from "../procedure";
 
 export const productRouter = router({
   all: publicProcedure.query(async () => {

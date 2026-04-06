@@ -1,8 +1,8 @@
 import { eq, sql } from "drizzle-orm";
 
-import { drizzle } from "@drizzle/client";
-import { order } from "@drizzle/schema/order";
-import { user } from "@drizzle/schema/user";
+import { drizzle } from "../client";
+import { order } from "../schema/order";
+import { user } from "../schema/user";
 
 // TODO: rename this type to be sort
 // type OrderParams = {};

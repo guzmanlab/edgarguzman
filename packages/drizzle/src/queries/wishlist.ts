@@ -1,7 +1,7 @@
 import { and, eq } from "drizzle-orm";
 
-import { drizzle } from "@drizzle/client";
-import { wishlist } from "@drizzle/schema";
+import { drizzle } from "../client";
+import { wishlist } from "../schema";
 
 // TODO: remove type from fetchWishlists()
 type FetchWishlistsParams = {

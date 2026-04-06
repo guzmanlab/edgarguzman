@@ -1,7 +1,7 @@
 import { and, eq } from "drizzle-orm";
 
-import { drizzle } from "@drizzle/client";
-import { country } from "@drizzle/schema/country";
+import { drizzle } from "../client";
+import { country } from "../schema/country";
 
 type FetchCountriesParams = {
   id: string;

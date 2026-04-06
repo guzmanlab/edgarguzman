@@ -11,8 +11,8 @@ import {
   updateCountryParams,
 } from "@edgarguzman/lib/schema/country";
 
-import { router } from "@rpc/client";
-import { protectProcedure, publicProcedure } from "@rpc/procedure";
+import { router } from "../client";
+import { protectProcedure, publicProcedure } from "../procedure";
 
 export const countryRouter = router({
   all: publicProcedure

@@ -12,8 +12,8 @@ import {
   varchar,
 } from "drizzle-orm/pg-core";
 
-import { user } from "@drizzle/schema/user";
-import { wishlist } from "@drizzle/schema/wishlist";
+import { user } from "../schema/user";
+import { wishlist } from "../schema/wishlist";
 
 const createId = init({
   length: 24,

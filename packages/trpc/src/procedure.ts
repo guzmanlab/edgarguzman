@@ -1,6 +1,6 @@
-import { procedure } from "@rpc/client";
-import { adminAuthMiddleware } from "@rpc/middlewares/admin-auth";
-import { userAuthMiddleware } from "@rpc/middlewares/user-auth";
+import { procedure } from "./client";
+import { adminAuthMiddleware } from "./middlewares/admin-auth";
+import { userAuthMiddleware } from "./middlewares/user-auth";
 
 export const publicProcedure = procedure;
 

@@ -8,8 +8,8 @@ import {
   varchar,
 } from "drizzle-orm/pg-core";
 
-import { country } from "@drizzle/schema/country";
-import { user } from "@drizzle/schema/user";
+import { country } from "../schema/country";
+import { user } from "../schema/user";
 
 const createId = init({
   length: 24,

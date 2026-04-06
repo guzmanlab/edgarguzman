@@ -1,11 +1,11 @@
-import { router } from "@rpc/client";
-import { addressRouter } from "@rpc/routers/address";
-import { countryRouter } from "@rpc/routers/country";
-import { customerRouter } from "@rpc/routers/customer";
-import { orderRouter } from "@rpc/routers/order";
-import { productRouter } from "@rpc/routers/product";
-import { userRouter } from "@rpc/routers/user";
-import { wishlistRouter } from "@rpc/routers/wishlist";
+import { router } from "../client";
+import { addressRouter } from "../routers/address";
+import { countryRouter } from "../routers/country";
+import { customerRouter } from "../routers/customer";
+import { orderRouter } from "../routers/order";
+import { productRouter } from "../routers/product";
+import { userRouter } from "../routers/user";
+import { wishlistRouter } from "../routers/wishlist";
 
 export const appRouter = router({
   address: addressRouter,
