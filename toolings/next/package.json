@@ -9,7 +9,7 @@
     "src"
   ],
   "dependencies": {
-    "next": "^15.5.8"
+    "next": "^15.5.14"
   },
   "devDependencies": {
     "@edgarguzman/typescript": "workspace:^",
