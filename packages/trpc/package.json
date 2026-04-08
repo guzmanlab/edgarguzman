@@ -17,7 +17,7 @@
     "@edgarguzman/drizzle": "workspace:^",
     "@edgarguzman/lib": "workspace:^",
     "@trpc/server": "^11.0.0-rc.730",
-    "drizzle-orm": "^0.44.7",
+    "drizzle-orm": "^0.45.2",
     "superjson": "^2.2.6",
     "zod": "^4.1.13"
   },
