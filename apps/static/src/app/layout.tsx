@@ -1,7 +1,12 @@
 import "@/styles/globals.css";
+import "@edgarguzman/ui/styles/globals.css";
 
+import { Toaster } from "@edgarguzman/ui/sonner";
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
+
+import { ModeToggle } from "@/components/mode-toggle";
+import { ThemeProvider } from "@/components/providers/theme-provider";
 
 type RootLayoutProps = React.PropsWithChildren;
 
@@ -93,8 +98,23 @@ export function metadata(): Metadata {
 
 const RootLayout = ({ children }: Readonly<RootLayoutProps>) => {
   return (
-    <html lang="en">
-      <body className={`${inter.className} antialiased`}>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${inter.className} antialiased`}>
+        <>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <ModeToggle />
+
+            <Toaster />
+
+            {children}
+          </ThemeProvider>
+        </>
+      </body>
     </html>
   );
 };
