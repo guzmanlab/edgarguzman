@@ -1,3 +1,4 @@
+import { Button } from "@edgarguzman/ui/button";
 import type { Metadata, NextPage } from "next";
 
 export function metadata(): Metadata {
@@ -19,6 +20,8 @@ const Home: NextPage = () => {
             This is a description of coming soon page.
           </div>
         </div>
+
+        <Button>This is a Button</Button>
       </div>
     </main>
   );
