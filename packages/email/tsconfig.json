@@ -1,0 +1,6 @@
+{
+  "extends": "@edgarguzman/typescript/react.json",
+  "compilerOptions": {},
+  "include": ["src", "react-email.d.ts"],
+  "exclude": ["node_modules"],
+}
