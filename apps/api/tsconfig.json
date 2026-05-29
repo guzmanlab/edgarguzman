@@ -1,0 +1,5 @@
+{
+  "extends": "@edgarguzman/typescript",
+  "include": ["src"],
+  "exclude": ["node_modules"],
+}
