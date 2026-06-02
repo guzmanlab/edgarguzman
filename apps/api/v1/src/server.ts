@@ -1,7 +1,7 @@
 import { serve } from "@hono/node-server";
 import { Hono } from "hono";
 
-export const one = new Hono();
+const one = new Hono();
 
 one.get("/", (c) => {
   return c.json({
