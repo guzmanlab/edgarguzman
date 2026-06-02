@@ -11,18 +11,12 @@ app.get("/", (c) => {
 });
 
 app.get("/v1", async () => {
-  return await proxy(
-    "https://edgarguzman-api-v1.vercel.app/"
-      ? "https://edgarguzman-api-v1.vercel.app/"
-      : "http://localhost:3008/",
-  );
+  return await proxy("https://edgarguzman-api-v1.vercel.app/");
 });
 
 app.get("/v1/:path", async (c) => {
   return await proxy(
-    `https://edgarguzman-api-v1.vercel.app/${c.req.param("path")}`
-      ? `https://edgarguzman-api-v1.vercel.app/${c.req.param("path")}`
-      : `http://localhost:3008/${c.req.param("path")}`,
+    `https://edgarguzman-api-v1.vercel.app/${c.req.param("path")}`,
   );
 });
 
