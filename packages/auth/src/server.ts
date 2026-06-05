@@ -9,15 +9,23 @@ export const auth = betterAuth({
   pages: {
     signIn: "/auth/sign-in",
   },
+  emailAndPassword: {
+    enabled: true,
+  },
+  secret: process.env.BETTER_AUTH_SECRET,
   trustOrigins:
     process.env.NODE_ENV === "production"
       ? [
-          // TODO: add a process env when there a app that require auth package
-          process.env.APP_ZERO_URL,
+          process.env.STATIC_APP_URL,
+          process.env.FRONTEND_APP_URL,
+          process.env.BACKEND_APP_URL,
+          process.env.API_VERSION_ONE_APP_URL,
         ].filter((url): url is string => Boolean(url))
       : [
-          // TODO: add a string instead of process env when there a app that require auth package
           "http://localhost:3000",
+          "http://localhost:3001",
+          "http://localhost:3002",
+          "http://localhost:3008",
         ],
 });
 
