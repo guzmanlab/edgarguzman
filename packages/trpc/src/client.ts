@@ -4,7 +4,8 @@ import { initTRPC } from "@trpc/server";
 
 import type { TRPCContext } from "./create-context";
 
-export const rpc = initTRPC.create({
+// TODO: think about uncommenting this code that within create() fuction
+export const rpc = initTRPC.context<TRPCContext>().create({
   // transformer: SuperJSON,
   // errorFormatter(opts) {
   //   return {
