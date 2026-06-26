@@ -3,50 +3,46 @@ import { and, eq } from "drizzle-orm";
 import { drizzle } from "../client";
 import { wishlist } from "../schema";
 
-// TODO: remove type from fetchWishlists()
+// TODO: add a JSDoc comment on what each function do without clicking the function name
+
 type FetchWishlistsParams = {
-  numberOfUUIDsToGenerate: string;
+  productId: string;
+  userId: string;
 };
 
 // TODO: rework in order to see every user that in the database without having to insert a user id
 export async function fetchWishlists(params: Readonly<FetchWishlistsParams>) {
-  try {
-    let [result] = await drizzle
-      .select()
-      .from(wishlist)
-      .where(
-        and(
-          eq(wishlist.id, params.numberOfUUIDsToGenerate),
-          eq(wishlist.productId, params.numberOfUUIDsToGenerate),
-          eq(wishlist.userId, params.numberOfUUIDsToGenerate),
-        ),
-      );
+  let [result] = await drizzle
+    .select()
+    .from(wishlist)
+    .where(
+      and(
+        eq(wishlist.id, params.productId),
+        eq(wishlist.productId, params.userId),
+      ),
+    );
 
-    return result;
-  } catch (e) {
-    console.error("There is a Server Error");
-    console.error(e);
-  }
+  return result;
 }
 
-// TODO: rename/add what type it's require from the function
 type FetchWishlistParams = {
-  numberOfUUIDsToGenerate: string;
+  productId: string;
+  userId: string;
 };
 
 // TODO: rework in order to see every user that in the database when inserting a user id
 export async function fetchWishlist(params: Readonly<FetchWishlistParams>) {
-  try {
-    let [result] = await drizzle
-      .select()
-      .from(wishlist)
-      .where(eq(wishlist.id, params.numberOfUUIDsToGenerate));
+  let [result] = await drizzle
+    .select()
+    .from(wishlist)
+    .where(
+      and(
+        eq(wishlist.id, params.productId),
+        eq(wishlist.productId, params.userId),
+      ),
+    );
 
-    return result;
-  } catch (e) {
-    console.error("There is a Server Error");
-    console.error(e);
-  }
+  return result;
 }
 
 type FetchWishlistByUserIdParams = {
@@ -69,27 +65,6 @@ export async function fetchWishlistByUserId(
   }
 }
 
-type FetchWishlistByProductIdParams = {
-  productId: string;
-};
-
-// TODO: this function links to nowhere
-export async function fetchWishlistByProductId(
-  params: Readonly<FetchWishlistByProductIdParams>,
-) {
-  try {
-    let [result] = await drizzle
-      .select()
-      .from(wishlist)
-      .where(eq(wishlist.id, params.productId));
-
-    return result;
-  } catch (e) {
-    console.error("There is a Server Error");
-    console.error(e);
-  }
-}
-
 type ToggleWishlistFavoritedParams = {
   favorited: boolean;
 };
@@ -98,19 +73,14 @@ type ToggleWishlistFavoritedParams = {
 export async function toggleWishlistFavorited(
   params: Readonly<ToggleWishlistFavoritedParams>,
 ) {
-  try {
-    let [result] = await drizzle
-      .update(wishlist)
-      .set({
-        favorited: params.favorited,
-      })
-      .returning();
+  let [result] = await drizzle
+    .update(wishlist)
+    .set({
+      favorited: params.favorited,
+    })
+    .returning();
 
-    return result;
-  } catch (e) {
-    console.error("There is a Server Error");
-    console.error(e);
-  }
+  return result;
 }
 
 type CreateWishlistParams = {
@@ -120,21 +90,16 @@ type CreateWishlistParams = {
 };
 
 export async function createWishlist(params: Readonly<CreateWishlistParams>) {
-  try {
-    let [created] = await drizzle
-      .insert(wishlist)
-      .values({
-        userId: params.userId,
-        productId: params.productId,
-        favorited: params.favorited,
-      })
-      .returning();
+  let [created] = await drizzle
+    .insert(wishlist)
+    .values({
+      userId: params.userId,
+      productId: params.productId,
+      favorited: params.favorited,
+    })
+    .returning();
 
-    return created;
-  } catch (e) {
-    console.error("There is a Server Error");
-    console.error(e);
-  }
+  return created;
 }
 
 type UpdateWishlistParams = {
@@ -145,22 +110,17 @@ type UpdateWishlistParams = {
 };
 
 export async function updateWishlist(params: Readonly<UpdateWishlistParams>) {
-  try {
-    let [updated] = await drizzle
-      .update(wishlist)
-      .set({
-        userId: params.userId,
-        productId: params.productId,
-        favorited: params.favorited,
-      })
-      .where(eq(wishlist.id, params.id))
-      .returning();
+  let [updated] = await drizzle
+    .update(wishlist)
+    .set({
+      userId: params.userId,
+      productId: params.productId,
+      favorited: params.favorited,
+    })
+    .where(eq(wishlist.id, params.id))
+    .returning();
 
-    return updated;
-  } catch (e) {
-    console.error("There is a Server Error");
-    console.error(e);
-  }
+  return updated;
 }
 
 type DeleteWishlistParams = {
@@ -168,15 +128,10 @@ type DeleteWishlistParams = {
 };
 
 export async function deleteWishlist(params: Readonly<DeleteWishlistParams>) {
-  try {
-    let [deleted] = await drizzle
-      .delete(wishlist)
-      .where(eq(wishlist.id, params.id))
-      .returning();
+  let [deleted] = await drizzle
+    .delete(wishlist)
+    .where(eq(wishlist.id, params.id))
+    .returning();
 
-    return deleted;
-  } catch (e) {
-    console.error("There is a Server Error");
-    console.error(e);
-  }
+  return deleted;
 }

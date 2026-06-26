@@ -4,14 +4,11 @@ import { drizzle } from "../client";
 import { order } from "../schema/order";
 import { user } from "../schema/user";
 
-// TODO: rename this type to be sort
-// type OrderParams = {};
-// TODO: add a sort field type
+// TODO: add a JSDoc comment on what each function do without clicking the function name
 
-// TODO: add sort and sort field type into FetchOrdersParams type
+// TODO: add sort and sort field type
 type FetchOrdersParams = {};
 
-// TODO: add a JSDoc comment on what this function do without clicking the function name
 // TODO: rework this function to have a sorting system on the where clause
 export async function fetchOrders(params: Readonly<FetchOrdersParams>) {
   let [result] = await drizzle
@@ -22,13 +19,11 @@ export async function fetchOrders(params: Readonly<FetchOrdersParams>) {
   return result;
 }
 
-// TODO: fetch a single order
-
 type FetchOrderParams = {
   id: string;
   userId: string;
 };
-// TODO: add a JSDoc comment on what this function do without clicking the function name
+
 // TODO: add a optional sorting by field on the where clause
 export async function fetchOrder(params: Readonly<FetchOrderParams>) {
   let [result] = await drizzle
@@ -44,27 +39,21 @@ export async function fetchOrder(params: Readonly<FetchOrderParams>) {
 
 // TODO: fetch all orders by user id
 
-// TODO: create order
-
 type CreateOrderParams = {
   userId: string;
 };
 
-// TODO: add a JSDoc comment on what this function do without clicking the function name
 export async function createOrder(params: Readonly<CreateOrderParams>) {
   let [created] = await drizzle.insert(order).values(params).returning();
 
   return created;
 }
 
-// TODO: update order
-
 type UpdateOrderParams = {
   id: string;
   userId: string;
 };
 
-// TODO: add a JSDoc comment on what this function do without clicking the function name
 export async function updateOrder(params: Readonly<UpdateOrderParams>) {
   let [update] = await drizzle
     .update(order)
@@ -77,14 +66,11 @@ export async function updateOrder(params: Readonly<UpdateOrderParams>) {
   return update;
 }
 
-// TODO: delete order
-
 type DeleteOrderParams = {
   id: string;
   userId: string;
 };
 
-// TODO: add a JSDoc comment on what this function do without clicking the function name
 export async function deleteOrder(params: Readonly<DeleteOrderParams>) {
   let [deleted] = await drizzle
     .delete(order)
@@ -94,12 +80,7 @@ export async function deleteOrder(params: Readonly<DeleteOrderParams>) {
   return deleted;
 }
 
-// TODO: rename this temporary order function to cancelOrder function
+type CancelOrderParams = {};
 
-// TODO: rename the function type to CancelOrderParams
-// type OrderParams = {};
-
-// // TODO: add a JSDoc comment on what this function do without clicking the function name
-// // TODO: rename the function type to CancelOrderParams
-// // NOTE: use this function to confirm the canceling order before redirecting this to deleteOrder() function
-// export async function Order(params: Readonly<OrderParams>) {}
+// NOTE: use this function to confirm the canceling order before redirecting this to deleteOrder() function
+export async function cancelOrder(params: Readonly<CancelOrderParams>) {}

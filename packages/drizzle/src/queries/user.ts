@@ -1,26 +1,18 @@
-"use server";
-
-// import { auth } from "@edgarguzman/auth/server";
+import { auth } from "@edgarguzman/auth/server";
 import { eq } from "drizzle-orm";
-// import { headers } from "next/headers";
-// import { redirect } from "next/navigation";
+import { headers } from "next/headers";
 
 import { drizzle } from "../client";
 import { user } from "../schema/user";
+import { deleteOrder } from "./order";
+import { deleteWishlist } from "./wishlist";
 
-// TODO: rewrite this function with auth package
+// TODO: add a JSDoc comment on what each function do without clicking the function name
+
 export async function fetchCurrentUser() {
-  let session = {
-    user: {
-      id: "",
-      name: "",
-      email: "",
-      emailVerified: false,
-      password: "",
-      image: "",
-      age: "",
-    },
-  };
+  let session = await auth.api.getSession({
+    headers: await headers(),
+  });
 
   if (!session) return null;
 
@@ -29,13 +21,13 @@ export async function fetchCurrentUser() {
     .from(user)
     .where(eq(user.id, session.user.id));
 
+  if (!currentUser) return null;
+
   return {
     ...session,
     currentUser,
   };
 }
-
-// TODO: create the findUsersOrderByDesc() function and link this function to tRPC User router
 
 export async function fetchUsers() {
   let list = await drizzle.select().from(user);
@@ -43,18 +35,61 @@ export async function fetchUsers() {
   return list;
 }
 
-// TODO: rename the selectUsers() to fetchUser() funtion and link this function to tRPC User router
 export async function selectUsers(withName: boolean) {
   return await drizzle
     .select({
       id: user.id,
-      ...(withName ? { name: user.name } : {}),
+      ...(withName
+        ? {
+            name: user.name,
+          }
+        : {}),
     })
     .from(user);
 }
 
-// TODO: create the createUser() function and link this function to tRPC User router
+interface CreateUserParams {
+  name: string;
+  email: string;
+  password: string;
+  image: string;
+}
 
-// TODO: create the updateUser() function and link this function to tRPC User router
+// TODO: link this function to tRPC User router
+export async function createUser(params: CreateUserParams) {
+  // comment line
+  return await drizzle
+    .insert(user)
+    .values({
+      name: params.name,
+      email: params.email,
+      password: params.password,
+      image: params.image,
+    })
+    .returning();
+}
 
-// TODO: create the deleteUser() function and link this function to tRPC User router
+// TODO: link this function to tRPC User router
+export async function updateUser() {}
+
+interface DeleteUserParams {
+  id: string;
+  userId: string;
+}
+
+// TODO: link this function to tRPC User router
+export async function deleteUser(params: DeleteUserParams) {
+  // add the user order deletion fn first
+  await deleteOrder({
+    id: params.id,
+    userId: params.userId,
+  });
+
+  // check if the user have a wishlist and then delete wishlist fn first
+  await deleteWishlist({
+    id: params.id,
+  });
+
+  // add a delete a user using drizzle orm
+  return await drizzle.delete(user).where(eq(user.id, params.id)).returning();
+}
