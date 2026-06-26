@@ -3,13 +3,14 @@ import { and, eq } from "drizzle-orm";
 import { drizzle } from "../client";
 import { country } from "../schema/country";
 
+// TODO: add a JSDoc comment on what each function do without clicking the function name
+
 type FetchCountriesParams = {
   id: string;
   userId: string;
 };
 
-// TODO: add a JSDoc comment on what this function do without clicking the function name
-// TODO: rework on this function for a optional sorting on the where clause
+// TODO: rework this function for a optional sorting on the where clause
 // TODO: also have abc function as well
 export async function fetchCountries(params: Readonly<FetchCountriesParams>) {
   let [result] = await drizzle.select().from(country);
@@ -21,7 +22,6 @@ type FetchCountryParams = {
   id: string;
 };
 
-// TODO: add a JSDoc comment on what this function do without clicking the function name
 export async function fetchCountry(params: Readonly<FetchCountryParams>) {
   let [result] = await drizzle
     .select()
@@ -37,7 +37,6 @@ type CreateCountryParams = {
   key: string;
 };
 
-// TODO: add a JSDoc comment on what this function do without clicking the function name
 export async function createCountry(params: Readonly<CreateCountryParams>) {
   let [created] = await drizzle.insert(country).values(params).returning();
 
@@ -51,7 +50,6 @@ type UpdateCountryParams = {
   key: string;
 };
 
-// TODO: add a JSDoc comment on what this function do without clicking the function name
 export async function updateCountry(params: Readonly<UpdateCountryParams>) {
   let [updated] = await drizzle.update(country).set(params).returning();
 
@@ -63,7 +61,6 @@ type DeleteCountryParams = {
   userId: string;
 };
 
-// TODO: add a JSDoc comment on what this function do without clicking the function name
 export async function deleteCountry(params: Readonly<DeleteCountryParams>) {
   let [deleted] = await drizzle
     .delete(country)
