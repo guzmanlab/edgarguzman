@@ -1,30 +1,29 @@
 {
-  "name": "@edgarguzman/auth",
-  "version": "0.0.0",
-  "main": "src/client.ts",
-  "private": true,
-  "exports": {
-    "./client": "./src/client.ts",
-    "./server": "./src/server.ts"
-  },
-  "files": [
-    "dist"
-  ],
-  "scripts": {
-    "auth:build": "tsc"
-  },
-  "dependencies": {
-    "@edgarguzman/drizzle": "workspace:^",
-    "better-auth": "^1.3.9",
-    "server-only": "^0.0.1"
-  },
-  "devDependencies": {
-    "@edgarguzman/eslint": "workspace:^",
-    "@edgarguzman/typescript": "workspace:^",
-    "@types/node": "^20",
-    "typescript": "^5.7.2"
-  },
-  "publishConfig": {
-    "access": "public"
-  }
+    "name": "@edgarguzman/auth",
+    "version": "0.0.0",
+    "main": "src/client.ts",
+    "private": true,
+    "exports": {
+        "./client": "./src/client.ts",
+        "./server": "./src/server.ts"
+    },
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "auth:build": "tsc"
+    },
+    "dependencies": {
+        "better-auth": "^1.3.9",
+        "server-only": "^0.0.1"
+    },
+    "devDependencies": {
+        "@edgarguzman/eslint": "workspace:^",
+        "@edgarguzman/typescript": "workspace:^",
+        "@types/node": "^20",
+        "typescript": "^5.7.2"
+    },
+    "publishConfig": {
+        "access": "public"
+    }
 }
