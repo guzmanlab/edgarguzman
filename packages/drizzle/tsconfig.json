@@ -1,5 +1,11 @@
 {
-  "extends": "@edgarguzman/typescript",
-  "include": ["src"],
-  "exclude": ["node_modules"],
+    "extends": "@edgarguzman/typescript",
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@edgarguzman/auth/*": ["../auth/src/*"],
+        },
+    },
+    "include": ["src"],
+    "exclude": ["node_modules"],
 }

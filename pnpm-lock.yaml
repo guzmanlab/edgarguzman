@@ -116,9 +116,6 @@ importers:
 
   packages/auth:
     dependencies:
-      '@edgarguzman/drizzle':
-        specifier: workspace:^
-        version: link:../drizzle
       better-auth:
         specifier: ^1.3.9
         version: 1.3.34
@@ -141,9 +138,6 @@ importers:
 
   packages/drizzle:
     dependencies:
-      '@edgarguzman/auth':
-        specifier: workspace:^
-        version: link:../auth
       '@neondatabase/serverless':
         specifier: ^1.0.2
         version: 1.0.2
