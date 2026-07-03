@@ -5,97 +5,96 @@ import { product } from "../schema/product";
 
 // TODO: add a JSDoc comment on what each function do without clicking the function name
 
-// TODO: rework this function to have a sorting system on the where clause with a type to this function
-export async function fetchProducts() {
-  let list = await drizzle.select().from(product);
+type OrderBy = "asc" | "desc";
 
-  return list;
-}
-
-// TODO: add a Sort between id: string or slug: string
-type FetchProductParams = {
-  id: string;
+type FetchProductsParams = {
+    orderBy?: OrderBy;
 };
 
-// TODO: rework this function for a optional sorting on the where clause
-export async function fetchProduct(params: Readonly<FetchProductParams>) {
-  let [result] = await drizzle
-    .select()
-    .from(product)
-    .where(eq(product.id, params.id));
+export async function fetchProducts(params: Readonly<FetchProductsParams>) {
+    if (params.orderBy === "asc") {
+        let list = await drizzle.select().from(product);
 
-  return result;
+        return list;
+    } else if (params.orderBy === "desc") {
+        let list = await drizzle.select().from(product);
+
+        return list;
+    } else {
+        let list = await drizzle.select().from(product);
+
+        return list;
+    }
+}
+
+type FetchProductParams = {
+    id: string;
+};
+
+export async function fetchProduct(params: Readonly<FetchProductParams>) {
+    let [result] = await drizzle
+        .select()
+        .from(product)
+        .where(eq(product.id, params.id));
+
+    return result;
 }
 
 type CreateProductParams = {
-  userId: string;
-  title: string;
-  slug: string;
-  description: string | null;
-  image: string | null;
-  quantity: number;
-  price: string;
-  activated: boolean;
+    userId: string;
+    title: string;
+    slug: string;
+    description?: string | null;
+    image?: string | null;
+    quantity: number;
+    price: string;
 };
 
 export async function createProduct(params: Readonly<CreateProductParams>) {
-  let [result] = await drizzle
-    .insert(product)
-    .values({
-      userId: params.userId,
-      title: params.title,
-      slug: params.slug,
-      description: params.description,
-      image: params.image,
-      quantity: Number(params.quantity.toFixed()),
-      price: params.price,
-      activated: params.activated,
-    })
-    .returning();
+    let [result] = await drizzle
+        .insert(product)
+        .values({
+            ...params,
+            quantity: Number(params.quantity.toFixed()),
+        })
+        .returning();
 
-  return result;
+    return result;
 }
 
 type UpdateProductParams = {
-  id: string;
-  userId: string;
-  title: string;
-  description: string | null;
-  image: string | null;
-  quantity: number;
-  price: string;
-  activated: boolean;
+    id: string;
+    title: string;
+    description?: string | null;
+    image?: string | null;
+    quantity: number;
+    price: string;
 };
 
 export async function updateProduct(params: Readonly<UpdateProductParams>) {
-  let [result] = await drizzle
-    .update(product)
-    .set({
-      userId: params.userId,
-      title: params.title,
-      description: params.description,
-      image: params.image,
-      quantity: Number(params.quantity.toFixed()),
-      price: params.price,
-      activated: params.activated,
-    })
-    .where(eq(product.id, params.id))
-    .returning();
+    let [result] = await drizzle
+        .update(product)
+        .set({
+            ...params,
+            quantity: Number(params.quantity.toFixed()),
+        })
+        .where(eq(product.id, params.id))
+        .returning();
 
-  return result;
+    return result;
 }
 
 type DeleteProductParams = {
-  id: string;
+    id: string;
 };
 
 export async function deleteProduct(params: Readonly<DeleteProductParams>) {
-  let [deleted] = await drizzle
-    .delete(product)
-    .where(eq(product.id, params.id))
-    .returning();
+    let [deleted] = await drizzle
+        .delete(product)
+        .where(eq(product.id, params.id))
+        .returning();
 
-  return deleted;
+    return deleted;
 }
 
 type SearchProductParams = {};

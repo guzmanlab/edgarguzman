@@ -1,5 +1,5 @@
 import { auth } from "@edgarguzman/auth/server";
-import { eq } from "drizzle-orm";
+import { asc, desc, eq } from "drizzle-orm";
 import { headers } from "next/headers";
 
 import { drizzle } from "../client";
@@ -10,86 +10,126 @@ import { deleteWishlist } from "./wishlist";
 // TODO: add a JSDoc comment on what each function do without clicking the function name
 
 export async function fetchCurrentUser() {
-  let session = await auth.api.getSession({
-    headers: await headers(),
-  });
+    let session = await auth.api.getSession({
+        headers: await headers(),
+    });
 
-  if (!session) return null;
+    if (!session) return null;
 
-  let currentUser = await drizzle
-    .select()
-    .from(user)
-    .where(eq(user.id, session.user.id));
+    let currentUser = await drizzle
+        .select()
+        .from(user)
+        .where(eq(user.id, session.user.id));
 
-  if (!currentUser) return null;
+    if (!currentUser) return null;
 
-  return {
-    ...session,
-    currentUser,
-  };
+    return {
+        ...session,
+        currentUser,
+    };
 }
 
-export async function fetchUsers() {
-  let list = await drizzle.select().from(user);
+type OrderBy = "asc" | "desc";
 
-  return list;
+type FetchUsersParams = {
+    orderBy?: OrderBy;
+};
+
+export async function fetchUsers(params: Readonly<FetchUsersParams>) {
+    if (params.orderBy === "asc") {
+        let [result] = await drizzle
+            .select()
+            .from(user)
+            .orderBy(asc(user.createdAt));
+
+        return result;
+    } else if (params.orderBy === "desc") {
+        let [result] = await drizzle
+            .select()
+            .from(user)
+            .orderBy(desc(user.createdAt));
+
+        return result;
+    } else {
+        let [result] = await drizzle.select().from(user);
+
+        return result;
+    }
 }
 
-export async function selectUsers(withName: boolean) {
-  return await drizzle
-    .select({
-      id: user.id,
-      ...(withName
-        ? {
-            name: user.name,
-          }
-        : {}),
-    })
-    .from(user);
+interface FindUserParams {
+    id: string;
+}
+
+export async function findUser(params: Readonly<FindUserParams>) {
+    let [result] = await drizzle
+        .select()
+        .from(user)
+        .where(eq(user.id, params.id));
+
+    return result;
 }
 
 interface CreateUserParams {
-  name: string;
-  email: string;
-  password: string;
-  image: string;
+    name: string;
+    email: string;
+    password: string;
+    image: string;
 }
 
 // TODO: link this function to tRPC User router
 export async function createUser(params: CreateUserParams) {
-  // comment line
-  return await drizzle
-    .insert(user)
-    .values({
-      name: params.name,
-      email: params.email,
-      password: params.password,
-      image: params.image,
-    })
-    .returning();
+    let [created] = await drizzle
+        .insert(user)
+        .values({
+            name: params.name,
+            email: params.email,
+            password: params.password,
+            image: params.image,
+        })
+        .returning();
+
+    return created;
+}
+
+interface UpdateUserParams {
+    id: string;
 }
 
 // TODO: link this function to tRPC User router
-export async function updateUser() {}
+export async function updateUser(params: Readonly<UpdateUserParams>) {
+    let [updated] = await drizzle
+        .update(user)
+        .set({})
+        .where(eq(user.id, params.id))
+        .returning();
+
+    return updated;
+}
 
 interface DeleteUserParams {
-  id: string;
-  userId: string;
+    id: string;
+    userId: string;
 }
 
 // TODO: link this function to tRPC User router
 export async function deleteUser(params: DeleteUserParams) {
-  // add the user order deletion fn first
-  await deleteOrder({
-    id: params.id,
-    userId: params.userId,
-  });
+    // add the user order deletion fn first
+    await deleteOrder({
+        id: params.id,
+        userId: params.userId,
+    });
 
-  // check if the user have a wishlist and then delete wishlist fn first
-  await deleteWishlist({
-    id: params.id,
-  });
+    // check if the user have a wishlist and then delete wishlist fn first
+    await deleteWishlist({
+        id: params.id,
+    });
 
-  // add a delete a user using drizzle orm
-  return await drizzle.delete(user).where(eq(user.id, params.id)).returning();
+    // comment line
+    let [deleted] = await drizzle
+        .delete(user)
+        .where(eq(user.id, params.id))
+        .returning();
+
+    return deleted;
 }

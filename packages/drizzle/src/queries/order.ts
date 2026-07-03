@@ -1,4 +1,4 @@
-import { eq, sql } from "drizzle-orm";
+import { and, asc, desc, eq, sql } from "drizzle-orm";
 
 import { drizzle } from "../client";
 import { order } from "../schema/order";
@@ -6,33 +6,50 @@ import { user } from "../schema/user";
 
 // TODO: add a JSDoc comment on what each function do without clicking the function name
 
-// TODO: add sort and sort field type
-type FetchOrdersParams = {};
+type OrderBy = "asc" | "desc";
 
-// TODO: rework this function to have a sorting system on the where clause
+type FetchOrdersParams = {
+    orderBy?: OrderBy;
+};
+
 export async function fetchOrders(params: Readonly<FetchOrdersParams>) {
-  let [result] = await drizzle
-    .select({})
-    .from(order)
-    .orderBy(sql`${order.id}`);
+    if (params.orderBy === "asc") {
+        let [result] = await drizzle
+            .select({})
+            .from(order)
+            .orderBy(asc(order.createdAt));
 
-  return result;
+        return result;
+    } else if (params.orderBy === "desc") {
+        let [result] = await drizzle
+            .select({})
+            .from(order)
+            .orderBy(desc(order.createdAt));
+
+        return result;
+    } else {
+        let [result] = await drizzle
+            .select({})
+            .from(order)
+            .orderBy(sql`${order.id}`);
+
+        return result;
+    }
 }
 
 type FetchOrderParams = {
-  id: string;
-  userId: string;
+    id: string;
+    userId: string;
 };
 
-// TODO: add a optional sorting by field on the where clause
 export async function fetchOrder(params: Readonly<FetchOrderParams>) {
-  let [result] = await drizzle
-    .select({})
-    .from(order)
-    .where(eq(order.id, params.id))
-    .leftJoin(order, eq(user.id, order.id));
+    let [result] = await drizzle
+        .select({})
+        .from(order)
+        .where(eq(order.id, params.id))
+        .leftJoin(order, eq(user.id, order.id));
 
-  return result;
+    return result;
 }
 
 // TODO: fetch a single order by user id
@@ -40,44 +57,49 @@ export async function fetchOrder(params: Readonly<FetchOrderParams>) {
 // TODO: fetch all orders by user id
 
 type CreateOrderParams = {
-  userId: string;
+    userId: string;
 };
 
 export async function createOrder(params: Readonly<CreateOrderParams>) {
-  let [created] = await drizzle.insert(order).values(params).returning();
+    let [created] = await drizzle
+        .insert(order)
+        .values({
+            ...params,
+        })
+        .returning();
 
-  return created;
+    return created;
 }
 
 type UpdateOrderParams = {
-  id: string;
-  userId: string;
+    id: string;
+    userId: string;
 };
 
 export async function updateOrder(params: Readonly<UpdateOrderParams>) {
-  let [update] = await drizzle
-    .update(order)
-    .set({
-      userId: params.userId,
-    })
-    .where(eq(order.id, params.id))
-    .returning();
+    let [update] = await drizzle
+        .update(order)
+        .set({
+            ...params,
+        })
+        .where(eq(order.id, params.id))
+        .returning();
 
-  return update;
+    return update;
 }
 
 type DeleteOrderParams = {
-  id: string;
-  userId: string;
+    id: string;
+    userId: string;
 };
 
 export async function deleteOrder(params: Readonly<DeleteOrderParams>) {
-  let [deleted] = await drizzle
-    .delete(order)
-    .where(eq(order.id, params.id))
-    .returning();
+    let [deleted] = await drizzle
+        .delete(order)
+        .where(and(eq(order.id, params.id), eq(order.userId, params.userId)))
+        .returning();
 
-  return deleted;
+    return deleted;
 }
 
 type CancelOrderParams = {};
