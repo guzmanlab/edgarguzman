@@ -71,6 +71,7 @@ type UpdateProductParams = {
     price: string;
 };
 
+// TODO: add userId in updateProduct() fn interface type
 export async function updateProduct(params: Readonly<UpdateProductParams>) {
     let [result] = await drizzle
         .update(product)
@@ -100,3 +101,9 @@ export async function deleteProduct(params: Readonly<DeleteProductParams>) {
 type SearchProductParams = {};
 
 export async function searchProducts(params: Readonly<SearchProductParams>) {}
+
+/**
+ * @description TODO: create a showRelatedProducts() fn for when a user is viewing a similar product / ( create it some another time )
+ * @function productRouter.related
+ * @link packages/trpc/src/routers/product.ts
+ */
