@@ -60,6 +60,7 @@ type CreateOrderParams = {
     userId: string;
 };
 
+// TODO: add a drizzle transaction within createOrder() fn instead of a drizzle insert fn
 export async function createOrder(params: Readonly<CreateOrderParams>) {
     let [created] = await drizzle
         .insert(order)

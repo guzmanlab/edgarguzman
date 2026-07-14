@@ -19,42 +19,31 @@ export const wishlistRouter = router({
     return await fetchWishlists({});
   }),
 
-  history: protectProcedure.input(wishlistIdSchema).query(async () => {}),
+  history: protectProcedure
+    .input(wishlistIdSchema)
+    .query(async () => {}),
 
   find: protectProcedure
     .input(wishlistIdSchema)
-    .query(async ({ ctx, input }) => {
-      return await fetchWishlistByUserId({
-        userId: ctx.session?.user?.id,
-      });
+    .query(async () => {
+      return await fetchWishlistByUserId({});
     }),
 
   create: protectProcedure
     .input(createWishlistParams)
-    .mutation(async ({ ctx, input }) => {
-      return await createWishlist({
-        productId: input.productId,
-        userId: ctx.session?.user?.id,
-        favorited: input.favorited,
-      });
+    .mutation(async () => {
+      return await createWishlist({});
     }),
 
   update: protectProcedure
     .input(updateWishlistParams)
-    .mutation(async ({ ctx, input }) => {
-      return await updateWishlist({
-        id: input.id,
-        productId: input.productId,
-        userId: ctx.session?.user?.id,
-        favorited: input.favorited,
-      });
+    .mutation(async () => {
+      return await updateWishlist({});
     }),
 
   delete: protectProcedure
     .input(wishlistIdSchema)
-    .mutation(async ({ input }) => {
-      return await deleteWishlist({
-        id: input.id,
-      });
+    .mutation(async () => {
+      return await deleteWishlist({});
     }),
 });

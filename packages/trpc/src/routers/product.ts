@@ -1,73 +1,56 @@
 import {
-  createProduct,
-  deleteProduct,
-  fetchProduct,
-  fetchProducts,
-  updateProduct,
+    createProduct,
+    deleteProduct,
+    fetchProduct,
+    fetchProducts,
+    searchProducts,
+    updateProduct,
 } from "@edgarguzman/drizzle/queries/product";
-// import { product } from "@edgarguzman/drizzle/schema/product";
 import {
-  createProductParams,
-  productIdSchema,
-  updateProductParams,
+    createProductParams,
+    productIdSchema,
+    updateProductParams,
 } from "@edgarguzman/lib/schema/product";
 
 import { router } from "../client";
 import { protectProcedure, publicProcedure } from "../procedure";
 
 export const productRouter = router({
-  all: publicProcedure.query(async () => {
-    return await fetchProducts();
-  }),
-
-  find: publicProcedure.input(productIdSchema).mutation(async ({ input }) => {
-    return await fetchProduct({
-      id: input.id,
-    });
-  }),
-
-  search: publicProcedure
-    // .input()
-    .query(async () => {}),
-
-  related: publicProcedure
-    // .input()
-    .query(async () => {}),
-
-  create: protectProcedure
-    .input(createProductParams)
-    .mutation(async ({ input }) => {
-      return await createProduct({
-        userId: input.userId,
-        title: input.title,
-        description: input.description,
-        image: input.image,
-        price: input.price,
-        quantity: input.quantity,
-        activated: input.activated,
-      });
+    all: publicProcedure.query(async () => {
+        return await fetchProducts({});
     }),
 
-  update: protectProcedure
-    .input(updateProductParams)
-    .mutation(async ({ input }) => {
-      return await updateProduct({
-        id: input.id,
-        userId: input.userId,
-        title: input.title,
-        description: input.description,
-        image: input.image,
-        price: input.price,
-        quantity: input.quantity,
-        activated: input.activated,
-      });
-    }),
+    find: publicProcedure
+        .input(productIdSchema)
+        .query(async () => {
+            return await fetchProduct({});
+        }),
 
-  delete: protectProcedure
-    .input(productIdSchema)
-    .mutation(async ({ input }) => {
-      return await deleteProduct({
-        id: input.id,
-      });
-    }),
+    search: publicProcedure
+        // .input()
+        .query(async () => {
+            return await searchProducts({});
+        }),
+
+    related: publicProcedure
+        // .input()
+        .query(async () => {}),
+
+    create: protectProcedure
+        .input(createProductParams)
+        .mutation(async () => {
+            return await createProduct({});
+        }),
+
+    update: protectProcedure
+        .input(updateProductParams)
+        .mutation(async () => {
+            return await updateProduct({});
+        }),
+
+    delete: protectProcedure
+        .input(productIdSchema)
+        .mutation(async () => {
+            return await deleteProduct({});
+        }),
 });

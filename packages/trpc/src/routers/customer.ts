@@ -15,46 +15,33 @@ import { router } from "../client";
 import { protectProcedure, publicProcedure } from "../procedure";
 
 export const customerRouter = router({
-  all: publicProcedure.input(customerIdSchema).query(async ({ ctx, input }) => {
-    return await fetchCustomers({
-      id: input.id,
-      userId: ctx.session?.user?.id ?? "",
-    });
-  }),
+  all: publicProcedure
+    .input(customerIdSchema)
+    .query(async () => {
+        return await fetchCustomers({});
+    }),
 
-  find: publicProcedure.query(async ({ ctx }) => {
-    return await fetchCustomer({
-      userId: ctx.session?.user?.id ?? "",
-    });
-  }),
+  find: publicProcedure
+    .input(customerIdSchema)
+    .query(async () => {
+        return await fetchCustomer({});
+    }),
 
   create: protectProcedure
     .input(createCustomerParams)
-    .mutation(async ({ ctx, input }) => {
-      return await createCustomer({
-        userId: ctx.session?.user?.id,
-        name: input.name,
-        email: input.email,
-      });
+    .mutation(async () => {
+      return await createCustomer({});
     }),
 
   update: protectProcedure
     .input(updateCustomerParams)
-    .mutation(async ({ ctx, input }) => {
-      return await updateCustomer({
-        id: input.id,
-        userId: ctx.session?.user?.id,
-        name: input.name,
-        email: input.email,
-      });
+    .mutation(async () => {
+      return await updateCustomer({});
     }),
 
   delete: protectProcedure
     .input(customerIdSchema)
-    .mutation(async ({ ctx, input }) => {
-      return await deleteCustomer({
-        id: input.id,
-        userId: ctx.session?.user?.id,
-      });
+    .mutation(async () => {
+      return await deleteCustomer({});
     }),
 });

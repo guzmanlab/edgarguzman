@@ -59,7 +59,7 @@ type CreateAddressParams = {
     userId: string;
     title: string;
     addressLine1: string;
-    addressLine2: string | null;
+    addressLine2?: string | null;
     city: string;
     postalCode: string;
     phone: string;

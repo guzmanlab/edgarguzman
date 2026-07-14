@@ -1,62 +1,47 @@
 import {
-  createCountry,
-  deleteCountry,
-  fetchCountry,
-  updateCountry,
+    createCountry,
+    deleteCountry,
+    fetchCountries,
+    fetchCountry,
+    updateCountry,
 } from "@edgarguzman/drizzle/queries/country";
-import { fetchCustomers } from "@edgarguzman/drizzle/queries/customer";
 import {
-  countryIdSchema,
-  createCountryParams,
-  updateCountryParams,
+    countryIdSchema,
+    createCountryParams,
+    updateCountryParams,
 } from "@edgarguzman/lib/schema/country";
 
 import { router } from "../client";
 import { protectProcedure, publicProcedure } from "../procedure";
 
 export const countryRouter = router({
-  all: publicProcedure
-    // .input(countryIdSchema)
-    .mutation(async ({ ctx, input }) => {
-      return await fetchCustomers({
-        // id: input.id,
-        // userId: ctx.session?.user?.id
-      });
-    }),
+    all: publicProcedure
+        .input(countryIdSchema)
+        .query(async () => {
+            return await fetchCountries({});
+        }),
 
-  find: publicProcedure.input(countryIdSchema).query(async ({ ctx, input }) => {
-    return await fetchCountry({
-      id: input.id,
-    });
-  }),
+    find: publicProcedure
+        .input(countryIdSchema)
+        .query(async () => {
+            return await fetchCountry({});
+        }),
 
-  create: protectProcedure
-    .input(createCountryParams)
-    .mutation(async ({ ctx, input }) => {
-      return await createCountry({
-        userId: ctx.session?.user?.id,
-        title: input.title,
-        key: input.key,
-      });
-    }),
+    create: protectProcedure
+        .input(createCountryParams)
+        .mutation(async () => {
+            return await createCountry({});
+        }),
 
-  update: protectProcedure
-    .input(updateCountryParams)
-    .mutation(async ({ ctx, input }) => {
-      return await updateCountry({
-        id: input.id,
-        userId: ctx.session?.user?.id,
-        title: input.title,
-        key: input.key,
-      });
-    }),
+    update: protectProcedure
+        .input(updateCountryParams)
+        .mutation(async () => {
+            return await updateCountry({});
+        }),
 
-  delete: protectProcedure
-    .input(countryIdSchema)
-    .mutation(async ({ ctx, input }) => {
-      return await deleteCountry({
-        id: input.id,
-        userId: ctx.session?.user?.id,
-      });
-    }),
+    delete: protectProcedure
+        .input(countryIdSchema)
+        .mutation(async () => {
+            return await deleteCountry({});
+        }),
 });

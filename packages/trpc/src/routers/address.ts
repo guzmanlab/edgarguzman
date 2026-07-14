@@ -1,74 +1,47 @@
 import {
-  createAddress,
-  deleteAddress,
-  fetchAddress,
-  fetchAddresses,
-  updateAddress,
+    createAddress,
+    deleteAddress,
+    fetchAddress,
+    fetchAddresses,
+    updateAddress,
 } from "@edgarguzman/drizzle/queries/address";
 import {
-  addressIdSchema,
-  createAddressParams,
-  updateAddressParams,
+    addressIdSchema,
+    createAddressParams,
+    updateAddressParams,
 } from "@edgarguzman/lib/schema/address";
 
 import { router } from "../client";
 import { protectProcedure } from "../procedure";
 
 export const addressRouter = router({
-  all: protectProcedure
-    // .input()
-    .query(async ({ ctx }) => {
-      return await fetchAddresses({
-        userId: ctx.session?.user?.id,
-      });
-    }),
+    all: protectProcedure
+        // .input()
+        .query(async () => {
+            return await fetchAddresses({});
+        }),
 
-  find: protectProcedure.input(addressIdSchema).query(async ({ input }) => {
-    return await fetchAddress({
-      countryId: input.addressId,
-      userId: input.userId,
-    });
-  }),
+    find: protectProcedure
+        .input(addressIdSchema)
+        .query(async () => {
+            return await fetchAddress({});
+        }),
 
-  create: protectProcedure
-    .input(createAddressParams)
-    .mutation(async ({ input }) => {
-      return await createAddress({
-        countryId: input.countryId,
-        userId: input.userId,
-        title: input.title,
-        addressLine1: input.addressLine1,
-        addressLine2: input.addressLine2,
-        city: input.city,
-        postalCode: input.postalCode,
-        phone: input.phone,
-        defaulted: input.defaulted,
-      });
-    }),
+    create: protectProcedure
+        .input(createAddressParams)
+        .mutation(async () => {
+            return await createAddress({});
+        }),
 
-  update: protectProcedure
-    .input(updateAddressParams)
-    .mutation(async ({ input }) => {
-      return await updateAddress({
-        id: input.id,
-        countryId: input.countryId,
-        userId: input.userId,
-        title: input.title,
-        addressLine1: input.addressLine1,
-        addressLine2: input.addressLine2,
-        city: input.city,
-        postalCode: input.postalCode,
-        phone: input.phone,
-        defaulted: input.defaulted,
-      });
-    }),
+    update: protectProcedure
+        .input(updateAddressParams)
+        .mutation(async () => {
+            return await updateAddress({});
+        }),
 
-  delete: protectProcedure
-    .input(addressIdSchema)
-    .mutation(async ({ input }) => {
-      return await deleteAddress({
-        countryId: input.countryId,
-        userId: input.userId,
-      });
-    }),
+    delete: protectProcedure
+        .input(addressIdSchema)
+        .mutation(async () => {
+            return await deleteAddress({});
+        }),
 });
