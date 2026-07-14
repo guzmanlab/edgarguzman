@@ -47,7 +47,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "turbo": "^2.5.4"
+    "turbo": "^2.9.14"
   },
   "engines": {
     "node": ">=18.x",
