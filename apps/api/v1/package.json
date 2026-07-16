@@ -9,7 +9,10 @@
     "start": "tsx src/server.ts"
   },
   "dependencies": {
+    "@edgarguzman/trpc": "workspace:^",
     "@hono/node-server": "^2.0.4",
+    "@hono/trpc-server": "^0.4.2",
+    "@trpc/client": "^11.0.0-rc.730",
     "hono": "^4.12.23"
   },
   "devDependencies": {
