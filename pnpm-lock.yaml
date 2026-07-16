@@ -36,9 +36,18 @@ importers:
 
   apps/api/v1:
     dependencies:
+      '@edgarguzman/trpc':
+        specifier: workspace:^
+        version: link:../../../packages/trpc
       '@hono/node-server':
         specifier: ^2.0.4
         version: 2.0.4(hono@4.12.23)
+      '@hono/trpc-server':
+        specifier: ^0.4.2
+        version: 0.4.2(@trpc/server@11.18.0)(hono@4.12.23)
+      '@trpc/client':
+        specifier: ^11.0.0-rc.730
+        version: 11.18.0(@trpc/server@11.18.0)(typescript@5.9.3)
       hono:
         specifier: ^4.12.23
         version: 4.12.23
@@ -1684,6 +1693,17 @@ packages:
     peerDependencies:
       hono: ^4
     dependencies:
+      hono: 4.12.23
+    dev: false
+
+  /@hono/trpc-server@0.4.2(@trpc/server@11.18.0)(hono@4.12.23):
+    resolution: {integrity: sha512-3TDrc42CZLgcTFkXQba+y7JlRWRiyw1AqhLqztWyNS2IFT+3bHld0lxKdGBttCtGKHYx0505dM67RMazjhdZqw==}
+    engines: {node: '>=16.0.0'}
+    peerDependencies:
+      '@trpc/server': ^10.10.0 || >11.0.0-rc
+      hono: '>=4.0.0'
+    dependencies:
+      '@trpc/server': 11.18.0(typescript@5.9.3)
       hono: 4.12.23
     dev: false
 
@@ -3706,8 +3726,28 @@ packages:
       tslib: 2.8.1
     dev: false
 
+  /@trpc/client@11.18.0(@trpc/server@11.18.0)(typescript@5.9.3):
+    resolution: {integrity: sha512-wOqeg3Fvl25V1ZisQhUD3K8G60ZJDlSGJNSyeXrLH24xAo5w6GSR2Kzb1cSNY9Y+IQ2YZvYGZstBU+V/ulo/ow==}
+    hasBin: true
+    peerDependencies:
+      '@trpc/server': 11.18.0
+      typescript: '>=5.7.2'
+    dependencies:
+      '@trpc/server': 11.18.0(typescript@5.9.3)
+      typescript: 5.9.3
+    dev: false
+
   /@trpc/server@11.16.0(typescript@5.9.3):
     resolution: {integrity: sha512-XgGuUMddrUTd04+za/WE5GFuZ1/YU9XQG0t3VL5WOIu2JspkOlq6k4RYEiqS6HSJt+S0RXaPdIoE2anIP/BBRQ==}
+    hasBin: true
+    peerDependencies:
+      typescript: '>=5.7.2'
+    dependencies:
+      typescript: 5.9.3
+    dev: false
+
+  /@trpc/server@11.18.0(typescript@5.9.3):
+    resolution: {integrity: sha512-JAvXOuNTxgXjIDfQaOvDq1j66LMNfDJUH1IU7Slfn8EvRv2EkH6ehu3A7zpYhjO0syHHiYg77v2lG2JFJgvw7Q==}
     hasBin: true
     peerDependencies:
       typescript: '>=5.7.2'

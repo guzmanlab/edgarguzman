@@ -1,7 +1,21 @@
+import { appRouter, createContext } from "@edgarguzman/trpc";
 import { serve } from "@hono/node-server";
+import { trpcServer } from "@hono/trpc-server";
 import { Hono } from "hono";
 
 const one = new Hono();
+
+one.use(
+    '/trpc',
+    trpcServer({
+        router: appRouter,
+        async createContext(c) {
+            return await createContext({
+                headers: c.req.headers
+            });
+        }
+    })
+);
 
 one.get("/", (c) => {
   return c.json({
