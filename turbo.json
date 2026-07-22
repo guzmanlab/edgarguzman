@@ -3,7 +3,7 @@
   "ui": "stream",
   "tasks": {
     "dev": {
-      "dependsOn": ["^dev", "^db:generate", "^auth:build"],
+      "dependsOn": ["^dev", "^db:generate"],
       "cache": false,
       "persistent": false
     },
@@ -34,10 +34,6 @@
     },
     "format": {
       "dependsOn": ["^format"],
-      "cache": false
-    },
-    "auth:build": {
-      "dependsOn": ["^auth:build"],
       "cache": false
     },
     "start": {

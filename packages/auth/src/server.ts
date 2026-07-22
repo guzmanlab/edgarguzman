@@ -17,14 +17,10 @@ export const auth = betterAuth({
     process.env.NODE_ENV === "production"
       ? [
           process.env.STATIC_APP_URL,
-          process.env.FRONTEND_APP_URL,
-          process.env.BACKEND_APP_URL,
           process.env.API_VERSION_ONE_APP_URL,
         ].filter((url): url is string => Boolean(url))
       : [
           "http://localhost:3000",
-          "http://localhost:3001",
-          "http://localhost:3002",
           "http://localhost:3008",
         ],
 });
