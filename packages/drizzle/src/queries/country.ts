@@ -1,9 +1,7 @@
-import { and, eq } from "drizzle-orm";
+import { and, asc, desc, eq } from "drizzle-orm";
 
 import { drizzle } from "../client";
 import { country } from "../schema/country";
-import { desc } from "drizzle-orm";
-import { asc } from "drizzle-orm";
 
 // TODO: add a JSDoc comment on what each function do without clicking the function name
 
