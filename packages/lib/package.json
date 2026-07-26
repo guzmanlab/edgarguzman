@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "exports": {
+    "./drizzle-query-logger": "./src/drizzle-query-logger",
     "./schema/*": "./src/schema/*.ts",
     "./class-name": "./src/class-name.ts",
     "./env": "./src/env.ts",
@@ -15,6 +16,7 @@
   "dependencies": {
     "@edgarguzman/drizzle": "workspace:^",
     "clsx": "^2.1.1",
+    "drizzle-orm": "^0.44.7",
     "drizzle-zod": "^0.8.3",
     "tailwind-merge": "^3.5.0",
     "zod": "^4.1.13"

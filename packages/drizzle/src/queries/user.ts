@@ -1,7 +1,7 @@
-import { auth } from "@edgarguzman/auth/server";
 import { asc, desc, eq } from "drizzle-orm";
 import { headers } from "next/headers";
 
+import { auth } from "../../../auth/src/server";
 import { drizzle } from "../client";
 import { user } from "../schema/user";
 import { deleteOrder } from "./order";
