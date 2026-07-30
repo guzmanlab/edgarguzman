@@ -1,123 +1,25 @@
-import { and, eq } from "drizzle-orm";
-
-import { drizzle } from "../client";
-import { wishlist } from "../schema";
-
 // TODO: add a JSDoc comment on what each function do without clicking the function name
 
-type OrderBy = "asc" | "desc";
+type FetchWishlistsParams = {};
 
-type FetchWishlistsParams = {
-    productId: string;
-    userId: string;
-    orderBy?: OrderBy;
-};
+export async function fetchWishlists(params: FetchWishlistsParams) {}
 
-export async function fetchWishlists(params: Readonly<FetchWishlistsParams>) {
-    if (params.orderBy === "asc") {
-        let [result] = await drizzle
-            .select()
-            .from(wishlist)
-            .where(
-                and(
-                    eq(wishlist.id, params.productId),
-                    eq(wishlist.productId, params.userId),
-                ),
-            );
+type FetchWishlistParams = {};
 
-        return result;
-    } else if (params.orderBy === "desc") {
-        let [result] = await drizzle
-            .select()
-            .from(wishlist)
-            .where(
-                and(
-                    eq(wishlist.id, params.productId),
-                    eq(wishlist.productId, params.userId),
-                ),
-            );
+export async function fetchWishlist(params: FetchWishlistParams) {}
 
-        return result;
-    } else {
-        let [result] = await drizzle
-            .select()
-            .from(wishlist)
-            .where(
-                and(
-                    eq(wishlist.id, params.productId),
-                    eq(wishlist.productId, params.userId),
-                ),
-            );
+type FetchWishlistByUserIdParams = {};
 
-        return result;
-    }
-}
-
-type FetchWishlistParams = {
-    productId: string;
-    userId: string;
-};
-
-export async function fetchWishlist(params: Readonly<FetchWishlistParams>) {
-    let [result] = await drizzle
-        .select()
-        .from(wishlist)
-        .where(
-            and(
-                eq(wishlist.id, params.productId),
-                eq(wishlist.productId, params.userId),
-            ),
-        );
-
-    return result;
-}
-
-type FetchWishlistByUserIdParams = {
-    userId: string;
-};
-
-export async function fetchWishlistByUserId(
-    params: Readonly<FetchWishlistByUserIdParams>,
-) {
-    let [result] = await drizzle
-        .select()
-        .from(wishlist)
-        .where(eq(wishlist.id, params.userId));
-
-    return result;
-}
+export async function fetchWishlistByUserId(params: FetchWishlistByUserIdParams) {}
 
 type CreateWishlistParams = {};
 
-export async function createWishlist(params: Readonly<CreateWishlistParams>) {
-    let [created] = await drizzle.insert(wishlist).values({}).returning();
+export async function createWishlist(params: CreateWishlistParams) {}
 
-    return created;
-}
+type UpdateWishlistParams = {};
 
-type UpdateWishlistParams = {
-    id: string;
-};
+export async function updateWishlist(params: UpdateWishlistParams) {}
 
-export async function updateWishlist(params: Readonly<UpdateWishlistParams>) {
-    let [updated] = await drizzle
-        .update(wishlist)
-        .set({})
-        .where(eq(wishlist.id, params.id))
-        .returning();
+type DeleteWishlistParams = {};
 
-    return updated;
-}
-
-type DeleteWishlistParams = {
-    id: string;
-};
-
-export async function deleteWishlist(params: Readonly<DeleteWishlistParams>) {
-    let [deleted] = await drizzle
-        .delete(wishlist)
-        .where(eq(wishlist.id, params.id))
-        .returning();
-
-    return deleted;
-}
+export async function deleteWishlist(params: DeleteWishlistParams) {}
