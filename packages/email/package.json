@@ -10,7 +10,6 @@
   ],
   "scripts": {
     "dev": "email dev --dir src --port 3009",
-    "build": "email build --dir src --packageManager pnpm",
     "start": "email start",
     "export": "email export --dir src --pretty true",
     "lint": "eslint src/ --fix"
