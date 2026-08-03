@@ -7,11 +7,11 @@ import {
 } from "drizzle-zod";
 import { z } from "zod";
 
-import { timestamp } from "../time-stamp";
+// import { timestamp } from "../time-stamp";
 
-const baseSchema = createSelectSchema(order).omit(timestamp);
+const baseSchema = createSelectSchema(order);
 
-export const createOrderSchema = createInsertSchema(order).omit(timestamp);
+export const createOrderSchema = createInsertSchema(order);
 
 export const createOrderParams = baseSchema
   .extend({
@@ -25,7 +25,7 @@ export const createOrderParams = baseSchema
     userId: true,
   });
 
-export const updateOrderSchema = createUpdateSchema(order).omit(timestamp);
+export const updateOrderSchema = createUpdateSchema(order);
 
 export const updateOrderParams = baseSchema
   .extend({
@@ -56,4 +56,4 @@ export type OrderId = z.infer<typeof orderIdSchema>["id"];
 
 export type CompleteOrder = Awaited<
   ReturnType<typeof fetchOrders>
->["orders"][number];
+>[][number];

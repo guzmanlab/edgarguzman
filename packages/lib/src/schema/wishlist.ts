@@ -1,4 +1,4 @@
-import { fetchWishlists } from "@edgarguzman/drizzle/queries/wishlist";
+import type { fetchWishlists } from "@edgarguzman/drizzle/queries/wishlist";
 import { wishlist } from "@edgarguzman/drizzle/schema/wishlist";
 import {
   createInsertSchema,
@@ -7,12 +7,11 @@ import {
 } from "drizzle-zod";
 import { z } from "zod";
 
-import { timestamp } from "../time-stamp";
+// import { timestamp } from "../time-stamp";
 
-const baseSchema = createSelectSchema(wishlist).omit(timestamp);
+const baseSchema = createSelectSchema(wishlist);
 
-export const createWishlistSchema =
-  createInsertSchema(wishlist).omit(timestamp);
+export const createWishlistSchema = createInsertSchema(wishlist);
 
 export const createWishlistParams = baseSchema
   .extend({
@@ -24,8 +23,7 @@ export const createWishlistParams = baseSchema
     userId: true,
   });
 
-export const updateWishlistSchema =
-  createUpdateSchema(wishlist).omit(timestamp);
+export const updateWishlistSchema = createUpdateSchema(wishlist);
 
 export const updateWishlistParams = baseSchema
   .extend({
@@ -54,4 +52,4 @@ export type WishlistId = z.infer<typeof wishlistIdSchema>["id"];
 
 export type CompleteWishlist = Awaited<
   ReturnType<typeof fetchWishlists>
->["wishlists"][number];
+>[][number];

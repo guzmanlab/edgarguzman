@@ -7,11 +7,11 @@ import {
 } from "drizzle-zod";
 import { z } from "zod";
 
-import { timestamp } from "../time-stamp";
+// import { timestamp } from "../time-stamp";
 
-const baseSchema = createSelectSchema(product).omit(timestamp);
+const baseSchema = createSelectSchema(product);
 
-export const createProductSchema = createInsertSchema(product).omit(timestamp);
+export const createProductSchema = createInsertSchema(product);
 
 export const createProductParams = baseSchema
   .extend({
@@ -23,7 +23,7 @@ export const createProductParams = baseSchema
     userId: true,
   });
 
-export const updateProductSchema = createUpdateSchema(product).omit(timestamp);
+export const updateProductSchema = createUpdateSchema(product);
 
 export const updateProductParams = baseSchema
   .extend({
@@ -52,4 +52,4 @@ export type ProductId = z.infer<typeof productIdSchema>["id"];
 
 export type CompleteProduct = Awaited<
   ReturnType<typeof fetchProducts>
->["products"][number];
+>[][number];
