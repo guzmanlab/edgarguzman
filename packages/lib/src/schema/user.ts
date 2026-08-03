@@ -7,11 +7,11 @@ import {
 } from "drizzle-zod";
 import { z } from "zod";
 
-import { timestamp } from "../time-stamp";
+// import { timestamp } from "../time-stamp";
 
-const baseSchema = createSelectSchema(user).omit(timestamp);
+const baseSchema = createSelectSchema(user);
 
-export const createUserSchema = createInsertSchema(user).omit(timestamp);
+export const createUserSchema = createInsertSchema(user);
 
 export const createUserParams = baseSchema
   .extend({
@@ -21,7 +21,7 @@ export const createUserParams = baseSchema
     id: true,
   });
 
-export const updateUserSchema = createUpdateSchema(user).omit(timestamp);
+export const updateUserSchema = createUpdateSchema(user);
 
 export const updateUserParams = baseSchema.extend({
   role: z.enum(["User", "Admin"]).default("User").nullish(),
@@ -45,4 +45,4 @@ export type UserId = z.infer<typeof userIdSchema>;
 
 export type CompleteUser = Awaited<
   ReturnType<typeof fetchUsers>
->["users"][number];
+>[][number];

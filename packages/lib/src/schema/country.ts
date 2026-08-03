@@ -7,18 +7,18 @@ import {
 } from "drizzle-zod";
 import { z } from "zod";
 
-import { timestamp } from "../time-stamp";
+// import { timestamp } from "../time-stamp";
 
-const baseSchema = createSelectSchema(country).omit(timestamp);
+const baseSchema = createSelectSchema(country);
 
-export const createCountrySchema = createInsertSchema(country).omit(timestamp);
+export const createCountrySchema = createInsertSchema(country);
 
 export const createCountryParams = baseSchema.extend({}).omit({
   id: true,
   userId: true,
 });
 
-export const updateCountrySchema = createUpdateSchema(country).omit(timestamp);
+export const updateCountrySchema = createUpdateSchema(country);
 
 export const updateCountryParams = baseSchema.extend({}).omit({
   userId: true,
@@ -42,4 +42,4 @@ export type CountryId = z.infer<typeof countryIdSchema>["id"];
 
 export type CompleteCountry = Awaited<
   ReturnType<typeof fetchCountries>
->["country"][number];
+>[][number];

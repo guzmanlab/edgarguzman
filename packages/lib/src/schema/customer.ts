@@ -1,4 +1,4 @@
-import { fetchCustomers } from "@edgarguzman/drizzle/queries/customer";
+import type { fetchCustomers } from "@edgarguzman/drizzle/queries/customer";
 import { customer } from "@edgarguzman/drizzle/schema/customer";
 import {
   createInsertSchema,
@@ -7,20 +7,18 @@ import {
 } from "drizzle-zod";
 import { z } from "zod";
 
-import { timestamp } from "../time-stamp";
+// import { timestamp } from "../time-stamp";
 
-const baseSchema = createSelectSchema(customer).omit(timestamp);
+const baseSchema = createSelectSchema(customer);
 
-export const createCustomerSchema =
-  createInsertSchema(customer).omit(timestamp);
+export const createCustomerSchema = createInsertSchema(customer);
 
 export const createCustomerParams = baseSchema.extend({}).omit({
   id: true,
   userId: true,
 });
 
-export const updateCustomerSchema =
-  createUpdateSchema(customer).omit(timestamp);
+export const updateCustomerSchema = createUpdateSchema(customer);
 
 export const updateCustomerParams = baseSchema.extend({}).omit({
   userId: true,
@@ -44,4 +42,4 @@ export type CustomerId = z.infer<typeof customerIdSchema>["id"];
 
 export type CompleteCountry = Awaited<
   ReturnType<typeof fetchCustomers>
->["customers"][number];
+>[][number];
