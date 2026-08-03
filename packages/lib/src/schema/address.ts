@@ -7,11 +7,11 @@ import {
 } from "drizzle-zod";
 import { z } from "zod";
 
-import { timestamp } from "../time-stamp";
+// import { timestamp } from "../time-stamp";
 
-const baseSchema = createSelectSchema(address).omit(timestamp);
+const baseSchema = createSelectSchema(address);
 
-export const createAddressSchema = createInsertSchema(address).omit(timestamp);
+export const createAddressSchema = createInsertSchema(address);
 
 export const createAddressParams = baseSchema
   .extend({
@@ -22,7 +22,7 @@ export const createAddressParams = baseSchema
     userId: true,
   });
 
-export const updateAddressSchema = createUpdateSchema(address).omit(timestamp);
+export const updateAddressSchema = createUpdateSchema(address);
 
 export const updateAddressParams = baseSchema
   .extend({
@@ -50,4 +50,4 @@ export type AddressId = z.infer<typeof addressIdSchema>["id"];
 
 export type CompleteAddress = Awaited<
   ReturnType<typeof fetchAddresses>
->["addresses"][number];
+>[][number];
