@@ -5,42 +5,48 @@ import {
   fetchCustomers,
   updateCustomer,
 } from "@edgarguzman/drizzle/queries/customer";
-import {
-  createCustomerParams,
-  customerIdSchema,
-  updateCustomerParams,
-} from "@edgarguzman/lib/schema/customer";
+import { z } from "zod";
 
 import { router } from "../client";
 import { protectProcedure, publicProcedure } from "../procedure";
 
 export const customerRouter = router({
   all: publicProcedure
-    .input(customerIdSchema)
+    .input(
+        z.object({})
+    )
     .query(async () => {
         return await fetchCustomers({});
     }),
 
   find: publicProcedure
-    .input(customerIdSchema)
+    .input(
+        z.object({})
+    )
     .query(async () => {
         return await fetchCustomer({});
     }),
 
   create: protectProcedure
-    .input(createCustomerParams)
+    .input(
+        z.object({})
+    )
     .mutation(async () => {
       return await createCustomer({});
     }),
 
   update: protectProcedure
-    .input(updateCustomerParams)
+    .input(
+        z.object({})
+    )
     .mutation(async () => {
       return await updateCustomer({});
     }),
 
   delete: protectProcedure
-    .input(customerIdSchema)
+    .input(
+        z.object({})
+    )
     .mutation(async () => {
       return await deleteCustomer({});
     }),

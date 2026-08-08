@@ -5,11 +5,7 @@ import {
   fetchWishlists,
   updateWishlist,
 } from "@edgarguzman/drizzle/queries/wishlist";
-import {
-  createWishlistParams,
-  updateWishlistParams,
-  wishlistIdSchema,
-} from "@edgarguzman/lib/schema/wishlist";
+import { z } from "zod";
 
 import { router } from "../client";
 import { protectProcedure } from "../procedure";
@@ -20,29 +16,39 @@ export const wishlistRouter = router({
   }),
 
   history: protectProcedure
-    .input(wishlistIdSchema)
+    .input(
+      z.object({})
+    )
     .query(async () => {}),
 
   find: protectProcedure
-    .input(wishlistIdSchema)
+    .input(
+      z.object({})
+    )
     .query(async () => {
       return await fetchWishlistByUserId({});
     }),
 
   create: protectProcedure
-    .input(createWishlistParams)
+    .input(
+      z.object({})
+    )
     .mutation(async () => {
       return await createWishlist({});
     }),
 
   update: protectProcedure
-    .input(updateWishlistParams)
+    .input(
+      z.object({})
+    )
     .mutation(async () => {
       return await updateWishlist({});
     }),
 
   delete: protectProcedure
-    .input(wishlistIdSchema)
+    .input(
+      z.object({})
+    )
     .mutation(async () => {
       return await deleteWishlist({});
     }),

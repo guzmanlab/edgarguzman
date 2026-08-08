@@ -1,47 +1,53 @@
 import {
-    createCountry,
-    deleteCountry,
-    fetchCountries,
-    fetchCountry,
-    updateCountry,
+  createCountry,
+  deleteCountry,
+  fetchCountries,
+  fetchCountry,
+  updateCountry,
 } from "@edgarguzman/drizzle/queries/country";
-import {
-    countryIdSchema,
-    createCountryParams,
-    updateCountryParams,
-} from "@edgarguzman/lib/schema/country";
+import { z } from "zod";
 
 import { router } from "../client";
 import { protectProcedure, publicProcedure } from "../procedure";
 
 export const countryRouter = router({
-    all: publicProcedure
-        .input(countryIdSchema)
-        .query(async () => {
-            return await fetchCountries({});
-        }),
+  all: publicProcedure
+    .input(
+        z.object({})
+    )
+    .query(async () => {
+        return await fetchCountries({});
+    }),
 
-    find: publicProcedure
-        .input(countryIdSchema)
-        .query(async () => {
-            return await fetchCountry({});
-        }),
+  find: publicProcedure
+    .input(
+        z.object({})
+    )
+    .query(async () => {
+        return await fetchCountry({});
+    }),
 
-    create: protectProcedure
-        .input(createCountryParams)
-        .mutation(async () => {
-            return await createCountry({});
-        }),
+  create: protectProcedure
+    .input(
+        z.object({})
+    )
+    .mutation(async () => {
+        return await createCountry({});
+    }),
 
-    update: protectProcedure
-        .input(updateCountryParams)
-        .mutation(async () => {
-            return await updateCountry({});
-        }),
+  update: protectProcedure
+    .input(
+        z.object({})
+    )
+    .mutation(async () => {
+        return await updateCountry({});
+    }),
 
-    delete: protectProcedure
-        .input(countryIdSchema)
-        .mutation(async () => {
-            return await deleteCountry({});
-        }),
+  delete: protectProcedure
+    .input(
+        z.object({})
+    )
+    .mutation(async () => {
+        return await deleteCountry({});
+    }),
 });

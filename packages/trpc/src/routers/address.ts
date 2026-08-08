@@ -5,42 +5,48 @@ import {
     fetchAddresses,
     updateAddress,
 } from "@edgarguzman/drizzle/queries/address";
-import {
-    addressIdSchema,
-    createAddressParams,
-    updateAddressParams,
-} from "@edgarguzman/lib/schema/address";
+import { z } from "zod";
 
 import { router } from "../client";
 import { protectProcedure } from "../procedure";
 
 export const addressRouter = router({
     all: protectProcedure
-        // .input()
+        .input(
+            z.object({})
+        )
         .query(async () => {
             return await fetchAddresses({});
         }),
 
     find: protectProcedure
-        .input(addressIdSchema)
+        .input(
+            z.object({})
+        )
         .query(async () => {
             return await fetchAddress({});
         }),
 
     create: protectProcedure
-        .input(createAddressParams)
+        .input(
+            z.object({})
+        )
         .mutation(async () => {
             return await createAddress({});
         }),
 
     update: protectProcedure
-        .input(updateAddressParams)
+        .input(
+            z.object({})
+        )
         .mutation(async () => {
             return await updateAddress({});
         }),
 
     delete: protectProcedure
-        .input(addressIdSchema)
+        .input(
+            z.object({})
+        )
         .mutation(async () => {
             return await deleteAddress({});
         }),

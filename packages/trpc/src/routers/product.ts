@@ -1,56 +1,64 @@
 import {
-    createProduct,
-    deleteProduct,
-    fetchProduct,
-    fetchProducts,
-    searchProducts,
-    updateProduct,
+  createProduct,
+  deleteProduct,
+  fetchProduct,
+  fetchProducts,
+  searchProducts,
+  updateProduct,
 } from "@edgarguzman/drizzle/queries/product";
-import {
-    createProductParams,
-    productIdSchema,
-    updateProductParams,
-} from "@edgarguzman/lib/schema/product";
+import { z } from "zod";
 
 import { router } from "../client";
 import { protectProcedure, publicProcedure } from "../procedure";
 
 export const productRouter = router({
-    all: publicProcedure.query(async () => {
-        return await fetchProducts({});
+  all: publicProcedure.query(async () => {
+    return await fetchProducts({});
+  }),
+
+  find: publicProcedure
+    .input(
+      z.object({})
+    )
+    .query(async () => {
+      return await fetchProduct({});
     }),
 
-    find: publicProcedure
-        .input(productIdSchema)
-        .query(async () => {
-            return await fetchProduct({});
-        }),
+  search: publicProcedure
+    .input(
+      z.object({})
+    )
+    .query(async () => {
+      return await searchProducts({});
+    }),
 
-    search: publicProcedure
-        // .input()
-        .query(async () => {
-            return await searchProducts({});
-        }),
+  related: publicProcedure
+    .input(
+      z.object({})
+    )
+    .query(async () => {}),
 
-    related: publicProcedure
-        // .input()
-        .query(async () => {}),
+  create: protectProcedure
+    .input(
+      z.object({})
+    )
+    .mutation(async () => {
+      return await createProduct({});
+    }),
 
-    create: protectProcedure
-        .input(createProductParams)
-        .mutation(async () => {
-            return await createProduct({});
-        }),
+  update: protectProcedure
+    .input(
+      z.object({})
+    )
+    .mutation(async () => {
+      return await updateProduct({});
+    }),
 
-    update: protectProcedure
-        .input(updateProductParams)
-        .mutation(async () => {
-            return await updateProduct({});
-        }),
-
-    delete: protectProcedure
-        .input(productIdSchema)
-        .mutation(async () => {
-            return await deleteProduct({});
-        }),
+  delete: protectProcedure
+    .input(
+      z.object({})
+    )
+    .mutation(async () => {
+      return await deleteProduct({});
+    }),
 });

@@ -1,9 +1,12 @@
-import { createUser, deleteUser, fetchCurrentUser, fetchUsers, findUser, updateUser } from "@edgarguzman/drizzle/queries/user";
 import {
-    createUserParams,
-    updateUserParams,
-    userIdSchema,
-} from "@edgarguzman/lib/schema/user";
+  createUser,
+  deleteUser,
+  fetchCurrentUser,
+  fetchUsers,
+  findUser,
+  updateUser,
+} from "@edgarguzman/drizzle/queries/user";
+import { z } from "zod";
 
 import { router } from "../client";
 import { protectProcedure, publicProcedure } from "../procedure";
@@ -18,25 +21,33 @@ export const userRouter = router({
   }),
 
   find: publicProcedure
-    .input(userIdSchema)
+    .input(
+      z.object({})
+    )
     .query(async () => {
       return await findUser({});
     }),
 
   create: publicProcedure
-    .input(createUserParams)
+    .input(
+      z.object({})
+    )
     .mutation(async () => {
       return await createUser({});
     }),
 
   update: protectProcedure
-    .input(updateUserParams)
+    .input(
+      z.object({})
+    )
     .mutation(async () => {
       return await updateUser({});
     }),
 
   delete: protectProcedure
-    .input(userIdSchema)
+    .input(
+      z.object({})
+    )
     .mutation(async () => {
       return await deleteUser({});
     }),
