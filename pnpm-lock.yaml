@@ -70,9 +70,18 @@ importers:
 
   apps/backend:
     dependencies:
+      '@edgarguzman/trpc':
+        specifier: workspace:^
+        version: link:../../packages/trpc
       '@edgarguzman/ui':
         specifier: workspace:^
         version: link:../../packages/ui
+      '@trpc/client':
+        specifier: ^11.0.0-rc.730
+        version: 11.18.0(@trpc/server@11.18.0)(typescript@5.9.3)
+      '@trpc/server':
+        specifier: ^11.0.0-rc.730
+        version: 11.18.0(typescript@5.9.3)
       lucide-react:
         specifier: ^1.7.0
         version: 1.7.0(react@19.2.4)
@@ -125,9 +134,18 @@ importers:
 
   apps/delivery:
     dependencies:
+      '@edgarguzman/trpc':
+        specifier: workspace:^
+        version: link:../../packages/trpc
       '@edgarguzman/ui':
         specifier: workspace:^
         version: link:../../packages/ui
+      '@trpc/client':
+        specifier: ^11.0.0-rc.730
+        version: 11.18.0(@trpc/server@11.18.0)(typescript@5.9.3)
+      '@trpc/server':
+        specifier: ^11.0.0-rc.730
+        version: 11.18.0(typescript@5.9.3)
       lucide-react:
         specifier: ^1.7.0
         version: 1.7.0(react@19.2.4)
