@@ -16,7 +16,7 @@ async function handler(request: NextRequest) {
         async createContext() {
             return await createContext(request);
         },
-        onError: env.NODE_ENV === "development"
+        onError: process.env.NODE_ENV === "development"
           ? ({ path, error }) => {
             console.error(
               `❌ tRPC failed on ${path ?? "<no-path>"}: ${error.message}`
