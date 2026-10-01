@@ -1,9 +1,9 @@
 import "@/styles/globals.css";
 import "@edgarguzman/ui/styles/globals.css";
 
-import type { Metadata,Viewport } from "next";
-import { Inter } from "next/font/google";
 import { Toaster } from "@edgarguzman/ui/sonner";
+import type { Metadata, Viewport } from "next";
+import { Inter } from "next/font/google";
 
 import { ModeToggle } from "@/components/mode-toggle";
 import { ThemeProvider } from "@/components/providers/theme-provider";

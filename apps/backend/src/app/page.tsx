@@ -1,7 +1,7 @@
 import { Button } from "@edgarguzman/ui/button";
 import type { Metadata, NextPage } from "next";
 
-import { trpc } from "@/trpc/proxy";
+// import { trpc } from "@/trpc/proxy";
 
 export function metadata(): Metadata {
   return {
@@ -9,12 +9,18 @@ export function metadata(): Metadata {
   };
 }
 
-async function displayAllProducts() {
-    return await trpc.product.all.query();
-}
+// async function displayAllOrders() {
+//     return await trpc.order.all.query({});
+// }
+
+// async function displayAllProducts() {
+//     return await trpc.product.all.query();
+// }
 
 const Home: NextPage = async () => {
-    let list = await displayAllProducts();
+  // let orderlist = await displayAllOrders();
+
+  // let productlist = await displayAllProducts();
 
   return (
     <main className="grid min-h-screen grid-cols-1 place-items-center text-black">
@@ -23,9 +29,13 @@ const Home: NextPage = async () => {
           Coming Soon
         </h1>
 
-        <div className="">
-            {JSON.stringify(list, null, 4)}
-        </div>
+        {/*<div className="">
+            {JSON.stringify(orderlist, null, 4)}
+        </div>*/}
+
+        {/*<div className="">
+            {JSON.stringify(productlist, null, 4)}
+        </div>*/}
 
         <div className="grid grid-cols-1 grid-rows-2 gap-4 sm:grid-cols-1 sm:grid-rows-2 md:gap-8">
           <div className="text-lg">

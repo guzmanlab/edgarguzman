@@ -1,0 +1,23 @@
+{
+    "name": "@edgarguzman/zustand",
+    "version": "0.0.0",
+    "main": "src/client.ts",
+    "private": true,
+    "exports": {
+        "./client": "./src/client.ts"
+    },
+    "files": [
+        "src"
+    ],
+    "dependencies": {
+        "zustand": "^5.0.15"
+    },
+    "devDependencies": {
+        "@edgarguzman/eslint": "workspace:^",
+        "@edgarguzman/typescript": "workspace:^",
+        "typescript": "^5.7.2"
+    },
+    "publishConfig": {
+        "access": "public"
+    }
+}
