@@ -8,16 +8,19 @@
     "./class-name": "./src/class-name.ts",
     "./env": "./src/env.ts",
     "./error-log": "./src/error-log.ts",
-    "./log": "./src/log.ts"
+    "./log": "./src/log.ts",
+    "./use-zod-form": "./src/use-zod-form.ts"
   },
   "files": [
     "src"
   ],
   "dependencies": {
     "@edgarguzman/drizzle": "workspace:^",
+    "@hookform/resolvers": "^5.0.1",
     "clsx": "^2.1.1",
     "drizzle-orm": "^0.44.7",
     "drizzle-zod": "^0.8.3",
+    "react-hook-form": "^7.55.0",
     "tailwind-merge": "^3.5.0",
     "zod": "^4.1.13"
   },

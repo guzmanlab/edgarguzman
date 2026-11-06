@@ -422,6 +422,9 @@ importers:
       '@edgarguzman/drizzle':
         specifier: workspace:^
         version: link:../drizzle
+      '@hookform/resolvers':
+        specifier: ^5.0.1
+        version: 5.2.2(react-hook-form@7.72.1)
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -431,6 +434,9 @@ importers:
       drizzle-zod:
         specifier: ^0.8.3
         version: 0.8.3(drizzle-orm@0.44.7)(zod@4.3.6)
+      react-hook-form:
+        specifier: ^7.55.0
+        version: 7.72.1(react@19.3.0)
       tailwind-merge:
         specifier: ^3.5.0
         version: 3.5.0
@@ -857,7 +863,7 @@ packages:
       jose: 6.1.2
       kysely: 0.28.8
       nanostores: 1.1.0
-      zod: 4.3.6
+      zod: 4.6.5
     dev: false
 
   /@better-auth/telemetry@1.3.34(better-call@1.0.19)(jose@6.1.2)(kysely@0.28.8)(nanostores@1.1.0):
@@ -1924,7 +1930,7 @@ packages:
       react-hook-form: ^7.55.0
     dependencies:
       '@standard-schema/utils': 0.3.0
-      react-hook-form: 7.72.1(react@19.2.4)
+      react-hook-form: 7.72.1(react@19.3.0)
     dev: false
 
   /@humanwhocodes/config-array@0.13.0:
@@ -4554,7 +4560,7 @@ packages:
       jose: 6.1.2
       kysely: 0.28.8
       nanostores: 1.1.0
-      zod: 4.3.6
+      zod: 4.6.5
     dev: false
 
   /better-call@1.0.19:
@@ -7363,6 +7369,15 @@ packages:
       react: 19.2.4
     dev: false
 
+  /react-hook-form@7.72.1(react@19.3.0):
+    resolution: {integrity: sha512-RhwBoy2ygeVZje+C+bwJ8g0NjTdBmDlJvAUHTxRjTmSUKPYsKfMphkS2sgEMotsY03bP358yEYlnUeZy//D9Ig==}
+    engines: {node: '>=18.0.0'}
+    peerDependencies:
+      react: ^16.8.0 || ^17 || ^18 || ^19
+    dependencies:
+      react: 19.3.0
+    dev: false
+
   /react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
 
@@ -8717,6 +8732,10 @@ packages:
 
   /zod@4.3.6:
     resolution: {integrity: sha512-rftlrkhHZOcjDwkGlnUtZZkvaPHCsDATp4pGpuOOMDaTdDDXF91wuVDJoWoPsKX/3YPQ5fHuF3STjcYyKr+Qhg==}
+    dev: false
+
+  /zod@4.6.5:
+    resolution: {integrity: sha512-v5l/aFXZQeai4awLbOpSoHecE9UiMrnfx75tEXLjNonXVARxQ5mOeipTjROUchszUNCqnE+hqAMujRsRHsut2Q==}
     dev: false
 
   /zustand@5.0.15:
