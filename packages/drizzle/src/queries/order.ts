@@ -1,11 +1,15 @@
-// TODO: add a JSDoc comment on what each function do without clicking the function name
-
 type FetchOrdersParams = {};
 
+/**
+ * @description TODO: write a brief description for jsdoc
+ */
 export async function fetchOrders(params: FetchOrdersParams) {}
 
 type FetchOrderParams = {};
 
+/**
+ * @description TODO: write a brief description for jsdoc
+ */
 export async function fetchOrder(params: FetchOrderParams) {}
 
 // TODO: fetch a single order by user id
@@ -14,16 +18,28 @@ export async function fetchOrder(params: FetchOrderParams) {}
 
 type CreateOrderParams = {};
 
+/**
+ * @description TODO: write a brief description for jsdoc
+ */
 export async function createOrder(params: CreateOrderParams) {}
 
 type UpdateOrderParams = {};
 
+/**
+ * @description TODO: write a brief description for jsdoc
+ */
 export async function updateOrder(params: UpdateOrderParams) {}
 
 type CancelOrderParams = {};
 
+/**
+ * @description TODO: write a brief description for jsdoc
+ */
 export async function cancelOrder(params: CancelOrderParams) {}
 
 type DeleteOrderParams = {};
 
+/**
+ * @description TODO: write a brief description for jsdoc
+ */
 export async function deleteOrder(params: DeleteOrderParams) {}
