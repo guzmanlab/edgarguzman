@@ -6,7 +6,7 @@ import { Hono } from "hono";
 const one = new Hono();
 
 one.use(
-    '/trpc',
+    "/trpc",
     trpcServer({
         router: appRouter,
         async createContext(c) {
