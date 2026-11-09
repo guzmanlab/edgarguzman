@@ -1,10 +1,5 @@
-import { config } from "dotenv";
-
-config({
-    path: "../.env",
-});
-
 import { neon, neonConfig } from "@neondatabase/serverless";
+import { config } from "dotenv";
 import { drizzle as neonDrizzle } from "drizzle-orm/neon-http";
 import ws from "ws";
 
@@ -13,7 +8,9 @@ import * as schema from "./schema";
 
 neonConfig.webSocketConstructor = ws;
 
-// config();
+config({
+    path: "../.env",
+});
 
 const sql = neon(process.env.DATABASE_URL!);
 
