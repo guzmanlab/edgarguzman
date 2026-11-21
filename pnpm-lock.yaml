@@ -76,6 +76,9 @@ importers:
       '@edgarguzman/ui':
         specifier: workspace:^
         version: link:../../packages/ui
+      '@next/env':
+        specifier: ^16.4.6
+        version: 16.4.6
       '@trpc/client':
         specifier: ^11.0.0-rc.730
         version: 11.18.0(@trpc/server@11.18.0)(typescript@5.9.3)
@@ -140,6 +143,9 @@ importers:
       '@edgarguzman/ui':
         specifier: workspace:^
         version: link:../../packages/ui
+      '@next/env':
+        specifier: ^16.4.6
+        version: 16.4.6
       '@trpc/client':
         specifier: ^11.0.0-rc.730
         version: 11.18.0(@trpc/server@11.18.0)(typescript@5.9.3)
@@ -204,6 +210,9 @@ importers:
       '@edgarguzman/ui':
         specifier: workspace:^
         version: link:../../packages/ui
+      '@next/env':
+        specifier: ^16.4.6
+        version: 16.4.6
       '@trpc/client':
         specifier: ^11.0.0-rc.730
         version: 11.18.0(@trpc/server@11.18.0)(typescript@5.9.3)
@@ -342,6 +351,9 @@ importers:
       '@neondatabase/serverless':
         specifier: ^1.0.2
         version: 1.0.2
+      '@next/env':
+        specifier: ^16.4.6
+        version: 16.4.6
       '@paralleldrive/cuid2':
         specifier: ^3.0.4
         version: 3.0.4
@@ -2233,6 +2245,10 @@ packages:
 
   /@next/env@15.5.12:
     resolution: {integrity: sha512-pUvdJN1on574wQHjaBfNGDt9Mz5utDSZFsIIQkMzPgNS8ZvT4H2mwOrOIClwsQOb6EGx5M76/CZr6G8i6pSpLg==}
+    dev: false
+
+  /@next/env@16.4.6:
+    resolution: {integrity: sha512-SunBjJ6t+oBtecS3dTjdVuMhUogP5wD/vrGL5EVuQYM1iS4O5ilL51HkiJ3sPjMzRHiCChvr4dbaSJbR7F3lxA==}
     dev: false
 
   /@next/eslint-plugin-next@15.5.12:

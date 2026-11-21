@@ -11,6 +11,7 @@
     "dependencies": {
         "@edgarguzman/trpc": "workspace:^",
         "@edgarguzman/ui": "workspace:^",
+        "@next/env": "^16.4.6",
         "@trpc/client": "^11.0.0-rc.730",
         "@trpc/server": "^11.0.0-rc.730",
         "lucide-react": "^1.7.0",
