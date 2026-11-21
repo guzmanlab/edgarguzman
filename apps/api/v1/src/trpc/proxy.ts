@@ -10,6 +10,10 @@ export const trpc = createTRPCProxyClient<AppRouter>({
     ]
 });
 
-function fetchBaseUrl() {
-    return `http://localhost:3008`;
+function fetchBaseUrl(): string {
+    if (typeof window !== "undefined") return window.location.origin;
+
+    if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
+
+    return `http://localhost:${process.env.PORT ?? 3011}`;
 }
